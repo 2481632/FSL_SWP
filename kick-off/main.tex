@@ -1,0 +1,189 @@
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+\usetheme{SimplePlus}
+
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{AR Flood Hazard Maps}
+% \subtitle{Subtitle}
+
+\author{Frederik Alpers, Lea Plümacher, Marvin Hagemeister}
+
+\institute
+{
+    Freie Universität Berlin % Your institution for the title page
+}
+\date{\today} % Date, can be changed to a custom date
+
+%----------------------------------------------------------------------------------------
+%    PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+\begin{frame}{Overview}
+    % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+    \tableofcontents
+\end{frame}
+
+%------------------------------------------------
+\section{Team}
+%------------------------------------------------
+
+\begin{frame}{Team}
+    \begin{itemize}
+        \item Frederik Alpers 
+        \item Lea Plümacher
+        \item Marvin Hagemeister (Master Informatik)
+    \end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\section{Project Idea}
+%------------------------------------------------
+
+\begin{frame}{Project Idea}
+    \centering
+    \textbf{Mit Hilfe von Augmented Reality potentielle Überflutungen und Meeresspiegelanstiege intuitiv verstehbar machen und somit einen besseren Schutz der Bevölkerung erreichen.}
+\end{frame}
+
+\begin{frame}{Project Idea}
+    \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+        \column{.45\textwidth} % Left column and width
+        \begin{enumerate}
+            \item AR Handy App
+            \item User Location per GPS
+            \item Anzeigen von historischen Daten und Vorhersagen
+        \end{enumerate}
+
+        \column{.45\textwidth} % Right column and width
+        \begin{figure}
+          \includegraphics[width=\linewidth]{img/Screenshot 2025-10-26 at 12-46-46 02_SWP_ZLAB_Project_Drafts.pdf.png}
+          \caption{Concept of the app}
+          \label{fig:boat1}
+        \end{figure}
+
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+\section{Data Sources}
+%------------------------------------------------
+
+\begin{frame}{Project Idea}
+    \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+        \column{.45\textwidth} % Left column and width
+        \begin{enumerate}
+            \item Nur Berlin: https://wasserportal.berlin.de
+            \item REST-API von Pegelonline: https://www.pegelonline.wsv.de/
+            \item Länderübergreifendes Hochwasser Portal (LHP): https://www.hochwasserzentralen.de/
+        \end{enumerate}
+
+        \column{.45\textwidth} % Right column and width
+        \begin{figure}
+          \includegraphics[width=\linewidth]{img/Screenshot 2025-10-26 at 13-36-55 Hochwasser Aktuelle Situation und Warnungen LHP.png}
+          \caption{Startseite von LHP, stellt auch APIs bereit.}
+          \label{fig:pegelonline}
+        \end{figure}
+
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+\section{Suggested Medium}
+%------------------------------------------------
+
+\begin{frame}{Suggested Medium}
+    \begin{enumerate}
+        \item Smartphones / Web-AR
+        \item Zugänglich für die Meisten
+        \item Gut verwendbar für Location based APPs
+    \end{enumerate}
+\end{frame}
+
+%------------------------------------------------
+\section{Prototype / Mock-up}
+%------------------------------------------------
+
+\begin{frame}{Prototype / Mock-up}
+    \begin{figure}
+          \includegraphics[width=0.6\linewidth]{img/photo_5472335260990701058_y.jpg}
+          \caption{Erstes Mock-up für die AR Flood Hazard Map App.}
+          \label{fig:pegelonline}
+        \end{figure}
+\end{frame}
+
+%------------------------------------------------
+\section{Mile stones}
+%------------------------------------------------
+
+\begin{frame}{Mile Stones}
+    \textbf{1. Recherche und endgültiges Konzept}
+    \begin{itemize}
+        \item Projektidee genau definieren
+        \item Detaillierteres Mock-up, evtl. User Stories
+        \item APIs und Datenquellen prüfen
+        \item Zeithorizont: 2 Wochen (10.11)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mile Stones}
+    \textbf{2. AR-Prototyp}
+    \begin{itemize}
+        \item Erste Web / AR Tests
+        \item GPS, Gyroskop und einfaches Overlay
+        \item Fake Pegelstände
+        \item Verwenden der Kamera
+        \item Zeithorizont: 01.12
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mile Stones}
+    \textbf{3. Pegelstandssimulation}
+    \begin{itemize}
+        \item Darstellung realer Pegelstände
+        \item Zeithorizont: 2 Wochen (15.12)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mile Stones}
+    \textbf{4. UX \& Testen}
+    \begin{itemize}
+        \item Hinzufügen von Animationen
+        \item Zeitstrahl und andere UI Elemente
+        \item Zeithorizont: 2 Wochen (12.01)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mile Stones}
+    \textbf{5. Präsentation}
+    \begin{itemize}
+        \item Testen und Bug-Fixes
+        \item Dokumentation
+        \item Zeithorizont: 2 Wochen (29.01.2026)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \Huge{\centerline{\textbf{Fragen?}}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
