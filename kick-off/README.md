@@ -1,11 +1,9 @@
-# SimplePlus Beamer Theme
+# SWP Kick off presentation
 
-The **SimplePlus Beamer Theme** is a minimalist and elegant LaTeX template tailored for academic and scientific presentations.
-
--   Overleaf: https://www.overleaf.com/latex/templates/simpleplus-beamertheme/wfmfjhdcrdfx
--   CTAN: https://ctan.org/pkg/beamertheme-simpleplus
--   Github: https://github.com/pm25/SimplePlus-BeamerTheme
-
-## License
-
-This project is released under the **Unlicense License**, granting you complete freedom to use, modify, and distribute the template. For more details, see the [LICENSE](./LICENSE) file.
+#### Kick off (third week, 10-15 min presentation, mandatory participation)
+- Introduce team
+- Define and explain project idea
+- Suggest potential data sources
+- Suggest medium (application for Phone / iPad / Web / VR / AR)
+- First paper-pencil prototype / Mock-ups
+- Divide project into mile stones
