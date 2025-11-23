@@ -1,0 +1,218 @@
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+\usetheme{SimplePlus}
+
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{lmodern}
+\usepackage{pifont} % Für Checkmarks
+
+% Definition von Checkmarks und Crossmarks
+\newcommand{\cmark}{\textcolor{green!60!black}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+\newcommand{\omark}{\textcolor{orange}{\ding{110}}} % Offen/In Arbeit
+
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{AR Flood Hazard Maps}
+\subtitle{Update Meeting 2}
+
+\author{Frederik Alpers, Lea Plümacher, Marvin Hagemeister}
+
+\institute
+{
+    Freie Universität Berlin % Your institution for the title page
+}
+\date{\today} % Date, can be changed to a custom date
+
+%----------------------------------------------------------------------------------------
+%    PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+\begin{frame}{Overview}
+    % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+    \tableofcontents
+\end{frame}
+
+% --- Sektion 1: Aktueller Sprint Status ---
+\section{Sprint Status}
+
+\begin{frame}{Sprint Ziele \& Status}
+    Wir befinden uns aktuell in der Mitte des Sprints (bis 1.12).
+    \vspace{0.5cm}
+    \begin{itemize}
+        \item[\cmark] \textbf{Erster AR-Prototyp}
+        \item[\cmark] \textbf{Deployment:} App auf Gerät geflasht
+        \item[\cmark] \textbf{GPS:} Position (Längengrad, Breitengrad und Höhe) bestimmt
+        \item[\omark] \textbf{Simulation:} Fake-API für Wasserstände (Geplant bis Ende der Woche)
+    \end{itemize}
+\end{frame}
+
+% --- Sektion 2: Detaillierte Ergebnisse (Bild + Text) ---
+\section{Erreichte Meilensteine}
+
+\begin{frame}{Erster AR-Prototyp}
+    \begin{columns}[C] % T = Top aligned
+        \begin{column}{0.48\textwidth}
+            \textbf{Funktionalität:}
+            \begin{itemize}
+                \item Example AR-Unity Projekt erstellt / erweitert
+                \item Erkennung von Flächen funktioniert 
+                \item Funktioniert auf unseren Testgeräten
+            \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.48\textwidth}
+            \centering
+            % HIER BILD EINFÜGEN: \includegraphics[width=\textwidth]{ar_screenshot.png}
+            \framebox{\parbox{0.9\textwidth}{\centering
+                \vspace{2.5cm}
+                \textbf{Screenshot: AR Prototyp} \\
+                \small\textit{Screenshot von Unity mit AR-Example-Project}
+                \vspace{2.5cm}
+            }}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{GPS Location \& Hight}
+    \begin{columns}[C]
+        \begin{column}{0.48\textwidth}
+            \textbf{Implementierung:}
+            \begin{itemize}
+                \item Zugriff auf Android Location Services
+                \item Anzeige von Breitengrad, Längengrad, Genauigkeit und Höhe
+            \end{itemize}
+            \vspace{0.5cm}
+            \textit{Grundlage für das Finden der richtigen Messtation und Berechnung des Wasserstandes.}
+        \end{column}
+        
+        \begin{column}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.5\textwidth]{./img/prot_1_location.jpg}
+%            \framebox{\parbox{0.9\textwidth}{\centering
+%                \vspace{2.5cm}
+%                \textbf{Screenshot: GPS Daten} \\
+%                \small\textit{UI mit Koordinaten-Anzeige}
+%                \vspace{2.5cm}
+%            }}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% --- Sektion 3: Restlicher Sprint ---
+\section{Nächste Schritte im Sprint}
+
+\begin{frame}{Planung bis Sprint-Ende (Nächste Woche)}
+    Ein offener Punkt für diesen Sprint:
+    \vspace{0.5cm}
+    
+    \begin{block}{To-Do: Fake-API Implementierung}
+        Um die Wasseroberfläche simulieren zu können, bevor die echte API angebunden ist, benötigen wir statische Daten.
+    \end{block}
+    
+    \textbf{Geplante Umsetzung:}
+    \begin{itemize}
+        \item Erstellung eines Mock-Services
+        \item Rückgabe von fixen Pegelständen für Testzwecke
+        \item Ermöglicht einfaches Testing positionsunabhängig
+    \end{itemize}
+\end{frame}
+
+% --- Sektion 4: Projekt Definitionen ---
+\section{Projekt Definitionen}
+
+\begin{frame}{Projekt-Anforderungen}
+    Wir haben die Anforderungen neu definiert, um den Fokus für das MVP zu wahren.
+    
+    \begin{alertblock}{Minimal Requirements (MVP)}
+        \begin{itemize}
+            \item Lauffähige AR App (Android)
+            \item Anzeige eines Flut-Levels (visuell als Plane)
+            \item Interface zur Anzeige der Wasserstandshöhe (als Textobjekt)
+            \item Mock-API (selbes Format wie Real API) für Testing und Demonstration
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}{Nice-to-Have Features}
+    Ziele für spätere Ausbaustufen:
+    
+    \begin{exampleblock}{Erweiterungen}
+        \begin{itemize}
+            \item \textbf{Daten:} Echte API-Anbindung \& Live GPS-Abgleich
+            \item \textbf{Feature:} Vorhersagen/Prognosen per Zeitstrahl auswählen
+            \item \textbf{Interaktion:} Standort-Teleportation \& manuelle Eingabe (Slider)
+            \item \textbf{Visualisierung:} 
+            \begin{itemize}
+                \item Realistische Wasserphysik
+                \item Rendering unter der Wasseroberfläche
+                \item Referenzobjekte (Autos, Schilder, Enten) zum Größenvergleich
+            \end{itemize}
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+% --- Sektion 5: Projektmanagement ---
+\section{Organisation}
+
+\begin{frame}{Projektmanagement \& Roadmap}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \textbf{Strukturierung:}
+            \begin{itemize}
+                \item Alle Anforderungen wurden in GitHub Issues überführt.
+                \item Roadmap wurde visualisiert, um Abhängigkeiten zu klären.
+            \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.48\textwidth}
+            \centering
+            % HIER BILD EINFÜGEN: \includegraphics[width=\textwidth]{github_roadmap.png}
+            \framebox{\parbox{0.9\textwidth}{\centering
+                \vspace{1.5cm}
+                \textbf{Screenshot: GitHub/Roadmap} \\
+                \small\textit{Übersicht der Issues \& Zeitplan}
+                \vspace{1.5cm}
+            }}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% --- Sektion 6: Ausblick ---
+\section{Ausblick}
+
+\begin{frame}{Sneak Peak: Der nächste Sprint}
+    \begin{center}
+        \Large \textbf{Ziel bis 15. Dezember}
+    \end{center}
+    \vspace{0.5cm}
+    
+    Unsere Ziele für den kommenden Sprint:
+    
+    \begin{itemize}
+        \item \textbf{Integration der Mock-API:} Abruf realer Pegeldaten basierend auf Geolocation.
+        \item \textbf{Visualisierung:} Anzeige der Wasserstände als Plane und in Textfeldern.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \Huge{\centerline{\textbf{Fragen?}}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
