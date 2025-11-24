@@ -13,5 +13,5 @@ with open(file_path, "r", encoding="utf-8") as f:
 def catch_all(path):
     return jsonify(JSON_DATA)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# zum starten: 
+# $ flask --app mock-api run --host=0.0.0.0
