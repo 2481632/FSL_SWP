@@ -11,7 +11,9 @@ with open(file_path, "r", encoding="utf-8") as f:
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def catch_all(path):
-    return jsonify(JSON_DATA)
+    with open(file_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return jsonify(data)
 
 # zum starten: 
 # $ flask --app mock-api run --host=0.0.0.0
