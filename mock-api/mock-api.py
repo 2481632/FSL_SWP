@@ -13,7 +13,9 @@ with open(file_path, "r", encoding="utf-8") as f:
 def catch_all(path):
     with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
+#    return "hello world"
     return jsonify(data)
+
 
 # zum starten: 
 # $ flask --app mock-api run --host=0.0.0.0
