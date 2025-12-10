@@ -1,0 +1,171 @@
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+\usetheme{SimplePlus}
+
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+%\usepackage{lmodern}
+\usepackage{pifont} % Für Checkmarks
+
+% Definition von Checkmarks und Crossmarks
+\newcommand{\cmark}{\textcolor{green!60!black}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+\newcommand{\omark}{\textcolor{orange}{\ding{110}}} % Offen/In Arbeit
+
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{AR Flood Hazard Maps}
+\subtitle{Update Meeting 4}
+
+\author{Frederik Alpers, Lea Plümacher, Marvin Hagemeister}
+
+\institute
+{
+    Freie Universität Berlin % Your institution for the title page
+}
+\date{\today} % Date, can be changed to a custom date
+
+%----------------------------------------------------------------------------------------
+%    PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+% \begin{frame}{Overview}
+%     % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+%     \tableofcontents
+% \end{frame}
+
+%%%%%
+% Progress Presentation: Notwendige Punkte:
+% - Project motivation
+% - Progress on your project idea - Where are you currently at? What comes next? (timeline / deviation from original time line) 
+% - Current implementation status – Include screenshots or videos if possible
+% - Reflection – How is it going so far? What have you learned? What do you want to learn in the next weeks.
+% - Feedback (optional) – What can we do to improve your experience?
+
+% --- Sektion 1: Project motivation
+\section{Project Motivation}
+
+
+\begin{frame}{Project Motivation}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \textbf{Bestehende Informationsmöglichkeiten beschränkt durch:}
+      \begin{itemize}
+        \item Abstrakte Pegelwerte ohne Bezug zur eigenen Umgebung
+        \item Lokale Geländeunterschiede werden nicht berücksichtigt
+        \item Fehlende visuelle Einschätzung des persönlichen Risikos
+      \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.8\textwidth]{./img/hwz.png}
+
+      \vspace{0.5em}
+      {\footnotesize
+      Screenshot: Aktuelle Hochwasserlage Deutschland  
+      (Quelle: \texttt{hochwasserzentralen.de})}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Project Idea}
+    \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \textbf{Die Anwendung soll unter anderem folgende Punkte beinhalten:}
+  \begin{itemize}
+    \item AR Handy App
+    \item Interaktive Anzeige des Wasserstandes vor Ort
+    \item Anzeigen von aktuellen Daten und Vorhersagen
+  \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.48\textwidth}
+      \centering
+      \framebox{\parbox{0.9\textwidth}{\centering
+          \vspace{2.5cm}
+          \textbf{Screenshot: AR Prototyp} \\
+          \small\textit{Screenshot von Unity, Zeichnung oder AR-Example-Project}
+          \vspace{2.5cm}
+      }}
+
+%      \vspace{0.5em}
+%      {\footnotesize
+%      Screenshot: Aktuelle Hochwasserlage Deutschland  
+%      (Quelle: \texttt{hochwasserzentralen.de})}
+    \end{column}
+
+  \end{columns}
+
+  % Gibt es Abweichungen zu unserer ursprünglichen Projektidee?
+  % Was wird unser Projekt am Ende voraussichtlich beinhalten?
+\end{frame}
+
+
+% --- Sektion 2: Progress on your project idea - Where are you currently at? What comes next? 
+\section{Progress}
+
+\begin{frame}{Progress | Project Requirements}
+  \begin{alertblock}{Minimal Requirements (MVP)}
+    \begin{itemize}
+      \item Lauffähige AR App (Android)
+      \item Anzeige eines Flut-Levels (visuell als Plane)
+      \item Interface zur Anzeige der Wasserstandshöhe (als Textobjekt)
+      \item Mock-API (selbes Format wie Real API) für Testing und Demonstration
+    \end{itemize}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Progress | Project Requirements}
+  \begin{alertblock}{Minimal Requirements (MVP)}
+    \begin{itemize}
+      \item[\cmark] Lauffähige AR App (Android)
+      \item[\cmark] Anzeige eines Flut-Levels (visuell als Plane)
+      \item[\cmark] Interface zur Anzeige der Wasserstandshöhe (als Textobjekt)
+      \item[\cmark] Mock-API (selbes Format wie Real API) für Testing und Demonstration
+    \end{itemize}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Progress | Timeline}
+
+    \includegraphics[height=0.73\textheight,keepaspectratio]{./img/progress.png}
+
+\end{frame}
+
+
+\begin{frame}{Organisation}
+\begin{itemize}
+    \item Treffen Montags
+    \item Textchat
+    \item GitHub
+    \item Unity Cloud
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \Huge{\centerline{\textbf{Fragen?}}}
+\end{frame}
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
