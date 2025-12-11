@@ -19,13 +19,13 @@
       "equidistance": 15,
       "currentMeasurement": {
         "timestamp": "2025-11-24T13:15:00+01:00",
-        "value": 209.0,
+        "value":100.0,
         "stateMnwMhw": "normal",
         "stateNswHsw": "unknown"
       },
       "gaugeZero": {
         "unit": "m. ü. NHN",
-        "value": 42.713,
+        "value": 61.0,
         "validFrom": "2019-11-01"
       }
     },
