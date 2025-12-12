@@ -12,6 +12,10 @@
 \usepackage{pifont} % Für Checkmarks
 \usepackage{fontawesome5}
 
+%\usepackage{media9}
+\usepackage{pdfpc}
+
+
 % Definition von Checkmarks und Crossmarks
 \newcommand{\cmark}{\textcolor{green!60!black}{\ding{51}}}
 \newcommand{\xmark}{\textcolor{red}{\ding{55}}}
@@ -197,40 +201,54 @@
 \end{frame}
 
 
-% \begin{frame}{Implementation Status | Screenshots}
-%   \begin{columns}[c]
-
-%     \begin{column}{0.48\textwidth}
-%        \centering
-%       \framebox{\parbox{0.9\textwidth}{\centering
-%           \vspace{2.5cm}
-%           \textbf{Screenshot: AR APP} \\
-%           \small\textit{Screenshot vom aktuellen Stand der App}
-%           \vspace{2.5cm}
-%       }}
-%     \end{column}
-
-%     \begin{column}{0.48\textwidth}
-%       \centering
-%       \framebox{\parbox{0.9\textwidth}{\centering
-%           \vspace{2.5cm}
-%           \textbf{Screenshot: Unity} \\
-%           \small\textit{Screenshot von Unity in welchem das Projekt von der App geöffnet ist}
-%           \vspace{2.5cm}
-%       }}
-%     \end{column}
-
-%   \end{columns}\end{frame}
 
 % ToDo: Wollen wir eines der Videos zeigen?
+% \begin{frame}{Demo-Video | App-Funktionalität}
+%     \centering
+    
+%     % Video im Hochformat korrekt skalieren
+%     \includemedia[
+%         width=0.35\textwidth,      % gut für Hochformat
+%         height=0.75\textheight,    % hält Seitenverhältnis sauber
+%         keepaspectratio,
+%         activate=pageopen,
+%         addresource=./img/demo.mp4,
+%         flashvars={
+%             source=./img/demo.mp4
+%             &autoPlay=true
+%             &loop=true
+%         }
+%     ]{\fbox{Video wird angezeigt, wenn PDF im Adobe Reader geöffnet wird}}{VPlayer.swf}
 
-  \begin{frame}{Reflection}
-    \begin{itemize}
+%     \vspace{0.5em}
+
+%     {\footnotesize Demo der AR-Plane & Höhenmessung}
+% \end{frame}
+
+
+% \begin{frame}{Demo-Video | App-Funktionalität}
+%     \centering
+
+%     % Vorschau-Bild (erstellt automatisch aus dem Video)
+%     \href{file:./img/demo.mp4}{\includegraphics{./img/screenshot_aktuellesProjekt.png}}
+%     %\includegraphics[height=0.75\textheight,keepaspectratio]{./img/screenshot_aktuellesProjekt.png}
+
+%     \vspace{0.4cm}
+%     \small
+%     Das Video kann über den folgenden Link abgespielt werden:
+
+%     \vspace{0.2cm}
+%     \href{run:./img/demo.mp4}{\beamergotobutton{Video starten}}
+% \end{frame}
+
+
+\begin{frame}{Reflection}
+  \begin{itemize}
       \item Läuft bisher gut
       \item Mock-API gute Entscheidung, um schnell zu testen
       \item Unity ist möglicherweise zu aufwendig für Anwendungsfall
-    \end{itemize}
-  \end{frame}
+  \end{itemize}
+\end{frame}
 
 \begin{frame}{Reflection | Future Learnings}
     \begin{itemize}
