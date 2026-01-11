@@ -1,0 +1,194 @@
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+\usetheme{SimplePlus}
+
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+%\usepackage{lmodern}
+\usepackage{pifont} % Für Checkmarks
+\usepackage{pifont} % Für Checkmarks
+
+% Definition von Checkmarks und Crossmarks
+\newcommand{\cmark}{\textcolor{green!60!black}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+\newcommand{\omark}{\textcolor{orange}{\ding{110}}} % Offen/In Arbeit
+
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{AR Flood Hazard Maps}
+\subtitle{Update Meeting 3}
+
+\author{Frederik Alpers, Lea Plümacher, Marvin Hagemeister}
+
+\institute
+{
+    Freie Universität Berlin % Your institution for the title page
+}
+\date{\today} % Date, can be changed to a custom date
+
+%----------------------------------------------------------------------------------------
+%    PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+\begin{frame}{Overview}
+    % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+    \tableofcontents
+\end{frame}
+
+\section{Recap 2025}
+
+\begin{frame}{Letzter Status}
+    Projektstand im letzten Jahr:
+    \vspace{0.5cm}
+
+    \begin{itemize}
+        \item[\cmark] \textbf{API-Anbindung Altitude:} Einbindung der Open-Meteo-API zur Ermittlung der Höhenlage
+        \item[\cmark] \textbf{Plane-Visualisierung:} Darstellung der ermittelten Höhe über eine 3D-Plane
+        \item[\cmark] \textbf{Demo-API:} Verwendung unserer Demo-API
+
+    \end{itemize}
+\end{frame}
+
+
+\section{Aktueller Stand}
+
+\begin{frame}{Ziele im aktuellen Sprint}
+    Gesetzte Ziele im letzten Jahr:
+    \vspace{0.5cm}
+
+    \begin{itemize}
+        \item[\omark] \textbf{Finden der nächsten Pegelstation:} Mittels Location und API-Call
+        \item[\omark] \textbf{Debug-Daten deaktivieren:} User kann mittels Button Debug-Daten anzeigen
+        \item[\omark] \textbf{UI-Anpassungen:} Besser aussehende UI
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ziele im aktuellen Sprint}
+    Aktueller Stand:
+    \vspace{0.5cm}
+
+    \begin{itemize}
+        \item[\cmark] \textbf{Finden der nächsten Pegelstation:} Mittels Location und API-Call
+        \item[\cmark] \textbf{Debug-Daten deaktivieren:} User kann mittels Button Debug-Daten anzeigen
+        \item[\xmark] \textbf{UI-Anpassungen:} Besser aussehende UI
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Real-API}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \textbf{Folgendes funktioniert:}
+      \begin{itemize}
+        \item[\cmark] Fetchen aller Stationen
+        \item[\cmark] Finden der uuid der nächsten Station
+        \item[\xmark] Probleme mit Location Permissions
+      \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.4\textwidth]{./img/5413430523264176902.jpg}
+
+      \vspace{0.5em}
+      {\footnotesize
+      Screenshot: Anzeige der uuid der nächsten Station.}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Real-API}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \textbf{Folgendes funktioniert:}
+      \begin{itemize}
+        \item[\cmark] Fetchen aller Stationen
+        \item[\cmark] Finden der uuid der nächsten Station
+        \item[\xmark] Probleme mit Location Permissions
+      \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.9\textwidth]{./img/5413430523264176902_cut.jpg}
+
+      \vspace{0.5em}
+      {\footnotesize
+      Screenshot: Anzeige der uuid der nächsten Station.}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Wechsel Demo und Normal-Mode}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \textbf{Folgendes funktioniert:}
+      \begin{itemize}
+        \item[\cmark] Button zum Wechsel zwischen zwei Szenen
+        \item[\xmark] Scenen müssen noch angeglichen werden
+      \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.9\textwidth]{./img/5413430523264176902_cut.jpg}
+      {\footnotesize
+      Screenshot: Button zum Wechsel zwischen Demo- und Normalem Mode.}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\section{Ausblick}
+
+\begin{frame}{Ausblock}
+    Ziele bis zum nächsten Treffen:
+    \vspace{0.5cm}
+
+    \begin{itemize}
+        \item[\omark] \textbf{Demo- und Nomal Mode:} Angleichen der UI oder Wechsel auf Ausblenden
+        \item[\omark] \textbf{Bug-Fixing:} Location auf allen Geräten nutzbar machen
+        \item[\omark] \textbf{Verbesserung der UI:} Besser aussehende UI und HDRI Map
+
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Organisation}
+\begin{itemize}
+    \item Treffen Montags
+    \item Textchat
+    \item GitHub
+    \item Unity Cloud
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \Huge{\centerline{\textbf{Fragen?}}}
+\end{frame}
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
