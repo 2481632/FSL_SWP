@@ -1,0 +1,170 @@
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+\usetheme{SimplePlus}
+
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+%\usepackage{lmodern}
+\usepackage{pifont} % Für Checkmarks
+\usepackage{minted} % For code snippets
+
+% Definition von Checkmarks und Crossmarks
+\newcommand{\cmark}{\textcolor{green!60!black}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+\newcommand{\omark}{\textcolor{orange}{\ding{110}}} % Offen/In Arbeit
+
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{AR Flood Hazard Maps}
+\subtitle{Update Meeting 5}
+
+\author{Frederik Alpers, Lea Plümacher, Marvin Hagemeister}
+
+\institute
+{
+    Freie Universität Berlin % Your institution for the title page
+}
+\date{25.01.2026} % Date, can be changed to a custom date
+
+%----------------------------------------------------------------------------------------
+%    PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+\begin{frame}{Overview}
+    \tableofcontents
+\end{frame}
+
+\section{Aktueller Sprint}
+
+\begin{frame}{Aktueller Sprint}
+    \begin{block}{Ziele diese Woche}
+        \begin{itemize}
+            \item Angleichen der beiden Scenes (Demo und normal Mode)
+            \item Debug Informationen ausblenden per Button
+            \item\textbf{Bug-Fixing:} Location auf allen Geräten nutzbar machen
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Aktueller Sprint}
+    \begin{block}{Erreichte Ziele}
+        \begin{itemize}
+            \item[\cmark] Debug Informationen ausblenden per Button
+            \item[\cmark] \textbf{Bug-Fixing:} Location auf allen Geräten nutzbar machen
+            \item[\cmark] Struktur für Dokumentation angefertigt
+            \item[\omark] Verbessern der UI
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\section{Ergebnisse}
+
+\begin{frame}{Debug Informationen ausblenden}
+  \begin{figure}
+    \centering
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=\linewidth]{img/screenshot_ar_flood_app_with_debug_info.jpg}
+        \caption{Mit Debug Informationen}
+    \end{minipage}\hfill
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=\linewidth]{img/screenshot_ar_flood_app_without_debug_info.jpg.jpg}
+        \caption{Ohne Debug Informationen}
+    \end{minipage}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Dokumentation - Code}
+    \begin{itemize}
+        \item Code Dokumentation verbessert
+        \item Beispiel aus \texttt{API\_WaterLevel.cs}:
+    \end{itemize}
+\begin{minted}[fontsize=\scriptsize,linenos,frame=lines,breaklines]{csharp}
+/// <summary>
+/// Handles fetching and processing water level data from PegelOnline API.
+/// This script is responsible for finding the closest water level measurement station
+/// based on the user's GPS location and then retrieving real-time water level data
+/// from that station. It also calculates absolute water height and displays it on UI.
+/// </summary>
+public class API_WaterLevel : MonoBehaviour
+\end{minted}
+\end{frame}
+
+\begin{frame}{Dokumentation - Wiki}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+        \textbf{Aufbau der Doku}
+        \begin{itemize}
+            \item Readme auf Github als Einstiegspunkt
+            \item Hosting via Github Pages
+            \item Erstellung via MkDocs
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.9\textwidth]{img/screenshot_documentation_mkdocs_frontpage.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Dokumentation - Wiki - Struktur}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+        \textbf{Struktur der Doku}
+        \begin{itemize}
+            \item Motivation
+            \item User Dokumentation (How to use)
+            \item Entwickler Dokumentation
+                \begin{itemize}
+                    \item Wie wurde es gebaut
+                    \item Architektur
+                    \item Future Works
+                \end{itemize}
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.9\textwidth]{img/screenshot_documentation_mkdocs_frontpage.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Ausblick}
+
+\begin{frame}{Ausblick - Nächste Schritte}
+    \begin{itemize}
+        \item[\omark] Angleichen Demo- und Normal mode
+        \item[\omark] UI/UX Verbesserungen
+        \item[\omark] Bugfixing und Dokumentation
+        \item[\omark] Erstellen der finalen Präsentation
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Organisation}
+\begin{itemize}
+    \item Treffen Montags
+    \item Textchat
+    \item GitHub
+    \item Unity Cloud
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \Huge{\centerline{\textbf{Fragen?}}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
