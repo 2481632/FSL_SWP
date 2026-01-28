@@ -1,0 +1,14 @@
+\frametitle{Dokumentation - Code}
+\begin{itemize}
+        \item Code Dokumentation verbessert
+        \item Beispiel aus \texttt{API\_WaterLevel.cs}:
+    \end{itemize}
+\begin{minted}[fontsize=\scriptsize,linenos,frame=lines,breaklines]{csharp}
+/// <summary>
+/// Handles fetching and processing water level data from PegelOnline API.
+/// This script is responsible for finding the closest water level measurement station
+/// based on the user's GPS location and then retrieving real-time water level data
+/// from that station. It also calculates absolute water height and displays it on UI.
+/// </summary>
+public class API_WaterLevel : MonoBehaviour
+\end{minted}
