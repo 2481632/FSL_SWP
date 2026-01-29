@@ -421,7 +421,7 @@
 
     \begin{center}
       \centering
-      %\includegraphics[height=0.75\textheight,keepaspectratio]{./img/screenshot_aktuellesProjekt.png}
+      \includegraphics[height=0.75\textheight,keepaspectratio]{./img/screenshot_unity_neu.png}
 
       \vspace{0.4em}
       {\footnotesize Screenshot of Unity}
@@ -498,7 +498,95 @@
 \end{frame}
 
 
-\begin{frame}{Future Works}
+\begin{frame}{Future Works | Technical Enhancements}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \textbf{Predictive Flood Modeling}
+      \begin{itemize}
+        \item Integration von Wettervorhersagen
+        \item Zeitbasierte Animation des Pegelanstiegs/-rückgangs
+        \item Frühwarnsystem bei kritischen Schwellenwerten
+      \end{itemize}
+      
+      \vspace{1em}
+      \textbf{Erwarteter Nutzen:}
+      \begin{itemize}
+        \item Bessere Vorbereitung für Anwohner
+        \item Rechtzeitige Evakuierung möglich
+        \item Visualisierung von möglichen Szenarien
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.8]
+
+        \draw[->] (0,0) -- (5,0) node[right] {Zeit};
+        \draw[->] (0,0) -- (0,4) node[above] {Pegel};
+        
+        \draw[dashed, gray] (1.5,0) -- (1.5,4);
+        \node[below] at (1.5,0) {\small Jetzt};
+        
+        \draw[thick, blue] (0,1.5) -- (1.5,2);
+        
+        \draw[thick, red, dashed] (1.5,2) -- (3,2.8) -- (4,3.2);
+        \draw[thick, orange, dashed] (1.5,2) -- (3,2.3) -- (4,2.5);
+        \draw[thick, green, dashed] (1.5,2) -- (3,1.8) -- (4,1.6);
+        
+        \draw[dotted, thick] (0,3) -- (5,3);
+        \node[right, text=red] at (5,3) {\tiny Kritisch};
+      \end{tikzpicture}
+      
+      \vspace{0.5em}
+      {\tiny
+      \textcolor{blue}{—} aktuell \quad
+      \textcolor{red}{- -} Worst Case \quad
+      \textcolor{orange}{- -} Wahrscheinlich \quad
+      \textcolor{green}{- -} Best Case
+      }
+      
+      \vspace{0.5em}
+      {\footnotesize Konzept: Vorhersagemodell mit verschiedenen Szenarien}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Future Works | Additional Enhancements}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      
+      \vspace{0.5em}
+      
+      \textbf{Offline-Modus}
+      \begin{itemize}
+        \item Daten-Caching für Gebiete ohne Netz
+        \item Lokale Datenspeicherung
+        \item Synchronisation bei Verbindung
+      \end{itemize}
+
+      \vspace{0.5em}
+      
+      \textbf{Evakuierungsrouten}
+      \begin{itemize}
+        \item Integration mit Navigation
+        \item Sichere Wege zu Sammelstellen
+        \item Echtzeit-Aktualisierung bei Überflutung
+      \end{itemize}
+      
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+
+      \vspace{0.5em}
+      \textbf{Optimierung}
+      \begin{itemize}
+        \item Performance-Optimierung (Akku, Rendering)
+        \item Wasser-Animation (Richtung, Geschwindigkeit)
+        \item auf mehr Geräten testen 
+      \end{itemize}
+      
+      \end{column}
+  \end{columns}
 \end{frame}
 
 
