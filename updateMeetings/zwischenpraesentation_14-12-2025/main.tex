@@ -21,6 +21,10 @@
 \newcommand{\xmark}{\textcolor{red}{\ding{55}}}
 \newcommand{\omark}{\textcolor{orange}{\ding{110}}} % Offen/In Arbeit
 
+% TikZ für Diagramme
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, shadows, calc, fit, backgrounds}
+
 %----------------------------------------------------------------------------------------
 %    TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -425,17 +429,74 @@
 
 \end{frame}
 
-\begin{frame}{Technical implementation | Project Diagram}
+\begin{frame}{Technical Implementation | Diagram}
+  \begin{tikzpicture}[
+    api/.style={
+      draw,
+      rounded corners,
+      minimum width=4cm,
+      minimum height=1.0cm,
+      align=center,
+      path picture={
+        \draw[dashed]
+          ([yshift=0mm]path picture bounding box.center -|
+          path picture bounding box.west)
+          --
+          ([yshift=0mm]path picture bounding box.center -|
+          path picture bounding box.east);
+      }
+    },
+    app/.style={
+      draw,
+      rounded corners,
+      minimum width=3cm,
+      minimum height=2cm,
+      align=center
+    },
+    decision/.style={
+      circle,
+      draw,
+      minimum size=10mm,
+      align=center,
+      font=\small
+    },
+    node distance=0.4cm and 2.8cm,
+    >={Stealth}
+    ]
 
-    \begin{center}
-      \centering
-      %\includegraphics[height=0.75\textheight,keepaspectratio]{./img/screenshot_aktuellesProjekt.png}
+    % Left column APIs
+    \node[api] (stations) {Pegelonline API\\[2mm]Fetch all stations};
+    \node[api, below=of stations] (levels) {Pegelonline API\\[2mm]Fetch water levels};
+    \node[api, below=of levels] (mock) {Mock API\\[2mm]Testing};
+    \node[api, below=of mock] (elevation) {Open--Meteo\\[2mm]Elevation API};
 
-      \vspace{0.4em}
-      {\footnotesize Diagram showing components of the APP}
-    \end{center}
+    % Decision / junction
+    \node[decision, right=3cm of levels] (decision) {Mock\\API?};
+
+    % Client app
+    \node[app, right=2.5cm of decision, yshift=-16mm] (client) {Client\\App};
+
+    % GPS
+    \node[api, above=1.5cm of client, minimum width=3cm] (gps)
+      {GPS\\[2mm]Location};
+
+    % Connections
+    \draw[->] (stations.east) -- node[above, font=\small] {no} (decision.west);
+    \draw[->] (levels.east) -- (decision.west);
+    \draw[->, dashed] (mock.east) -- node[below, font=\small] {yes} (decision.west);
+
+    \draw[<->] (decision.east) -- (client.west);
+    \draw[->] (gps.south) -- (client.north);
+
+    \draw[->]
+      (elevation.east)
+      .. controls +(2,0) and +(-2,-1) ..
+      (client.south);
+
+  \end{tikzpicture}
 
 \end{frame}
+
 
 \begin{frame}{Future Works}
 \end{frame}
