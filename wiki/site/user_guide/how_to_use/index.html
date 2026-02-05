@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>How to Use - FSL Flood Simulation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "How to Use";
+        var mkdocs_page_input_path = "user_guide/how_to_use.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FSL Flood Simulation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/building/">Building</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/design_decisions/">Design decisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Developer Guide Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/testing/">Testing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/open_meteo/">Open meteo</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonine/">Pegelonine</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Product info</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/future_work/">Future work</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/hardware/">Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/motivation/">Motivation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/team/">Team</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../compatibility/">Compatibility</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">How to Use</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#interface-overview">Interface Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#main-screen-elements">Main Screen Elements</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-debug-panel-top-right">1. Debug Panel (Top Right)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-ar-camera-view-center">2. AR Camera View (Center)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-flood-height-display">3. Flood Height Display</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4-floor-selector-top-left">4. Floor Selector (Top Left)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#5-demo-mode-button-top-left">5. Demo Mode Button (Top Left)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#6-info-button-top-left">6. Info Button (Top Left)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#7-demo-scene">7. Demo Scene</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-by-step-usage">Step-by-Step Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#starting-the-app">Starting the App</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#selecting-your-mode">Selecting Your Mode</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#live-mode-default">Live Mode (Default)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#demo-mode">Demo Mode</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adjusting-floor-level">Adjusting Floor Level</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#moving-around">Moving Around</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interpreting-flood-height">Interpreting Flood Height</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#advanced-features">Advanced Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#understanding-data-sources">Understanding Data Sources</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#calculation-method">Calculation Method</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dealing-with-inaccuracies">Dealing with Inaccuracies</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#common-use-cases">Common Use Cases</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FSL Flood Simulation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User guide</li>
+      <li class="breadcrumb-item active">How to Use</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="how-to-use">How to Use</h1>
+<p>A comprehensive guide to all features and functionality of AR Flood Visualization.</p>
+<h2 id="interface-overview">Interface Overview</h2>
+<h3 id="main-screen-elements">Main Screen Elements</h3>
+<h4 id="1-debug-panel-top-right">1. Debug Panel (Top Right)</h4>
+<p>Displays real-time technical information:</p>
+<pre><code>GPS
+Lat:  52.5200
+Lon:  13.4050
+Elev: 34 m
+
+WASSER
+Höhe Gewässer über Pegelnull: 245.0 cm
+Pegelnullstand: 32.15 m
+Höhe über NN: 34.60 m
+
+KAMERA
+Kamerahöhe: 1.5 m
+</code></pre>
+<p><strong>What it means:</strong>
+- <strong>Lat/Lon</strong>: Your GPS coordinates
+- <strong>Elev</strong>: Your elevation above sea level
+- <strong>Höhe Gewässer</strong>: Water height above gauge zero
+- <strong>Pegelnullstand</strong>: The gauge's reference point
+- <strong>Höhe über NN</strong>: Water height above normal null (sea level)
+- <strong>Kamerahöhe</strong>: Height of your camera above ground</p>
+<h4 id="2-ar-camera-view-center">2. AR Camera View (Center)</h4>
+<p>The main visualization area showing:
+- Live camera feed from your device
+- Water plane at calculated flood level
+- Real-time positioning as you move</p>
+<h4 id="3-flood-height-display">3. Flood Height Display</h4>
+<p>Shows the calculated flood height at your position:</p>
+<pre><code>Fluthöhe: 2.5 m
+</code></pre>
+<ul>
+<li>Positive value: You would be flooded</li>
+<li>Negative value: You are above flood level</li>
+</ul>
+<h4 id="4-floor-selector-top-left">4. Floor Selector (Top Left)</h4>
+<p>Dropdown menu to select your floor level:
+- Range: B3 (basement 3) to Floor 45
+- Each floor = 3 meters height
+- Ground floor = 0 meters</p>
+<h4 id="5-demo-mode-button-top-left">5. Demo Mode Button (Top Left)</h4>
+<p>Button to switch into the Demo Mode.</p>
+<h4 id="6-info-button-top-left">6. Info Button (Top Left)</h4>
+<p>Button to turn the Debug Panel Display on/off.</p>
+<h4 id="7-demo-scene">7. Demo Scene</h4>
+<p>When in the demo mode:
+- Live camera feed from your device 
+- Water panel displayed
+- Water panel controllable with slider </p>
+<h2 id="step-by-step-usage">Step-by-Step Usage</h2>
+<h3 id="starting-the-app">Starting the App</h3>
+<ol>
+<li><strong>Launch</strong> the app from your home screen</li>
+<li><strong>Point camera</strong> at the ground</li>
+<li><strong>Move slowly</strong> to help ARCore detect surfaces</li>
+<li><strong>Wait</strong> for data to load (3-5 seconds)</li>
+</ol>
+<h3 id="selecting-your-mode">Selecting Your Mode</h3>
+<h4 id="live-mode-default">Live Mode (Default)</h4>
+<p>Uses real-time data from Pegelonline API:
+- Automatic station selection based on GPS
+- Updates every 5 seconds
+- Requires internet connection</p>
+<h4 id="demo-mode">Demo Mode</h4>
+<p>Uses simulated flood data:
+- Useful for testing without real flood conditions
+- Works offline</p>
+<h3 id="adjusting-floor-level">Adjusting Floor Level</h3>
+<ol>
+<li>Tap the <strong>Floor dropdown</strong> at the bottom</li>
+<li>Select your current floor:</li>
+<li><code>Ground</code> for ground level</li>
+<li><code>Floor: 1</code>, <code>Floor: 2</code>, etc. for upper floors</li>
+<li><code>Floor: B1</code>, <code>Floor: B2</code>, etc. for basements</li>
+<li>Water plane adjusts automatically</li>
+</ol>
+<h3 id="moving-around">Moving Around</h3>
+<p>As you walk:
+- GPS updates your position
+- Elevation changes affect the calculation
+- Water plane repositions in real-time</p>
+<p><strong>Best practices:</strong>
+- Walk slowly for stable AR tracking
+- Stay outdoors for best GPS signal
+- Avoid rapid movements</p>
+<h3 id="interpreting-flood-height">Interpreting Flood Height</h3>
+<p>The "Fluthöhe" value shows:</p>
+<pre><code>Fluthöhe: 2.3 m  → You're 2.3m below water level
+Fluthöhe: 0.5 m  → Water at low level
+Fluthöhe: -1.2 m → You're 1.2m above water (safe)
+</code></pre>
+<h2 id="advanced-features">Advanced Features</h2>
+<h3 id="understanding-data-sources">Understanding Data Sources</h3>
+<p>The app combines multiple data sources:</p>
+<ol>
+<li><strong>Pegelonline API</strong></li>
+<li>Current water levels from official gauges</li>
+<li>Updates every few minutes</li>
+<li>
+<p>Covers major rivers in Germany</p>
+</li>
+<li>
+<p><strong>Open-Meteo Elevation API</strong></p>
+</li>
+<li>Provides elevation at your GPS position</li>
+<li>Accuracy: ±5-10 meters</li>
+<li>
+<p>Global coverage</p>
+</li>
+<li>
+<p><strong>Device GPS</strong></p>
+</li>
+<li>Your latitude/longitude</li>
+<li>Accuracy: ±5-20 meters depending on conditions</li>
+</ol>
+<h3 id="calculation-method">Calculation Method</h3>
+<p>The water height at your position is calculated as:</p>
+<pre><code>Water Height (your position) = 
+    Water Height (gauge) 
+    + Gauge Zero Height
+    - Your Elevation
+    - Your Floor Offset
+    - Camera Height
+</code></pre>
+<h3 id="dealing-with-inaccuracies">Dealing with Inaccuracies</h3>
+<p>Sources of error:
+- GPS accuracy (±5-20m horizontally)
+- Elevation data accuracy (±5-10m vertically)
+- Distance from gauge station
+- Terrain variations</p>
+<p>Important:
+    This app is for visualization only. Always rely on official flood warnings and evacuation orders from authorities.</p>
+<h2 id="common-use-cases">Common Use Cases</h2>
+<!-- to do -->
+
+<h2 id="limitations">Limitations</h2>
+<p>Be aware of these limitations:</p>
+<ul>
+<li><strong>Data Delay</strong>: Water levels update every 5 seconds</li>
+<li><strong>Coverage</strong>: Only works near Pegelonline stations</li>
+<li><strong>Elevation</strong>: Accuracy varies by location</li>
+<li><strong>AR Tracking</strong>: Requires textured surfaces</li>
+<li><strong>Battery</strong>: AR uses significant battery power</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Common issues and solutions:</p>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Water plane not visible</td>
+<td>Check if you're very far from water level</td>
+</tr>
+<tr>
+<td>GPS coordinates not updating</td>
+<td>Enable location services, wait outdoors</td>
+</tr>
+<tr>
+<td>"Loading water level..." stuck</td>
+<td>Check internet connection</td>
+</tr>
+<tr>
+<td>AR tracking lost</td>
+<td>Point at textured ground, move slowly</td>
+</tr>
+<tr>
+<td>Battery draining fast</td>
+<td>Normal for AR apps, use power saving mode</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../troubleshooting/">Troubleshooting Guide</a> for more help.</p>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Learn about <a href="../compatibility/">Compatibility</a></li>
+<li>Check <a href="../troubleshooting/">Troubleshooting</a> for issues</li>
+<li>Explore <a href="../../developer_guide/overview/">Developer Guide</a> to contribute</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../getting_started/" class="btn btn-neutral float-left" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../installation/" class="btn btn-neutral float-right" title="Installation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../getting_started/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../installation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
