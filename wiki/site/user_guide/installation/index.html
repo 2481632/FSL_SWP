@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Installation - FSL Flood Simulation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installation";
+        var mkdocs_page_input_path = "user_guide/installation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FSL Flood Simulation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/building/">Building</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/design_decisions/">Design decisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Developer Guide Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/testing/">Testing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/open_meteo/">Open meteo</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonine/">Pegelonine</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Product info</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/future_work/">Future work</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/hardware/">Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/motivation/">Motivation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/team/">Team</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../compatibility/">Compatibility</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../how_to_use/">How to Use</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Installation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#device-requirements">Device Requirements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#check-arcore-compatibility">Check ARCore Compatibility</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-methods">Installation Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#method-1-apk-installation-recommended">Method 1: APK Installation (Recommended)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#method-2-build-from-source">Method 2: Build from Source</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#post-installation">Post-Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#grant-permissions">Grant Permissions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#verify-installation">Verify Installation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting-installation">Troubleshooting Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#app-not-installed-error">"App not installed" Error</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#app-not-compatible-with-this-device">"App not compatible with this device"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#arcore-not-installed">ARCore Not Installed</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#permission-issues">Permission Issues</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#updating">Updating</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#uninstalling">Uninstalling</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FSL Flood Simulation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User guide</li>
+      <li class="breadcrumb-item active">Installation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="installation">Installation</h1>
+<p>This guide walks you through installing AR Flood App on your Android device.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="device-requirements">Device Requirements</h3>
+<ul>
+<li><strong>Android Version</strong>: 11.0 (API Level 30) or higher</li>
+<li><strong>ARCore Support</strong>: Your device must support ARCore</li>
+<li><strong>Storage</strong>: At least 150 MB free space</li>
+<li><strong>RAM</strong>: Minimum 2 GB recommended</li>
+</ul>
+<h3 id="check-arcore-compatibility">Check ARCore Compatibility</h3>
+<p>Visit <a href="https://developers.google.com/ar/devices">Google's ARCore Supported Devices</a> to verify your device is supported.</p>
+<h2 id="installation-methods">Installation Methods</h2>
+<h3 id="method-1-apk-installation-recommended">Method 1: APK Installation (Recommended)</h3>
+<ol>
+<li><strong>Download the APK</strong>
+   <code>AR_Flood.apk from the releases page</code></li>
+</ol>
+<!-- noch erstellen -->
+
+<ol>
+<li><strong>Enable Unknown Sources</strong></li>
+<li>Go to Settings → Security</li>
+<li>
+<p>Enable "Install unknown apps" for your browser/file manager</p>
+</li>
+<li>
+<p><strong>Install the APK</strong></p>
+</li>
+<li>Locate the downloaded APK file</li>
+<li>Tap to install</li>
+<li>
+<p>Follow the on-screen prompts</p>
+</li>
+<li>
+<p><strong>Launch the App</strong></p>
+</li>
+<li>Find "AR Flood" in your app drawer</li>
+<li>Tap to open</li>
+</ol>
+<h3 id="method-2-build-from-source">Method 2: Build from Source</h3>
+<p>For developers who want to build from source:</p>
+<pre><code class="language-bash"># Clone the repository
+git clone https://github.com/your-repo/ar-flood-viz.git
+
+# Open in Unity
+# See Developer Guide for detailed build instructions
+</code></pre>
+<p>See <a href="../../developer_guide/building/">Developer Guide - Building</a> for complete instructions.</p>
+<h2 id="post-installation">Post-Installation</h2>
+<h3 id="grant-permissions">Grant Permissions</h3>
+<p>On first launch, grant these permissions:</p>
+<ol>
+<li><strong>Camera</strong> </li>
+<li>Required for AR visualization</li>
+<li>
+<p>Tap "Allow" when prompted</p>
+</li>
+<li>
+<p><strong>Location</strong> </p>
+</li>
+<li>Required for GPS positioning</li>
+<li>
+<p>Choose "While using the app"</p>
+</li>
+<li>
+<p><strong>Internet</strong> </p>
+</li>
+<li>Required for fetching water level data</li>
+<li>Automatically granted</li>
+</ol>
+<h3 id="verify-installation">Verify Installation</h3>
+<ol>
+<li>Open the app</li>
+<li>You should see the AR camera view</li>
+<li>Grant all permissions</li>
+<li>Look for "Loading water level..." in the UI</li>
+</ol>
+<p>If you see the AR view, installation was successful! ✅</p>
+<h2 id="troubleshooting-installation">Troubleshooting Installation</h2>
+<h3 id="app-not-installed-error">"App not installed" Error</h3>
+<p><strong>Possible causes:</strong>
+- Insufficient storage space
+- Corrupted APK file
+- Incompatible Android version</p>
+<p><strong>Solutions:</strong>
+1. Free up storage space (need ~150 MB)
+2. Re-download the APK
+3. Verify your Android version is 11.0+</p>
+<h3 id="app-not-compatible-with-this-device">"App not compatible with this device"</h3>
+<p><strong>Possible causes:</strong>
+- Device doesn't support ARCore
+- Android version too old</p>
+<p><strong>Solutions:</strong>
+1. Check <a href="https://developers.google.com/ar/devices">ARCore compatibility list</a>
+2. Update Android to latest version
+3. Try on a different device</p>
+<h3 id="arcore-not-installed">ARCore Not Installed</h3>
+<p>If prompted to install ARCore:</p>
+<ol>
+<li>Tap "Install" when prompted</li>
+<li>You'll be redirected to Google Play Store</li>
+<li>Install "Google Play Services for AR"</li>
+<li>Return to the app and try again</li>
+</ol>
+<h3 id="permission-issues">Permission Issues</h3>
+<p>If permissions aren't working:</p>
+<ol>
+<li>Go to Settings → Apps → AR Flood Viz</li>
+<li>Tap "Permissions"</li>
+<li>Manually enable Camera and Location</li>
+<li>Restart the app</li>
+</ol>
+<h2 id="updating">Updating</h2>
+<p>To update to a new version:</p>
+<ol>
+<li>Download the new APK</li>
+<li>Install over the existing version</li>
+<li>Your settings will be preserved</li>
+</ol>
+<h2 id="uninstalling">Uninstalling</h2>
+<p>To remove the app:</p>
+<ol>
+<li>Long-press the app icon</li>
+<li>Tap "Uninstall" or drag to "Uninstall"</li>
+<li>Confirm removal</li>
+</ol>
+<p>Or via Settings:
+1. Settings → Apps → AR Flood Viz
+2. Tap "Uninstall"</p>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Read <a href="../getting_started/">Getting Started</a> to learn how to use the app</li>
+<li>Check <a href="../compatibility/">Compatibility</a> for detailed device requirements</li>
+<li>Visit <a href="../how_to_use/">How to Use</a> for feature documentation</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../how_to_use/" class="btn btn-neutral float-left" title="How to Use"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../troubleshooting/" class="btn btn-neutral float-right" title="Troubleshooting">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../how_to_use/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../troubleshooting/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

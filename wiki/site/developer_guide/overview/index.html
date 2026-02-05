@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Developer Guide Overview - FSL Flood Simulation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Developer Guide Overview";
+        var mkdocs_page_input_path = "developer_guide/overview.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FSL Flood Simulation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../building/">Building</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../design_decisions/">Design decisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../error_handling/">Error handling</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Developer Guide Overview</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#quick-start-for-developers">Quick Start for Developers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#technology-stack">Technology Stack</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#core-technologies">Core Technologies</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#apis-services">APIs &amp; Services</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#libraries-packages">Libraries &amp; Packages</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#project-structure">Project Structure</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#architecture-overview">Architecture Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#key-components">Key Components</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-data-fetching-layer">1. Data Fetching Layer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-calculation-layer">2. Calculation Layer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-visualization-layer">3. Visualization Layer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-user-interface">4. User Interface</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#development-workflow">Development Workflow</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-setup-development-environment">1. Setup Development Environment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-make-changes">2. Make Changes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-test">3. Test</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-submit">4. Submit</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#design-principles">Design Principles</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-modularity">1. Modularity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-separation-of-concerns">2. Separation of Concerns</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-testability">3. Testability</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-performance">4. Performance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#common-development-tasks">Common Development Tasks</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-a-new-data-source">Adding a New Data Source</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modifying-water-visualization">Modifying Water Visualization</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-ui-elements">Adding UI Elements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#changing-ar-behavior">Changing AR Behavior</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#debugging-tips">Debugging Tips</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#unity-console-logs">Unity Console Logs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#debug-panel">Debug Panel</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#android-logcat">Android Logcat</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#common-issues">Common Issues</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-help">Getting Help</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../apis/open_meteo/">Open meteo</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../apis/pegelonine/">Pegelonine</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Product info</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/future_work/">Future work</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/hardware/">Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/motivation/">Motivation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/team/">Team</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/compatibility/">Compatibility</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/getting_started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/how_to_use/">How to Use</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/troubleshooting/">Troubleshooting</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FSL Flood Simulation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Developer guide</li>
+      <li class="breadcrumb-item active">Developer Guide Overview</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="developer-guide-overview">Developer Guide Overview</h1>
+<p>Welcome to the AR Flood Visualization developer documentation. This guide is for developers who want to contribute to, extend, or understand the technical implementation of this project.</p>
+<p>This developer guide covers:</p>
+<ul>
+<li><strong>Architecture</strong>: How the system is structured</li>
+<li><strong>Setup</strong>: Getting the development environment ready</li>
+<li><strong>Building</strong>: Compiling and deploying the app</li>
+<li><strong>APIs</strong>: Integration with external services</li>
+<li><strong>Design Decisions</strong>: Why we made certain technical choices</li>
+<li><strong>Contributing</strong>: How to contribute to the project</li>
+</ul>
+<h2 id="quick-start-for-developers">Quick Start for Developers</h2>
+<pre><code class="language-bash"># Clone the repository
+git clone 
+
+# Open in Unity
+# Unity 2021.3 LTS or newer required
+
+# Install dependencies
+# See Setup Guide for details
+</code></pre>
+<h2 id="technology-stack">Technology Stack</h2>
+<h3 id="core-technologies">Core Technologies</h3>
+<ul>
+<li><strong>Game Engine</strong>: Unity 2021.3 LTS</li>
+<li><strong>AR Framework</strong>: Unity AR Foundation 5.x</li>
+<li><strong>Language</strong>: C# (.NET Standard 2.1)</li>
+<li><strong>Platform</strong>: Android (Unity Android Build Support)</li>
+<li><strong>IDE</strong>: Unity Editor + Visual Studio or other Code Editor </li>
+</ul>
+<h3 id="apis-services">APIs &amp; Services</h3>
+<ul>
+<li><strong><a href="apis/pegelonline.md">Pegelonline API</a></strong>: Real-time water level data</li>
+<li><strong><a href="apis/elevation.md">Open-Meteo Elevation API</a></strong>: Terrain elevation data</li>
+<li><strong><a href="apis/mock-api.md">Mock API</a></strong>: Testing and development</li>
+</ul>
+<h3 id="libraries-packages">Libraries &amp; Packages</h3>
+<pre><code>Unity AR Foundation 5.x
+ARCore XR Plugin 5.x
+UnityWebRequest (built-in)
+Unity Location Services (built-in)
+</code></pre>
+<h2 id="project-structure">Project Structure</h2>
+<p>to do </p>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>to do</p>
+<h2 id="key-components">Key Components</h2>
+<h3 id="1-data-fetching-layer">1. Data Fetching Layer</h3>
+<ul>
+<li><code>API_WaterLevel.cs</code>: Fetches water levels from Pegelonline</li>
+<li><code>API_Elevation.cs</code>: Gets elevation data</li>
+<li><code>Location.cs</code>: Manages GPS positioning</li>
+</ul>
+<h3 id="2-calculation-layer">2. Calculation Layer</h3>
+<ul>
+<li><code>FloodHeightManager.cs</code>: Calculates flood height at user position</li>
+<li>Combines water level, elevation, GPS, floor offset</li>
+</ul>
+<h3 id="3-visualization-layer">3. Visualization Layer</h3>
+<ul>
+<li><code>ContentPlacement.cs</code>: Positions water plane in AR space</li>
+<li><code>ARSessionOrigin</code>: Manages AR coordinate system</li>
+<li>Water material &amp; renderer</li>
+</ul>
+<h3 id="4-user-interface">4. User Interface</h3>
+<ul>
+<li><code>DebugPanel.cs</code>: Technical info display</li>
+<li><code>BuildingLevel.cs</code>: Floor selection dropdown</li>
+<li>TextMeshPro UI elements</li>
+</ul>
+<h2 id="development-workflow">Development Workflow</h2>
+<h3 id="1-setup-development-environment">1. Setup Development Environment</h3>
+<p>See <a href="../setup/">Setup Guide</a></p>
+<h3 id="2-make-changes">2. Make Changes</h3>
+<ul>
+<li>Modify C# scripts</li>
+<li>Test in Unity Editor</li>
+<li>Build for Android</li>
+</ul>
+<h3 id="3-test">3. Test</h3>
+<ul>
+<li>Unity Play Mode testing</li>
+<li>Android device testing</li>
+<li>See <a href="../testing/">Testing Strategy</a></li>
+</ul>
+<h3 id="4-submit">4. Submit</h3>
+<ul>
+<li>Create pull request</li>
+<li>Follow <a href="contributing.md">Contributing Guide</a></li>
+</ul>
+<h2 id="design-principles">Design Principles</h2>
+<h3 id="1-modularity">1. Modularity</h3>
+<p>Each component has a single responsibility:
+- API classes only handle data fetching
+- Manager classes only handle calculations
+- Placement classes only handle positioning</p>
+<h3 id="2-separation-of-concerns">2. Separation of Concerns</h3>
+<pre><code>Data Layer (APIs) 
+    ↓
+Business Logic (Managers)
+    ↓
+Presentation Layer (UI/AR)
+</code></pre>
+<h3 id="3-testability">3. Testability</h3>
+<ul>
+<li>Mock API for testing without real data</li>
+<li>Debug panel for verification</li>
+<li>Demo mode for offline testing</li>
+</ul>
+<h3 id="4-performance">4. Performance</h3>
+<ul>
+<li>Update intervals (5 seconds for API calls)</li>
+<li>Efficient coroutines</li>
+</ul>
+<h2 id="common-development-tasks">Common Development Tasks</h2>
+<h3 id="adding-a-new-data-source">Adding a New Data Source</h3>
+<ol>
+<li>Create new API script (e.g., <code>API_NewSource.cs</code>)</li>
+<li>Implement data fetching coroutine</li>
+<li>Add static properties for data sharing</li>
+<li>Integrate with <code>FloodHeightManager.cs</code></li>
+</ol>
+<h3 id="modifying-water-visualization">Modifying Water Visualization</h3>
+<ol>
+<li>Edit <code>ContentPlacement.cs</code></li>
+<li>Adjust calculation in <code>UpdateWater()</code></li>
+<li>Test with various elevation/water levels</li>
+</ol>
+<h3 id="adding-ui-elements">Adding UI Elements</h3>
+<ol>
+<li>Modify UI Canvas prefab</li>
+<li>Create/update C# script for logic</li>
+<li>Use TextMeshPro for text</li>
+<li>Follow existing UI patterns</li>
+</ol>
+<h3 id="changing-ar-behavior">Changing AR Behavior</h3>
+<ol>
+<li>Modify <code>ARSessionOrigin</code> settings</li>
+<li>Adjust AR Foundation components</li>
+<li>Test on actual device (AR doesn't work in editor)</li>
+</ol>
+<h2 id="debugging-tips">Debugging Tips</h2>
+<h3 id="unity-console-logs">Unity Console Logs</h3>
+<p>Enable detailed logging:</p>
+<pre><code class="language-csharp">Debug.Log(&quot;WaterHeight: &quot; + waterHeight);
+Debug.Log(&quot;Elevation: &quot; + elevation);
+</code></pre>
+<h3 id="debug-panel">Debug Panel</h3>
+<p>Use the in-app debug panel:
+- Shows all key values in real-time
+- Verify calculations step-by-step</p>
+<h3 id="android-logcat">Android Logcat</h3>
+<p>View device logs:</p>
+<pre><code class="language-bash">adb logcat -s Unity
+</code></pre>
+<h3 id="common-issues">Common Issues</h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API data not updating</td>
+<td>Check coroutine is running</td>
+</tr>
+<tr>
+<td>Water plane position wrong</td>
+<td>Verify calculation in FloodHeightManager</td>
+</tr>
+<tr>
+<td>AR tracking issues</td>
+<td>Test on different surface/lighting</td>
+</tr>
+<tr>
+<td>GPS not working</td>
+<td>Test on actual device, not emulator</td>
+</tr>
+</tbody>
+</table>
+<h2 id="next-steps">Next Steps</h2>
+<p><strong>For New Contributors:</strong>
+1. <a href="../setup/">Setup Development Environment</a>
+2. <a href="../building/">Build Your First Version</a>
+3. <a href="contributing.md">Read Contributing Guide</a></p>
+<p><strong>For Understanding the System:</strong>
+1. <a href="../architecture/">Architecture Deep Dive</a>
+2. <a href="../design_decisions/">Design Decisions</a>
+3. <a href="apis/pegelonline.md">API Documentation</a></p>
+<p><strong>For Testing:</strong>
+1. <a href="../testing/">Testing Strategy</a>
+2. <a href="../error_handling/">Error Handling</a></p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><strong>Unity Docs</strong>: <a href="https://docs.unity3d.com">docs.unity3d.com</a></li>
+<li><strong>AR Foundation</strong>: <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/manual/index.html">Unity AR Foundation Manual</a></li>
+<li><strong>Pegelonline</strong>: <a href="https://pegelonline.wsv.de">pegelonline.wsv.de</a></li>
+<li><strong>C# Guide</strong>: <a href="https://docs.microsoft.com/en-us/dotnet/csharp/">Microsoft C# Docs</a></li>
+</ul>
+<h2 id="getting-help">Getting Help</h2>
+<ul>
+<li><strong>GitHub Issues</strong>: Report bugs and request features</li>
+<li><strong>Discussions</strong>: Ask questions, share ideas</li>
+<li><strong>Pull Requests</strong>: Contribute code</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../error_handling/" class="btn btn-neutral float-left" title="Error handling"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../setup/" class="btn btn-neutral float-right" title="Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../error_handling/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../setup/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
