@@ -19,13 +19,13 @@ Before you begin, make sure you have:
 
 2. **Grant Permissions**  
    On first launch, you'll be asked to grant:
-   - Camera access (required for AR)
-   - Location access (required for GPS positioning)
-   - Internet access (for fetching water level data)
+    - Camera access (required for AR)
+    - Location access (required for GPS positioning)
+    - Internet access (for fetching water level data)
 
 3. **Choose Your Mode**  
-   - **Live Mode**: Uses real data from Pegelonline API
-   - **Demo Mode**: Uses simulated data for testing
+    - **Live Mode**: Uses real data from Pegelonline API
+    - **Demo Mode**: Uses simulated data for testing
 
 ## Basic Usage
 
@@ -34,23 +34,28 @@ Before you begin, make sure you have:
 The app consists of several key elements:
 
 **Debug Panel** (top right):
+
 - GPS coordinates (latitude/longitude)
 - Elevation at your location
 - Current water height over gauge zero
 - Water height over normal null
 
 **AR View** (center):
+
 - Live camera feed
 - Water plane showing flood level
 - Adjusts in real-time based on your position
 
 **Info Button** (top left):
+
 - turns debug panel display on/off
 
 **Demo Mode Button** (top left):
+
 - enter demo mode, return from demo mode
 
 **Floor Selector** (top left):
+
 - Select which floor you're on (-3 to 45)
 - Adjusts the water visualization accordingly
 
@@ -78,12 +83,14 @@ The Water plane shows:
 - **Above ground level**: Your location would be flooded to that height
 
 The calculation takes into account:
+
 - Current water level from the nearest gauge station
 - Gauge zero height (reference point)
 - Your GPS elevation
 - Your selected floor level
 
 ## Limitations
+
 - Elevation data accuracy varies by location (±5-10m)
 - Water levels are from the nearest gauge station
 - This is a visualization tool, not an official warning system

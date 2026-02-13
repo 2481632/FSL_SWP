@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Developer Guide Overview - FSL Flood Simulation</title>
+    <title>Overview - FSL Flood Simulation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Developer Guide Overview";
+        var mkdocs_page_name = "Overview";
         var mkdocs_page_input_path = "developer_guide/overview.md";
         var mkdocs_page_url = null;
       </script>
@@ -53,7 +53,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../error_handling/">Error handling</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Developer Guide Overview</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Overview</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#quick-start-for-developers">Quick Start for Developers</a>
     </li>
@@ -145,22 +145,24 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Apis</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../apis/open_meteo/">Open meteo</a>
+                <li class="toctree-l2"><a class="reference internal" href="../apis/elevation/">Elevation</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../apis/pegelonine/">Pegelonine</a>
+                <li class="toctree-l2"><a class="reference internal" href="../apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../apis/pegelonline/">Pegelonline</a>
                 </li>
     </ul>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Product info</span></p>
+              <p class="caption"><span class="caption-text">Project info</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/future_work/">Future work</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/future_work/">Future Work</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/hardware/">Hardware</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/hardware/">Hardware Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/motivation/">Motivation</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/motivation/">Project Motivation</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/team/">Team</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/team/">Team Structure</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">User guide</span></p>
@@ -191,7 +193,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Developer guide</li>
-      <li class="breadcrumb-item active">Developer Guide Overview</li>
+      <li class="breadcrumb-item active">Overview</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -200,7 +202,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="developer-guide-overview">Developer Guide Overview</h1>
+                <h1 id="overview">Overview</h1>
 <p>Welcome to the AR Flood Visualization developer documentation. This guide is for developers who want to contribute to, extend, or understand the technical implementation of this project.</p>
 <p>This developer guide covers:</p>
 <ul>
@@ -232,9 +234,9 @@ git clone
 </ul>
 <h3 id="apis-services">APIs &amp; Services</h3>
 <ul>
-<li><strong><a href="apis/pegelonline.md">Pegelonline API</a></strong>: Real-time water level data</li>
-<li><strong><a href="apis/elevation.md">Open-Meteo Elevation API</a></strong>: Terrain elevation data</li>
-<li><strong><a href="apis/mock-api.md">Mock API</a></strong>: Testing and development</li>
+<li><strong><a href="../apis/pegelonline/">Pegelonline API</a></strong>: Real-time water level data</li>
+<li><strong><a href="../apis/elevation/">Open-Meteo Elevation API</a></strong>: Terrain elevation data</li>
+<li><strong><a href="../apis/mock_api/">Mock API</a></strong>: Testing and development</li>
 </ul>
 <h3 id="libraries-packages">Libraries &amp; Packages</h3>
 <pre><code>Unity AR Foundation 5.x
@@ -288,14 +290,15 @@ Unity Location Services (built-in)
 <h3 id="4-submit">4. Submit</h3>
 <ul>
 <li>Create pull request</li>
-<li>Follow <a href="contributing.md">Contributing Guide</a></li>
 </ul>
 <h2 id="design-principles">Design Principles</h2>
 <h3 id="1-modularity">1. Modularity</h3>
-<p>Each component has a single responsibility:
-- API classes only handle data fetching
-- Manager classes only handle calculations
-- Placement classes only handle positioning</p>
+<p>Each component has a single responsibility:</p>
+<ul>
+<li>API classes only handle data fetching</li>
+<li>Manager classes only handle calculations</li>
+<li>Placement classes only handle positioning</li>
+</ul>
 <h3 id="2-separation-of-concerns">2. Separation of Concerns</h3>
 <pre><code>Data Layer (APIs) 
     ↓
@@ -348,9 +351,11 @@ Presentation Layer (UI/AR)
 Debug.Log(&quot;Elevation: &quot; + elevation);
 </code></pre>
 <h3 id="debug-panel">Debug Panel</h3>
-<p>Use the in-app debug panel:
-- Shows all key values in real-time
-- Verify calculations step-by-step</p>
+<p>Use the in-app debug panel:</p>
+<ul>
+<li>Shows all key values in real-time</li>
+<li>Verify calculations step-by-step</li>
+</ul>
 <h3 id="android-logcat">Android Logcat</h3>
 <p>View device logs:</p>
 <pre><code class="language-bash">adb logcat -s Unity
@@ -383,17 +388,22 @@ Debug.Log(&quot;Elevation: &quot; + elevation);
 </tbody>
 </table>
 <h2 id="next-steps">Next Steps</h2>
-<p><strong>For New Contributors:</strong>
-1. <a href="../setup/">Setup Development Environment</a>
-2. <a href="../building/">Build Your First Version</a>
-3. <a href="contributing.md">Read Contributing Guide</a></p>
-<p><strong>For Understanding the System:</strong>
-1. <a href="../architecture/">Architecture Deep Dive</a>
-2. <a href="../design_decisions/">Design Decisions</a>
-3. <a href="apis/pegelonline.md">API Documentation</a></p>
-<p><strong>For Testing:</strong>
-1. <a href="../testing/">Testing Strategy</a>
-2. <a href="../error_handling/">Error Handling</a></p>
+<p><strong>For New Contributors:</strong></p>
+<ol>
+<li><a href="../setup/">Setup Development Environment</a></li>
+<li><a href="../building/">Build Your First Version</a></li>
+</ol>
+<p><strong>For Understanding the System:</strong></p>
+<ol>
+<li><a href="../architecture/">Architecture Deep Dive</a></li>
+<li><a href="../design_decisions/">Design Decisions</a></li>
+<li><a href="../apis/pegelonline/">API Documentation</a></li>
+</ol>
+<p><strong>For Testing:</strong></p>
+<ol>
+<li><a href="../testing/">Testing Strategy</a></li>
+<li><a href="../error_handling/">Error Handling</a></li>
+</ol>
 <h2 id="resources">Resources</h2>
 <ul>
 <li><strong>Unity Docs</strong>: <a href="https://docs.unity3d.com">docs.unity3d.com</a></li>

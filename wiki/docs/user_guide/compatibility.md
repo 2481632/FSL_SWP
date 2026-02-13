@@ -66,6 +66,7 @@ Check if your device supports ARCore:
 ### Internet Connection
 
 Required for:
+
 - Fetching current water levels (Pegelonline API)
 - Getting elevation data (Open-Meteo API)
 - Updating gauge station information
@@ -73,6 +74,7 @@ Required for:
 ### Offline Capabilities
 
 Limited offline functionality:
+
 - AR visualization works offline
 - Demo mode works offline
 - Live water levels require internet
@@ -82,7 +84,6 @@ Limited offline functionality:
 ## Permissions Required
 
 The app requires these permissions to function:
-
 ```
 Camera (CAMERA)
 - Required for AR visualization
@@ -108,10 +109,10 @@ AR applications are power-intensive:
 
 - **Average Usage**: 20-30% battery per hour
 - **Recommendations**: 
-  - Use with >50% battery
-  - Enable power saving mode
-  - Reduce screen brightness
-  - Close background apps
+    - Use with >50% battery
+    - Enable power saving mode
+    - Reduce screen brightness
+    - Close background apps
 
 
 ## Known Incompatibilities
@@ -139,24 +140,25 @@ May conflict with:
 ### Verification Steps
 
 1. **Install ARCore**
-   - Download "Google Play Services for AR" from Play Store
-   - If it installs successfully, ARCore is supported 
+    - Download "Google Play Services for AR" from Play Store
+    - If it installs successfully, ARCore is supported 
 
 2. **Test GPS**
-   - Open Google Maps
-   - Check if location is accurate
-   - GPS must work for this app 
+    - Open Google Maps
+    - Check if location is accurate
+    - GPS must work for this app 
 
 3. **Test Camera**
-   - Open camera app
-   - Verify rear camera works
-   - AR requires functional camera 
+    - Open camera app
+    - Verify rear camera works
+    - AR requires functional camera 
 
 ## Future Compatibility
 
 ### Planned Support
 
 We're planning to work on:
+
 - iOS version (ARKit)
 - Web-based viewer (WebXR)
 - Lower Android versions (Android 10)

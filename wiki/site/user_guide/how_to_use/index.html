@@ -53,7 +53,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error handling</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Developer Guide Overview</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Overview</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Setup</a>
                   </li>
@@ -61,22 +61,24 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Apis</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/open_meteo/">Open meteo</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/elevation/">Elevation</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonine/">Pegelonine</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonline/">Pegelonline</a>
                 </li>
     </ul>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Product info</span></p>
+              <p class="caption"><span class="caption-text">Project info</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/future_work/">Future work</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/future_work/">Future Work</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/hardware/">Hardware</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/hardware/">Hardware Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/motivation/">Motivation</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/motivation/">Project Motivation</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/team/">Team</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/team/">Team Structure</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">User guide</span></p>
@@ -197,18 +199,22 @@ Höhe über NN: 34.60 m
 KAMERA
 Kamerahöhe: 1.5 m
 </code></pre>
-<p><strong>What it means:</strong>
-- <strong>Lat/Lon</strong>: Your GPS coordinates
-- <strong>Elev</strong>: Your elevation above sea level
-- <strong>Höhe Gewässer</strong>: Water height above gauge zero
-- <strong>Pegelnullstand</strong>: The gauge's reference point
-- <strong>Höhe über NN</strong>: Water height above normal null (sea level)
-- <strong>Kamerahöhe</strong>: Height of your camera above ground</p>
+<p><strong>What it means:</strong></p>
+<ul>
+<li><strong>Lat/Lon</strong>: Your GPS coordinates</li>
+<li><strong>Elev</strong>: Your elevation above sea level</li>
+<li><strong>Höhe Gewässer</strong>: Water height above gauge zero</li>
+<li><strong>Pegelnullstand</strong>: The gauge's reference point</li>
+<li><strong>Höhe über NN</strong>: Water height above normal null (sea level)</li>
+<li><strong>Kamerahöhe</strong>: Height of your camera above ground</li>
+</ul>
 <h4 id="2-ar-camera-view-center">2. AR Camera View (Center)</h4>
-<p>The main visualization area showing:
-- Live camera feed from your device
-- Water plane at calculated flood level
-- Real-time positioning as you move</p>
+<p>The main visualization area showing:</p>
+<ul>
+<li>Live camera feed from your device</li>
+<li>Water plane at calculated flood level</li>
+<li>Real-time positioning as you move</li>
+</ul>
 <h4 id="3-flood-height-display">3. Flood Height Display</h4>
 <p>Shows the calculated flood height at your position:</p>
 <pre><code>Fluthöhe: 2.5 m
@@ -218,19 +224,23 @@ Kamerahöhe: 1.5 m
 <li>Negative value: You are above flood level</li>
 </ul>
 <h4 id="4-floor-selector-top-left">4. Floor Selector (Top Left)</h4>
-<p>Dropdown menu to select your floor level:
-- Range: B3 (basement 3) to Floor 45
-- Each floor = 3 meters height
-- Ground floor = 0 meters</p>
+<p>Dropdown menu to select your floor level:</p>
+<ul>
+<li>Range: B3 (basement 3) to Floor 45</li>
+<li>Each floor = 3 meters height</li>
+<li>Ground floor = 0 meters</li>
+</ul>
 <h4 id="5-demo-mode-button-top-left">5. Demo Mode Button (Top Left)</h4>
 <p>Button to switch into the Demo Mode.</p>
 <h4 id="6-info-button-top-left">6. Info Button (Top Left)</h4>
 <p>Button to turn the Debug Panel Display on/off.</p>
 <h4 id="7-demo-scene">7. Demo Scene</h4>
-<p>When in the demo mode:
-- Live camera feed from your device 
-- Water panel displayed
-- Water panel controllable with slider </p>
+<p>When in the demo mode:</p>
+<ul>
+<li>Live camera feed from your device </li>
+<li>Water panel displayed</li>
+<li>Water panel controllable with slider </li>
+</ul>
 <h2 id="step-by-step-usage">Step-by-Step Usage</h2>
 <h3 id="starting-the-app">Starting the App</h3>
 <ol>
@@ -241,32 +251,42 @@ Kamerahöhe: 1.5 m
 </ol>
 <h3 id="selecting-your-mode">Selecting Your Mode</h3>
 <h4 id="live-mode-default">Live Mode (Default)</h4>
-<p>Uses real-time data from Pegelonline API:
-- Automatic station selection based on GPS
-- Updates every 5 seconds
-- Requires internet connection</p>
+<p>Uses real-time data from Pegelonline API:</p>
+<ul>
+<li>Automatic station selection based on GPS</li>
+<li>Updates every 5 seconds</li>
+<li>Requires internet connection</li>
+</ul>
 <h4 id="demo-mode">Demo Mode</h4>
-<p>Uses simulated flood data:
-- Useful for testing without real flood conditions
-- Works offline</p>
+<p>Uses simulated flood data:</p>
+<ul>
+<li>Useful for testing without real flood conditions</li>
+<li>Works offline</li>
+</ul>
 <h3 id="adjusting-floor-level">Adjusting Floor Level</h3>
 <ol>
 <li>Tap the <strong>Floor dropdown</strong> at the bottom</li>
-<li>Select your current floor:</li>
+<li>Select your current floor:<ul>
 <li><code>Ground</code> for ground level</li>
 <li><code>Floor: 1</code>, <code>Floor: 2</code>, etc. for upper floors</li>
 <li><code>Floor: B1</code>, <code>Floor: B2</code>, etc. for basements</li>
+</ul>
+</li>
 <li>Water plane adjusts automatically</li>
 </ol>
 <h3 id="moving-around">Moving Around</h3>
-<p>As you walk:
-- GPS updates your position
-- Elevation changes affect the calculation
-- Water plane repositions in real-time</p>
-<p><strong>Best practices:</strong>
-- Walk slowly for stable AR tracking
-- Stay outdoors for best GPS signal
-- Avoid rapid movements</p>
+<p>As you walk:</p>
+<ul>
+<li>GPS updates your position</li>
+<li>Elevation changes affect the calculation</li>
+<li>Water plane repositions in real-time</li>
+</ul>
+<p><strong>Best practices:</strong></p>
+<ul>
+<li>Walk slowly for stable AR tracking</li>
+<li>Stay outdoors for best GPS signal</li>
+<li>Avoid rapid movements</li>
+</ul>
 <h3 id="interpreting-flood-height">Interpreting Flood Height</h3>
 <p>The "Fluthöhe" value shows:</p>
 <pre><code>Fluthöhe: 2.3 m  → You're 2.3m below water level
@@ -277,25 +297,29 @@ Fluthöhe: -1.2 m → You're 1.2m above water (safe)
 <h3 id="understanding-data-sources">Understanding Data Sources</h3>
 <p>The app combines multiple data sources:</p>
 <ol>
-<li><strong>Pegelonline API</strong></li>
+<li>
+<p><strong>Pegelonline API</strong></p>
+<ul>
 <li>Current water levels from official gauges</li>
 <li>Updates every few minutes</li>
-<li>
-<p>Covers major rivers in Germany</p>
+<li>Covers major rivers in Germany</li>
+</ul>
 </li>
 <li>
 <p><strong>Open-Meteo Elevation API</strong></p>
-</li>
+<ul>
 <li>Provides elevation at your GPS position</li>
 <li>Accuracy: ±5-10 meters</li>
-<li>
-<p>Global coverage</p>
+<li>Global coverage</li>
+</ul>
 </li>
 <li>
 <p><strong>Device GPS</strong></p>
-</li>
+<ul>
 <li>Your latitude/longitude</li>
 <li>Accuracy: ±5-20 meters depending on conditions</li>
+</ul>
+</li>
 </ol>
 <h3 id="calculation-method">Calculation Method</h3>
 <p>The water height at your position is calculated as:</p>
@@ -307,13 +331,16 @@ Fluthöhe: -1.2 m → You're 1.2m above water (safe)
     - Camera Height
 </code></pre>
 <h3 id="dealing-with-inaccuracies">Dealing with Inaccuracies</h3>
-<p>Sources of error:
-- GPS accuracy (±5-20m horizontally)
-- Elevation data accuracy (±5-10m vertically)
-- Distance from gauge station
-- Terrain variations</p>
-<p>Important:
-    This app is for visualization only. Always rely on official flood warnings and evacuation orders from authorities.</p>
+<p>Sources of error:</p>
+<ul>
+<li>GPS accuracy (±5-20m horizontally)</li>
+<li>Elevation data accuracy (±5-10m vertically)</li>
+<li>Distance from gauge station</li>
+<li>Terrain variations</li>
+</ul>
+<p>Important:</p>
+<pre><code>This app is for visualization only. Always rely on official flood warnings and evacuation orders from authorities.
+</code></pre>
 <h2 id="common-use-cases">Common Use Cases</h2>
 <!-- to do -->
 
