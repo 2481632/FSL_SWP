@@ -53,7 +53,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error handling</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Developer Guide Overview</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Overview</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Setup</a>
                   </li>
@@ -61,22 +61,24 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Apis</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/open_meteo/">Open meteo</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/elevation/">Elevation</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonine/">Pegelonine</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonline/">Pegelonline</a>
                 </li>
     </ul>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Product info</span></p>
+              <p class="caption"><span class="caption-text">Project info</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/future_work/">Future work</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/future_work/">Future Work</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/hardware/">Hardware</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/hardware/">Hardware Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/motivation/">Motivation</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/motivation/">Project Motivation</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/team/">Team</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/team/">Team Structure</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">User guide</span></p>
@@ -175,30 +177,35 @@
 <h2 id="installation-methods">Installation Methods</h2>
 <h3 id="method-1-apk-installation-recommended">Method 1: APK Installation (Recommended)</h3>
 <ol>
-<li><strong>Download the APK</strong>
-   <code>AR_Flood.apk from the releases page</code></li>
+<li><strong>Download the APK</strong></li>
 </ol>
+<pre><code>   AR_Flood.apk from the releases page
+</code></pre>
 <!-- noch erstellen -->
 
 <ol>
-<li><strong>Enable Unknown Sources</strong></li>
-<li>Go to Settings → Security</li>
 <li>
-<p>Enable "Install unknown apps" for your browser/file manager</p>
+<p><strong>Enable Unknown Sources</strong></p>
+<ul>
+<li>Go to Settings → Security</li>
+<li>Enable "Install unknown apps" for your browser/file manager</li>
+</ul>
 </li>
 <li>
 <p><strong>Install the APK</strong></p>
-</li>
+<ul>
 <li>Locate the downloaded APK file</li>
 <li>Tap to install</li>
-<li>
-<p>Follow the on-screen prompts</p>
+<li>Follow the on-screen prompts</li>
+</ul>
 </li>
 <li>
 <p><strong>Launch the App</strong></p>
-</li>
+<ul>
 <li>Find "AR Flood" in your app drawer</li>
 <li>Tap to open</li>
+</ul>
+</li>
 </ol>
 <h3 id="method-2-build-from-source">Method 2: Build from Source</h3>
 <p>For developers who want to build from source:</p>
@@ -213,23 +220,27 @@ git clone https://github.com/your-repo/ar-flood-viz.git
 <h3 id="grant-permissions">Grant Permissions</h3>
 <p>On first launch, grant these permissions:</p>
 <ol>
-<li><strong>Camera</strong> </li>
-<li>Required for AR visualization</li>
 <li>
-<p>Tap "Allow" when prompted</p>
+<p><strong>Camera</strong> </p>
+<ul>
+<li>Required for AR visualization</li>
+<li>Tap "Allow" when prompted</li>
+</ul>
 </li>
 <li>
 <p><strong>Location</strong> </p>
-</li>
+<ul>
 <li>Required for GPS positioning</li>
-<li>
-<p>Choose "While using the app"</p>
+<li>Choose "While using the app"</li>
+</ul>
 </li>
 <li>
 <p><strong>Internet</strong> </p>
-</li>
+<ul>
 <li>Required for fetching water level data</li>
 <li>Automatically granted</li>
+</ul>
+</li>
 </ol>
 <h3 id="verify-installation">Verify Installation</h3>
 <ol>
@@ -241,22 +252,30 @@ git clone https://github.com/your-repo/ar-flood-viz.git
 <p>If you see the AR view, installation was successful! ✅</p>
 <h2 id="troubleshooting-installation">Troubleshooting Installation</h2>
 <h3 id="app-not-installed-error">"App not installed" Error</h3>
-<p><strong>Possible causes:</strong>
-- Insufficient storage space
-- Corrupted APK file
-- Incompatible Android version</p>
-<p><strong>Solutions:</strong>
-1. Free up storage space (need ~150 MB)
-2. Re-download the APK
-3. Verify your Android version is 11.0+</p>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Insufficient storage space</li>
+<li>Corrupted APK file</li>
+<li>Incompatible Android version</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>Free up storage space (need ~150 MB)</li>
+<li>Re-download the APK</li>
+<li>Verify your Android version is 11.0+</li>
+</ol>
 <h3 id="app-not-compatible-with-this-device">"App not compatible with this device"</h3>
-<p><strong>Possible causes:</strong>
-- Device doesn't support ARCore
-- Android version too old</p>
-<p><strong>Solutions:</strong>
-1. Check <a href="https://developers.google.com/ar/devices">ARCore compatibility list</a>
-2. Update Android to latest version
-3. Try on a different device</p>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Device doesn't support ARCore</li>
+<li>Android version too old</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>Check <a href="https://developers.google.com/ar/devices">ARCore compatibility list</a></li>
+<li>Update Android to latest version</li>
+<li>Try on a different device</li>
+</ol>
 <h3 id="arcore-not-installed">ARCore Not Installed</h3>
 <p>If prompted to install ARCore:</p>
 <ol>
@@ -287,9 +306,11 @@ git clone https://github.com/your-repo/ar-flood-viz.git
 <li>Tap "Uninstall" or drag to "Uninstall"</li>
 <li>Confirm removal</li>
 </ol>
-<p>Or via Settings:
-1. Settings → Apps → AR Flood Viz
-2. Tap "Uninstall"</p>
+<p>Or via Settings:</p>
+<ol>
+<li>Settings → Apps → AR Flood Viz</li>
+<li>Tap "Uninstall"</li>
+</ol>
 <h2 id="next-steps">Next Steps</h2>
 <ul>
 <li>Read <a href="../getting_started/">Getting Started</a> to learn how to use the app</li>

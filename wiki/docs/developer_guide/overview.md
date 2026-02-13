@@ -1,4 +1,4 @@
-# Developer Guide Overview
+# Overview
 
 Welcome to the AR Flood Visualization developer documentation. This guide is for developers who want to contribute to, extend, or understand the technical implementation of this project.
 
@@ -12,7 +12,6 @@ This developer guide covers:
 - **Contributing**: How to contribute to the project
 
 ## Quick Start for Developers
-
 ```bash
 # Clone the repository
 git clone 
@@ -38,10 +37,9 @@ git clone
 
 - **[Pegelonline API](apis/pegelonline.md)**: Real-time water level data
 - **[Open-Meteo Elevation API](apis/elevation.md)**: Terrain elevation data
-- **[Mock API](apis/mock-api.md)**: Testing and development
+- **[Mock API](apis/mock_api.md)**: Testing and development
 
 ### Libraries & Packages
-
 ```
 Unity AR Foundation 5.x
 ARCore XR Plugin 5.x
@@ -60,20 +58,24 @@ to do
 ## Key Components
 
 ### 1. Data Fetching Layer
+
 - `API_WaterLevel.cs`: Fetches water levels from Pegelonline
 - `API_Elevation.cs`: Gets elevation data
 - `Location.cs`: Manages GPS positioning
 
 ### 2. Calculation Layer
+
 - `FloodHeightManager.cs`: Calculates flood height at user position
 - Combines water level, elevation, GPS, floor offset
 
 ### 3. Visualization Layer
+
 - `ContentPlacement.cs`: Positions water plane in AR space
 - `ARSessionOrigin`: Manages AR coordinate system
 - Water material & renderer
 
 ### 4. User Interface
+
 - `DebugPanel.cs`: Technical info display
 - `BuildingLevel.cs`: Floor selection dropdown
 - TextMeshPro UI elements
@@ -81,26 +83,31 @@ to do
 ## Development Workflow
 
 ### 1. Setup Development Environment
+
 See [Setup Guide](setup.md)
 
 ### 2. Make Changes
+
 - Modify C# scripts
 - Test in Unity Editor
 - Build for Android
 
 ### 3. Test
+
 - Unity Play Mode testing
 - Android device testing
 - See [Testing Strategy](testing.md)
 
 ### 4. Submit
+
 - Create pull request
-- Follow [Contributing Guide](contributing.md)
 
 ## Design Principles
 
 ### 1. Modularity
+
 Each component has a single responsibility:
+
 - API classes only handle data fetching
 - Manager classes only handle calculations
 - Placement classes only handle positioning
@@ -115,11 +122,13 @@ Presentation Layer (UI/AR)
 ```
 
 ### 3. Testability
+
 - Mock API for testing without real data
 - Debug panel for verification
 - Demo mode for offline testing
 
 ### 4. Performance
+
 - Update intervals (5 seconds for API calls)
 - Efficient coroutines
 
@@ -164,6 +173,7 @@ Debug.Log("Elevation: " + elevation);
 ### Debug Panel
 
 Use the in-app debug panel:
+
 - Shows all key values in real-time
 - Verify calculations step-by-step
 
@@ -186,16 +196,18 @@ adb logcat -s Unity
 ## Next Steps
 
 **For New Contributors:**
+
 1. [Setup Development Environment](setup.md)
 2. [Build Your First Version](building.md)
-3. [Read Contributing Guide](contributing.md)
 
 **For Understanding the System:**
+
 1. [Architecture Deep Dive](architecture.md)
 2. [Design Decisions](design_decisions.md)
 3. [API Documentation](apis/pegelonline.md)
 
 **For Testing:**
+
 1. [Testing Strategy](testing.md)
 2. [Error Handling](error_handling.md)
 

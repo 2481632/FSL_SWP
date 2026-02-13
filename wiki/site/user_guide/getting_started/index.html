@@ -53,7 +53,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error handling</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Developer Guide Overview</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Overview</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Setup</a>
                   </li>
@@ -61,22 +61,24 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Apis</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/open_meteo/">Open meteo</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/elevation/">Elevation</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonine/">Pegelonine</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonline/">Pegelonline</a>
                 </li>
     </ul>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Product info</span></p>
+              <p class="caption"><span class="caption-text">Project info</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/future_work/">Future work</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/future_work/">Future Work</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/hardware/">Hardware</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/hardware/">Hardware Requirements</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/motivation/">Motivation</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/motivation/">Project Motivation</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../product_info/team/">Team</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/team/">Team Structure</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">User guide</span></p>
@@ -156,37 +158,49 @@
 <li>
 <p><strong>Grant Permissions</strong><br />
    On first launch, you'll be asked to grant:</p>
-</li>
+<ul>
 <li>Camera access (required for AR)</li>
 <li>Location access (required for GPS positioning)</li>
-<li>
-<p>Internet access (for fetching water level data)</p>
+<li>Internet access (for fetching water level data)</li>
+</ul>
 </li>
 <li>
 <p><strong>Choose Your Mode</strong>  </p>
-</li>
+<ul>
 <li><strong>Live Mode</strong>: Uses real data from Pegelonline API</li>
 <li><strong>Demo Mode</strong>: Uses simulated data for testing</li>
+</ul>
+</li>
 </ol>
 <h2 id="basic-usage">Basic Usage</h2>
 <h3 id="understanding-the-interface">Understanding the Interface</h3>
 <p>The app consists of several key elements:</p>
-<p><strong>Debug Panel</strong> (top right):
-- GPS coordinates (latitude/longitude)
-- Elevation at your location
-- Current water height over gauge zero
-- Water height over normal null</p>
-<p><strong>AR View</strong> (center):
-- Live camera feed
-- Water plane showing flood level
-- Adjusts in real-time based on your position</p>
-<p><strong>Info Button</strong> (top left):
-- turns debug panel display on/off</p>
-<p><strong>Demo Mode Button</strong> (top left):
-- enter demo mode, return from demo mode</p>
-<p><strong>Floor Selector</strong> (top left):
-- Select which floor you're on (-3 to 45)
-- Adjusts the water visualization accordingly</p>
+<p><strong>Debug Panel</strong> (top right):</p>
+<ul>
+<li>GPS coordinates (latitude/longitude)</li>
+<li>Elevation at your location</li>
+<li>Current water height over gauge zero</li>
+<li>Water height over normal null</li>
+</ul>
+<p><strong>AR View</strong> (center):</p>
+<ul>
+<li>Live camera feed</li>
+<li>Water plane showing flood level</li>
+<li>Adjusts in real-time based on your position</li>
+</ul>
+<p><strong>Info Button</strong> (top left):</p>
+<ul>
+<li>turns debug panel display on/off</li>
+</ul>
+<p><strong>Demo Mode Button</strong> (top left):</p>
+<ul>
+<li>enter demo mode, return from demo mode</li>
+</ul>
+<p><strong>Floor Selector</strong> (top left):</p>
+<ul>
+<li>Select which floor you're on (-3 to 45)</li>
+<li>Adjusts the water visualization accordingly</li>
+</ul>
 <h3 id="your-first-visualization">Your First Visualization</h3>
 <ol>
 <li>
@@ -213,11 +227,13 @@
 <li><strong>At ground level</strong>: Water would reach your feet</li>
 <li><strong>Above ground level</strong>: Your location would be flooded to that height</li>
 </ul>
-<p>The calculation takes into account:
-- Current water level from the nearest gauge station
-- Gauge zero height (reference point)
-- Your GPS elevation
-- Your selected floor level</p>
+<p>The calculation takes into account:</p>
+<ul>
+<li>Current water level from the nearest gauge station</li>
+<li>Gauge zero height (reference point)</li>
+<li>Your GPS elevation</li>
+<li>Your selected floor level</li>
+</ul>
 <h2 id="limitations">Limitations</h2>
 <ul>
 <li>Elevation data accuracy varies by location (±5-10m)</li>

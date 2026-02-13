@@ -9,7 +9,6 @@ A comprehensive guide to all features and functionality of AR Flood Visualizatio
 #### 1. Debug Panel (Top Right)
 
 Displays real-time technical information:
-
 ```
 GPS
 Lat:  52.5200
@@ -26,6 +25,7 @@ Kamerahöhe: 1.5 m
 ```
 
 **What it means:**
+
 - **Lat/Lon**: Your GPS coordinates
 - **Elev**: Your elevation above sea level
 - **Höhe Gewässer**: Water height above gauge zero
@@ -36,6 +36,7 @@ Kamerahöhe: 1.5 m
 #### 2. AR Camera View (Center)
 
 The main visualization area showing:
+
 - Live camera feed from your device
 - Water plane at calculated flood level
 - Real-time positioning as you move
@@ -46,24 +47,30 @@ Shows the calculated flood height at your position:
 ```
 Fluthöhe: 2.5 m
 ```
+
 - Positive value: You would be flooded
 - Negative value: You are above flood level
 
 #### 4. Floor Selector (Top Left)
 
 Dropdown menu to select your floor level:
+
 - Range: B3 (basement 3) to Floor 45
 - Each floor = 3 meters height
 - Ground floor = 0 meters
 
 #### 5. Demo Mode Button (Top Left)
+
 Button to switch into the Demo Mode.
 
 #### 6. Info Button (Top Left)
+
 Button to turn the Debug Panel Display on/off.
 
 #### 7. Demo Scene
+
 When in the demo mode:
+
 - Live camera feed from your device 
 - Water panel displayed
 - Water panel controllable with slider 
@@ -80,13 +87,17 @@ When in the demo mode:
 ### Selecting Your Mode
 
 #### Live Mode (Default)
+
 Uses real-time data from Pegelonline API:
+
 - Automatic station selection based on GPS
 - Updates every 5 seconds
 - Requires internet connection
 
 #### Demo Mode
+
 Uses simulated flood data:
+
 - Useful for testing without real flood conditions
 - Works offline
 
@@ -94,20 +105,22 @@ Uses simulated flood data:
 
 1. Tap the **Floor dropdown** at the bottom
 2. Select your current floor:
-   - `Ground` for ground level
-   - `Floor: 1`, `Floor: 2`, etc. for upper floors
-   - `Floor: B1`, `Floor: B2`, etc. for basements
+    - `Ground` for ground level
+    - `Floor: 1`, `Floor: 2`, etc. for upper floors
+    - `Floor: B1`, `Floor: B2`, etc. for basements
 3. Water plane adjusts automatically
 
 
 ### Moving Around
 
 As you walk:
+
 - GPS updates your position
 - Elevation changes affect the calculation
 - Water plane repositions in real-time
 
 **Best practices:**
+
 - Walk slowly for stable AR tracking
 - Stay outdoors for best GPS signal
 - Avoid rapid movements
@@ -115,7 +128,6 @@ As you walk:
 ### Interpreting Flood Height
 
 The "Fluthöhe" value shows:
-
 ```
 Fluthöhe: 2.3 m  → You're 2.3m below water level
 Fluthöhe: 0.5 m  → Water at low level
@@ -129,23 +141,22 @@ Fluthöhe: -1.2 m → You're 1.2m above water (safe)
 The app combines multiple data sources:
 
 1. **Pegelonline API**
-   - Current water levels from official gauges
-   - Updates every few minutes
-   - Covers major rivers in Germany
+    - Current water levels from official gauges
+    - Updates every few minutes
+    - Covers major rivers in Germany
 
 2. **Open-Meteo Elevation API**
-   - Provides elevation at your GPS position
-   - Accuracy: ±5-10 meters
-   - Global coverage
+    - Provides elevation at your GPS position
+    - Accuracy: ±5-10 meters
+    - Global coverage
 
 3. **Device GPS**
-   - Your latitude/longitude
-   - Accuracy: ±5-20 meters depending on conditions
+    - Your latitude/longitude
+    - Accuracy: ±5-20 meters depending on conditions
 
 ### Calculation Method
 
 The water height at your position is calculated as:
-
 ```
 Water Height (your position) = 
     Water Height (gauge) 
@@ -158,12 +169,14 @@ Water Height (your position) =
 ### Dealing with Inaccuracies
 
 Sources of error:
+
 - GPS accuracy (±5-20m horizontally)
 - Elevation data accuracy (±5-10m vertically)
 - Distance from gauge station
 - Terrain variations
 
 Important:
+
     This app is for visualization only. Always rely on official flood warnings and evacuation orders from authorities.
 
 ## Common Use Cases

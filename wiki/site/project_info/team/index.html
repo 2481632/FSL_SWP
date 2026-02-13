@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Team Structure - FSL Flood Simulation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Team Structure";
+        var mkdocs_page_input_path = "project_info/team.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FSL Flood Simulation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/building/">Building</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/design_decisions/">Design decisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/testing/">Testing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/elevation/">Elevation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonline/">Pegelonline</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project info</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../future_work/">Future Work</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../motivation/">Project Motivation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Team Structure</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#team-members">Team Members</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#core-team">Core Team</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#communication">Communication</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#primary-channels">Primary Channels</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#development-cycle">Development Cycle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#weekly-rhythm">Weekly Rhythm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#decision-making">Decision Making</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#technical-decisions">Technical Decisions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#collaboration-tools">Collaboration Tools</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#code-version-control">Code &amp; Version Control</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#project-management">Project Management</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#development-practices">Development Practices</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#testing">Testing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#documentation_1">Documentation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#project-timeline">Project Timeline</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#initial-development">Initial Development</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature-development">Feature Development</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#current-phase">Current Phase</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#skills">Skills</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#learning-goals">Learning Goals</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#retrospectives">Retrospectives</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/compatibility/">Compatibility</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/getting_started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/how_to_use/">How to Use</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/troubleshooting/">Troubleshooting</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FSL Flood Simulation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Project info</li>
+      <li class="breadcrumb-item active">Team Structure</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="team-structure">Team Structure</h1>
+<p>Information about the AR Flood Visualization project team, communication, and workflow.</p>
+<h2 id="team-members">Team Members</h2>
+<h3 id="core-team">Core Team</h3>
+<p><strong>Frederik, Marvin, Lea:</strong></p>
+<ul>
+<li><strong>Roles</strong>: Developers</li>
+<li><strong>Responsibilities</strong>: <ul>
+<li>Project ideation and concept</li>
+<li>Technical implementation</li>
+<li>Architecture decisions</li>
+<li>API integration</li>
+<li>Timeline management</li>
+<li>Testing strategy</li>
+<li>Reflection and process improvement</li>
+<li>Future works planning</li>
+<li>Conclusion and vision</li>
+</ul>
+</li>
+</ul>
+<h2 id="communication">Communication</h2>
+<h3 id="primary-channels">Primary Channels</h3>
+<p><strong>1. Weekly Meetings</strong></p>
+<ul>
+<li><strong>When</strong>: Mondays</li>
+<li><strong>Duration</strong>: 2 hours</li>
+<li><strong>Format</strong>: In-person</li>
+<li><strong>Agenda</strong>:<ul>
+<li>Progress updates from each team member</li>
+<li>Technical discussions</li>
+<li>Next week planning</li>
+<li>Demo of completed features</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. Text Chat</strong></p>
+<ul>
+<li><strong>Platform</strong>: Signal</li>
+<li><strong>Purpose</strong>: <ul>
+<li>Quick questions</li>
+<li>Async updates</li>
+<li>Link sharing</li>
+<li>Coordination</li>
+</ul>
+</li>
+</ul>
+<p><strong>3. GitHub</strong></p>
+<ul>
+<li><strong>Repository</strong>: [Link to repo]</li>
+<li><strong>Usage</strong>:<ul>
+<li>Code reviews</li>
+<li>Issue tracking</li>
+<li>Feature discussions</li>
+<li>Release planning</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Unity Cloud</strong></p>
+<ul>
+<li><strong>Purpose</strong>: <ul>
+<li>Project collaboration</li>
+<li>Asset sharing</li>
+<li>Version control integration</li>
+</ul>
+</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<h3 id="development-cycle">Development Cycle</h3>
+<pre><code class="language-mermaid">graph LR
+    A[Planning] --&gt; B[Development]
+    B --&gt; C[Testing]
+    C --&gt; D[Review]
+    D --&gt; E[Integration]
+    E --&gt; A
+</code></pre>
+<h3 id="weekly-rhythm">Weekly Rhythm</h3>
+<p><strong>Monday Meeting:</strong></p>
+<ol>
+<li>Review last week's progress</li>
+<li>Demo completed features</li>
+<li>Plan this week's tasks</li>
+<li>Assign responsibilities</li>
+</ol>
+<p><strong>Tuesday-Sunday:</strong></p>
+<ul>
+<li>Individual development work</li>
+<li>Async communication via chat</li>
+<li>Code reviews on GitHub</li>
+<li>Testing and bug fixes</li>
+</ul>
+<p><strong>Before Next Monday:</strong></p>
+<ul>
+<li>Commit and push changes</li>
+<li>Update documentation</li>
+<li>Prepare demo/update</li>
+</ul>
+<h2 id="decision-making">Decision Making</h2>
+<h3 id="technical-decisions">Technical Decisions</h3>
+<p><strong>Minor (e.g., variable naming, code structure):</strong></p>
+<ul>
+<li>Individual developer decides</li>
+<li>Document in code comments</li>
+</ul>
+<p><strong>Medium (e.g., new library, UI change):</strong></p>
+<ul>
+<li>Discuss in text chat or meeting</li>
+<li>Document in meeting notes</li>
+</ul>
+<p><strong>Major (e.g., architecture change, platform change):</strong></p>
+<ul>
+<li>Dedicated meeting discussion</li>
+<li>Document in design decisions</li>
+</ul>
+<h2 id="collaboration-tools">Collaboration Tools</h2>
+<h3 id="code-version-control">Code &amp; Version Control</h3>
+<p><strong>GitHub</strong></p>
+<ul>
+<li>Repository hosting</li>
+<li>Issue tracking</li>
+<li>Code review</li>
+</ul>
+<p><strong>Unity Collaborate / Git</strong></p>
+<ul>
+<li>Unity project version control</li>
+<li>Scene and asset merging</li>
+<li>Conflict resolution</li>
+</ul>
+<h3 id="project-management">Project Management</h3>
+<p><strong>GitHub Projects</strong></p>
+<ul>
+<li>Kanban board</li>
+<li>Sprint planning</li>
+<li>Task tracking</li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<p><strong>MkDocs</strong></p>
+<ul>
+<li>Technical documentation</li>
+<li>User guides</li>
+<li>Developer guides</li>
+</ul>
+<h2 id="development-practices">Development Practices</h2>
+<h3 id="testing">Testing</h3>
+<p><strong>Who Tests:</strong></p>
+<ul>
+<li>Developer tests own code</li>
+<li>All team members test on devices</li>
+</ul>
+<h3 id="documentation_1">Documentation</h3>
+<p><strong>Who Writes:</strong></p>
+<ul>
+<li>Feature developer writes initial docs</li>
+<li>Team reviews and improves</li>
+</ul>
+<p><strong>What to Document:</strong></p>
+<ul>
+<li>New features</li>
+<li>API changes</li>
+<li>Bug fixes</li>
+<li>Design decisions</li>
+</ul>
+<h2 id="project-timeline">Project Timeline</h2>
+<h3 id="initial-development">Initial Development</h3>
+<p><strong>November 2025 - December 2026</strong></p>
+<ul>
+<li>Project conception</li>
+<li>Technology selection</li>
+<li>MVP development</li>
+<li>Mock API implementation</li>
+</ul>
+<h3 id="feature-development">Feature Development</h3>
+<p><strong>December - February 2026</strong></p>
+<ul>
+<li>Real API integration</li>
+<li>UI improvements</li>
+<li>Testing and refinement</li>
+<li>Documentation</li>
+</ul>
+<h3 id="current-phase">Current Phase</h3>
+<p><strong>February 2026</strong></p>
+<ul>
+<li>Bug fixing</li>
+<li>Documentation completion</li>
+<li>Future work planning</li>
+</ul>
+<h2 id="skills">Skills</h2>
+<h3 id="learning-goals">Learning Goals</h3>
+<p><strong>What We're Learning:</strong></p>
+<ul>
+<li>AR development best practices</li>
+<li>Mobile app optimization</li>
+<li>Real-time data visualization</li>
+<li>API integration patterns</li>
+<li>Collaborative development</li>
+<li>Documentation practices</li>
+</ul>
+<h2 id="retrospectives">Retrospectives</h2>
+<p><strong>We Regularly Reflect On:</strong></p>
+<ul>
+<li>What went well?</li>
+<li>What could improve?</li>
+<li>What should we try next?</li>
+<li>What should we stop doing?</li>
+</ul>
+<p><strong>From Recent Reflection:</strong></p>
+<p><strong>What Worked:</strong></p>
+<ul>
+<li>Mock API for testing</li>
+<li>Weekly Monday meetings</li>
+<li>GitHub for collaboration</li>
+</ul>
+<p><strong>What Could Improve:</strong></p>
+<ul>
+<li>Unity Cloud not optimal</li>
+<li>Better documentation as we go</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Read about <a href="../hardware/">Hardware</a> we use</li>
+<li>Learn about <a href="../future_work/">Future Work</a> plans</li>
+<li>Check <a href="../motivation/">Motivation</a> for project background</li>
+</ul>
+<hr />
+<p><strong>Team</strong>: Lea, Marvin, Fred<br />
+<strong>Project</strong>: AR Flood Visualization<br />
+<strong>Started</strong>: November 2025<br />
+<strong>Status</strong>: Paused Development</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../motivation/" class="btn btn-neutral float-left" title="Project Motivation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../user_guide/compatibility/" class="btn btn-neutral float-right" title="Compatibility">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../motivation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../user_guide/compatibility/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

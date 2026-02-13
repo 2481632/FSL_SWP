@@ -20,29 +20,28 @@ Visit [Google's ARCore Supported Devices](https://developers.google.com/ar/devic
 ### Method 1: APK Installation (Recommended)
 
 1. **Download the APK**
-   ```
+```
    AR_Flood.apk from the releases page
-   ```
+```
 
    <!-- noch erstellen -->
 
 2. **Enable Unknown Sources**
-   - Go to Settings → Security
-   - Enable "Install unknown apps" for your browser/file manager
+    - Go to Settings → Security
+    - Enable "Install unknown apps" for your browser/file manager
 
 3. **Install the APK**
-   - Locate the downloaded APK file
-   - Tap to install
-   - Follow the on-screen prompts
+    - Locate the downloaded APK file
+    - Tap to install
+    - Follow the on-screen prompts
 
 4. **Launch the App**
-   - Find "AR Flood" in your app drawer
-   - Tap to open
+    - Find "AR Flood" in your app drawer
+    - Tap to open
 
 ### Method 2: Build from Source
 
 For developers who want to build from source:
-
 ```bash
 # Clone the repository
 git clone https://github.com/your-repo/ar-flood-viz.git
@@ -60,16 +59,16 @@ See [Developer Guide - Building](../developer_guide/building.md) for complete in
 On first launch, grant these permissions:
 
 1. **Camera** 
-   - Required for AR visualization
-   - Tap "Allow" when prompted
+    - Required for AR visualization
+    - Tap "Allow" when prompted
 
 2. **Location** 
-   - Required for GPS positioning
-   - Choose "While using the app"
+    - Required for GPS positioning
+    - Choose "While using the app"
 
 3. **Internet** 
-   - Required for fetching water level data
-   - Automatically granted
+    - Required for fetching water level data
+    - Automatically granted
 
 ### Verify Installation
 
@@ -85,11 +84,13 @@ If you see the AR view, installation was successful! ✅
 ### "App not installed" Error
 
 **Possible causes:**
+
 - Insufficient storage space
 - Corrupted APK file
 - Incompatible Android version
 
 **Solutions:**
+
 1. Free up storage space (need ~150 MB)
 2. Re-download the APK
 3. Verify your Android version is 11.0+
@@ -97,10 +98,12 @@ If you see the AR view, installation was successful! ✅
 ### "App not compatible with this device"
 
 **Possible causes:**
+
 - Device doesn't support ARCore
 - Android version too old
 
 **Solutions:**
+
 1. Check [ARCore compatibility list](https://developers.google.com/ar/devices)
 2. Update Android to latest version
 3. Try on a different device
@@ -140,6 +143,7 @@ To remove the app:
 3. Confirm removal
 
 Or via Settings:
+
 1. Settings → Apps → AR Flood Viz
 2. Tap "Uninstall"
 

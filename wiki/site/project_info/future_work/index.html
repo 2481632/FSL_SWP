@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Future Work - FSL Flood Simulation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Future Work";
+        var mkdocs_page_input_path = "project_info/future_work.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FSL Flood Simulation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/building/">Building</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/design_decisions/">Design decisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/testing/">Testing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/elevation/">Elevation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonline/">Pegelonline</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project info</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Future Work</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#vision">Vision</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#roadmap">Roadmap</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#current-status">Current Status</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#future-implementations">Future Implementations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ideas-for-long-term">Ideas for Long-Term</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#detailed-feature-plans">Detailed Feature Plans</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#predictive-flood-modeling">Predictive Flood Modeling</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#historical-data-overlay">Historical Data Overlay</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notification-system">Notification System</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#research-exploration">Research &amp; Exploration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#areas-for-investigation">Areas for Investigation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#constraints-challenges">Constraints &amp; Challenges</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#technical-limitations">Technical Limitations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-limitations">Data Limitations</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../motivation/">Project Motivation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../team/">Team Structure</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/compatibility/">Compatibility</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/getting_started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/how_to_use/">How to Use</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/troubleshooting/">Troubleshooting</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FSL Flood Simulation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Project info</li>
+      <li class="breadcrumb-item active">Future Work</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="future-work">Future Work</h1>
+<p>Planned features, improvements, and the roadmap for AR Flood Visualization.</p>
+<h2 id="vision">Vision</h2>
+<p><strong>Transform AR Flood Visualization from a proof-of-concept into a comprehensive flood preparedness and awareness platform.</strong></p>
+<p>Our goal is to create a tool that:</p>
+<ul>
+<li>Helps people understand and prepare for flood risks</li>
+<li>Provides actionable insights for emergency situations</li>
+<li>Expands to broader audiences and use cases</li>
+<li>Integrates with official warning systems</li>
+</ul>
+<h2 id="roadmap">Roadmap</h2>
+<h3 id="current-status">Current Status</h3>
+<p><strong>Status:</strong> Complete</p>
+<ul>
+<li>Functional AR visualization</li>
+<li>Real-time Pegelonline API integration</li>
+<li>GPS-based positioning</li>
+<li>Elevation data integration</li>
+<li>Floor level selection</li>
+<li>Demo mode for testing</li>
+<li>Basic UI and debug panel</li>
+<li>Android 11+ support</li>
+<li>Documentation</li>
+</ul>
+<h3 id="future-implementations">Future Implementations</h3>
+<p><strong>Status:</strong> In Planning</p>
+<ol>
+<li>
+<p><strong>Predictive Flood Modeling</strong></p>
+<ul>
+<li>Integrate weather forecasts</li>
+<li>Show predicted water levels (24-48h ahead)</li>
+<li>Display multiple scenarios (best/worst/likely)</li>
+<li>Time-based animation of water rise/fall</li>
+<li>Alert users when critical thresholds expected</li>
+</ul>
+</li>
+<li>
+<p><strong>Historical Data Overlay</strong></p>
+<ul>
+<li>Show past flood events at current location</li>
+<li>Compare current levels to historical floods</li>
+<li>"Last time water reached this height: [date]"</li>
+<li>Learning from past events</li>
+</ul>
+</li>
+<li>
+<p><strong>Improved UI/UX</strong></p>
+<ul>
+<li>Better onboarding tutorial</li>
+<li>In-app help system</li>
+<li>Accessibility improvements (larger text, high contrast)</li>
+<li>Simplified mode for non-technical users</li>
+</ul>
+</li>
+<li>
+<p><strong>Performance Optimization</strong></p>
+<ul>
+<li>Reduce battery consumption</li>
+<li>Faster data loading</li>
+<li>Better AR tracking</li>
+<li>Optimized for lower-end devices</li>
+<li>Reduced app size</li>
+</ul>
+</li>
+<li>
+<p><strong>Bug Fixes &amp; Refinement</strong></p>
+<ul>
+<li>Address user-reported issues</li>
+<li>Improve error messages</li>
+<li>Better handling of edge cases</li>
+<li>Stability improvements</li>
+</ul>
+</li>
+<li>
+<p><strong>Offline Mode</strong></p>
+<ul>
+<li>Cache water level data</li>
+<li>Download area data for offline use</li>
+<li>Limited functionality without network</li>
+<li>Sync when connection restored</li>
+</ul>
+</li>
+<li>
+<p><strong>Notification System</strong></p>
+<ul>
+<li>Push alerts for rising water levels</li>
+<li>Customizable thresholds</li>
+<li>Early warning for critical levels</li>
+<li>Daily summary (optional)</li>
+<li>Location-based alerts</li>
+</ul>
+</li>
+<li>
+<p><strong>iOS Version</strong></p>
+<ul>
+<li>Port to ARKit</li>
+<li>iPhone/iPad support</li>
+<li>Feature parity with Android</li>
+<li>Cross-platform codebase optimization</li>
+</ul>
+</li>
+</ol>
+<h3 id="ideas-for-long-term">Ideas for Long-Term</h3>
+<ol>
+<li>
+<p><strong>Evacuation Route Planning</strong></p>
+<ul>
+<li>Integration with navigation apps</li>
+<li>Show safe routes to high ground</li>
+<li>Identify emergency shelters</li>
+<li>Real-time route updates based on flooding</li>
+<li>Community-contributed safe zones</li>
+</ul>
+</li>
+<li>
+<p><strong>Social &amp; Community Features</strong></p>
+<ul>
+<li>Share flood observations</li>
+<li>Report actual water levels</li>
+<li>Crowdsourced data validation</li>
+<li>Community warnings</li>
+<li>Photo sharing of flood conditions</li>
+</ul>
+</li>
+<li>
+<p><strong>Advanced Visualization</strong></p>
+<ul>
+<li>Water flow animation (direction &amp; speed)</li>
+<li>Current and wave visualization</li>
+<li>Debris/contamination indicators</li>
+<li>Flood damage estimation</li>
+<li>Before/after comparisons</li>
+</ul>
+</li>
+<li>
+<p><strong>Multi-Hazard Support</strong></p>
+<ul>
+<li>Storm surge visualization</li>
+<li>Tsunami modeling</li>
+<li>Heavy rain accumulation</li>
+<li>Dam break scenarios</li>
+<li>Coastal flooding</li>
+</ul>
+</li>
+</ol>
+<h2 id="detailed-feature-plans">Detailed Feature Plans</h2>
+<h3 id="predictive-flood-modeling">Predictive Flood Modeling</h3>
+<p><strong>How It Works:</strong></p>
+<pre><code class="language-mermaid">graph LR
+    A[Current Water Level] --&gt; B[Weather Forecast API]
+    B --&gt; C[Precipitation Data]
+    C --&gt; D[Prediction Model]
+    D --&gt; E[24-48h Forecast]
+    E --&gt; F[AR Visualization]
+
+    G[Historical Patterns] --&gt; D
+    H[River Flow Data] --&gt; D
+</code></pre>
+<p><strong>User Experience:</strong></p>
+<ol>
+<li>See timeline slider (Now → +48h)</li>
+<li>Drag slider to see future water levels</li>
+<li>Color coding: Green (safe), Yellow (watch), Red (warning)</li>
+<li>Automatic alerts if critical level predicted</li>
+</ol>
+<p><strong>Data Sources:</strong></p>
+<ul>
+<li>Weather API (OpenWeatherMap, DWD)</li>
+<li>Pegelonline forecasts</li>
+<li>Historical pattern analysis</li>
+<li>Precipitation predictions</li>
+</ul>
+<hr />
+<h3 id="historical-data-overlay">Historical Data Overlay</h3>
+<p><strong>Features:</strong></p>
+<ul>
+<li>"On this day in [year], water reached [height]"</li>
+<li>Overlay historical max flood levels</li>
+<li>Show frequency of flooding at location</li>
+<li>10-year, 50-year, 100-year flood levels</li>
+<li>Timeline of major flood events</li>
+</ul>
+<p><strong>Data Sources:</strong></p>
+<ul>
+<li>Pegelonline historical data</li>
+<li>Local flood archives</li>
+<li>News reports of major floods</li>
+</ul>
+<p><strong>UI Design:</strong></p>
+<ul>
+<li>Timeline scrubber</li>
+<li>"Show major floods" toggle</li>
+<li>Markers for notable events</li>
+<li>Comparison view (then vs now)</li>
+</ul>
+<hr />
+<h3 id="notification-system">Notification System</h3>
+<p><strong>Notification Types:</strong></p>
+<ol>
+<li>
+<p><strong>Critical Alerts</strong></p>
+<ul>
+<li>Water approaching critical level</li>
+<li>Immediate action recommended</li>
+<li>Sound + vibration</li>
+</ul>
+</li>
+<li>
+<p><strong>Warnings</strong></p>
+<ul>
+<li>Water level rising</li>
+<li>Monitor situation</li>
+<li>Silent or low-priority</li>
+</ul>
+</li>
+<li>
+<p><strong>Information</strong></p>
+<ul>
+<li>Daily summary</li>
+<li>Weekly forecast</li>
+<li>Optional, can disable</li>
+</ul>
+</li>
+</ol>
+<p><strong>User Controls:</strong></p>
+<ul>
+<li>Set custom thresholds</li>
+<li>Choose notification types</li>
+<li>Location-specific settings</li>
+</ul>
+<p><strong>Privacy:</strong></p>
+<ul>
+<li>All processing on-device</li>
+<li>No location tracking</li>
+<li>User controls all data</li>
+</ul>
+<h2 id="research-exploration">Research &amp; Exploration</h2>
+<h3 id="areas-for-investigation">Areas for Investigation</h3>
+<ol>
+<li>
+<p><strong>Improved Elevation Data</strong></p>
+<ul>
+<li>LiDAR data sources</li>
+<li>Satellite-based DEMs</li>
+<li>Local surveying data</li>
+<li>Crowdsourced corrections</li>
+</ul>
+</li>
+<li>
+<p><strong>Hydraulic Modeling</strong></p>
+<ul>
+<li>River flow simulation</li>
+<li>Terrain-based water spread</li>
+<li>Drainage system modeling</li>
+<li>More accurate flooding patterns</li>
+</ul>
+</li>
+<li>
+<p><strong>AR Improvements</strong></p>
+<ul>
+<li>Better outdoor tracking</li>
+<li>Persistent AR anchors</li>
+<li>Multi-user AR (shared view)</li>
+<li>Occlusion (water behind objects)</li>
+</ul>
+</li>
+<li>
+<p><strong>Accessibility</strong></p>
+<ul>
+<li>Voice guidance for visually impaired</li>
+<li>Haptic feedback for warnings</li>
+<li>Simple mode for elderly</li>
+<li>Multi-language support</li>
+</ul>
+</li>
+</ol>
+<h2 id="constraints-challenges">Constraints &amp; Challenges</h2>
+<h3 id="technical-limitations">Technical Limitations</h3>
+<p><strong>GPS Accuracy:</strong></p>
+<ul>
+<li>±5-20m horizontal error</li>
+<li>±10-30m vertical error</li>
+<li>Difficult to improve significantly</li>
+</ul>
+<p><strong>Elevation Data:</strong></p>
+<ul>
+<li>Limited by source resolution</li>
+<li>Trade-off: accuracy vs coverage</li>
+<li>May never be perfect</li>
+</ul>
+<p><strong>AR Tracking:</strong></p>
+<ul>
+<li>Requires good lighting</li>
+<li>Outdoor environment best</li>
+<li>Can't work in all conditions</li>
+</ul>
+<p><strong>Battery Life:</strong></p>
+<ul>
+<li>AR is power-intensive</li>
+<li>Hard to significantly improve</li>
+<li>Users must accept limitation</li>
+</ul>
+<h3 id="data-limitations">Data Limitations</h3>
+<p><strong>Pegelonline Coverage:</strong></p>
+<ul>
+<li>Germany only</li>
+<li>Limited international expansion</li>
+<li>Dependent on government data</li>
+</ul>
+<p><strong>API Reliability:</strong></p>
+<ul>
+<li>Not under our control</li>
+<li>Could change or be discontinued</li>
+<li>Need fallback options</li>
+</ul>
+<p><strong>Real-time Updates:</strong></p>
+<ul>
+<li>Limited by API refresh rate</li>
+<li>Can't be truly instant</li>
+<li>5-second minimum delay</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>See also:</p>
+<ul>
+<li><a href="../motivation/">Motivation</a> - Why we're building this</li>
+<li><a href="../team/">Team</a> - Who's working on this</li>
+<li><a href="../hardware/">Hardware</a> - Hardware we use</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../developer_guide/apis/pegelonline/" class="btn btn-neutral float-left" title="Pegelonline"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../hardware/" class="btn btn-neutral float-right" title="Hardware Requirements">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../developer_guide/apis/pegelonline/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../hardware/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

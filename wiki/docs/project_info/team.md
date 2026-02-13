@@ -1,0 +1,253 @@
+# Team Structure
+
+Information about the AR Flood Visualization project team, communication, and workflow.
+
+## Team Members
+
+### Core Team
+
+**Frederik, Marvin, Lea:**
+
+- **Roles**: Developers
+- **Responsibilities**: 
+    - Project ideation and concept
+    - Technical implementation
+    - Architecture decisions
+    - API integration
+    - Timeline management
+    - Testing strategy
+    - Reflection and process improvement
+    - Future works planning
+    - Conclusion and vision
+
+
+## Communication
+
+### Primary Channels
+
+**1. Weekly Meetings**
+
+- **When**: Mondays
+- **Duration**: 2 hours
+- **Format**: In-person
+- **Agenda**:
+    - Progress updates from each team member
+    - Technical discussions
+    - Next week planning
+    - Demo of completed features
+
+**2. Text Chat**
+
+- **Platform**: Signal
+- **Purpose**: 
+    - Quick questions
+    - Async updates
+    - Link sharing
+    - Coordination
+
+**3. GitHub**
+
+- **Repository**: [Link to repo]
+- **Usage**:
+    - Code reviews
+    - Issue tracking
+    - Feature discussions
+    - Release planning
+
+**4. Unity Cloud**
+
+- **Purpose**: 
+    - Project collaboration
+    - Asset sharing
+    - Version control integration
+
+
+## Workflow
+
+### Development Cycle
+```mermaid
+graph LR
+    A[Planning] --> B[Development]
+    B --> C[Testing]
+    C --> D[Review]
+    D --> E[Integration]
+    E --> A
+```
+
+### Weekly Rhythm
+
+**Monday Meeting:**
+
+1. Review last week's progress
+2. Demo completed features
+3. Plan this week's tasks
+4. Assign responsibilities
+
+**Tuesday-Sunday:**
+
+- Individual development work
+- Async communication via chat
+- Code reviews on GitHub
+- Testing and bug fixes
+
+**Before Next Monday:**
+
+- Commit and push changes
+- Update documentation
+- Prepare demo/update
+
+
+## Decision Making
+
+### Technical Decisions
+
+**Minor (e.g., variable naming, code structure):**
+
+- Individual developer decides
+- Document in code comments
+
+**Medium (e.g., new library, UI change):**
+
+- Discuss in text chat or meeting
+- Document in meeting notes
+
+**Major (e.g., architecture change, platform change):**
+
+- Dedicated meeting discussion
+- Document in design decisions
+
+
+## Collaboration Tools
+
+### Code & Version Control
+
+**GitHub**
+
+- Repository hosting
+- Issue tracking
+- Code review
+
+**Unity Collaborate / Git**
+
+- Unity project version control
+- Scene and asset merging
+- Conflict resolution
+
+### Project Management
+
+**GitHub Projects**
+
+- Kanban board
+- Sprint planning
+- Task tracking
+
+### Documentation
+
+**MkDocs**
+
+- Technical documentation
+- User guides
+- Developer guides
+
+
+## Development Practices
+
+
+### Testing
+
+**Who Tests:**
+
+- Developer tests own code
+- All team members test on devices
+
+### Documentation
+
+**Who Writes:**
+
+- Feature developer writes initial docs
+- Team reviews and improves
+
+**What to Document:**
+
+- New features
+- API changes
+- Bug fixes
+- Design decisions
+
+## Project Timeline
+
+### Initial Development
+
+**November 2025 - December 2026**
+
+- Project conception
+- Technology selection
+- MVP development
+- Mock API implementation
+
+### Feature Development
+
+**December - February 2026**
+
+- Real API integration
+- UI improvements
+- Testing and refinement
+- Documentation
+
+### Current Phase
+
+**February 2026**
+
+- Bug fixing
+- Documentation completion
+- Future work planning
+
+
+## Skills 
+
+### Learning Goals
+
+**What We're Learning:**
+
+- AR development best practices
+- Mobile app optimization
+- Real-time data visualization
+- API integration patterns
+- Collaborative development
+- Documentation practices
+
+## Retrospectives
+
+**We Regularly Reflect On:**
+
+- What went well?
+- What could improve?
+- What should we try next?
+- What should we stop doing?
+
+**From Recent Reflection:**
+
+**What Worked:**
+
+- Mock API for testing
+- Weekly Monday meetings
+- GitHub for collaboration
+
+**What Could Improve:**
+
+- Unity Cloud not optimal
+- Better documentation as we go
+
+
+## Next Steps
+
+- Read about [Hardware](hardware.md) we use
+- Learn about [Future Work](future_work.md) plans
+- Check [Motivation](motivation.md) for project background
+
+---
+
+**Team**: Lea, Marvin, Fred  
+**Project**: AR Flood Visualization  
+**Started**: November 2025  
+**Status**: Paused Development
