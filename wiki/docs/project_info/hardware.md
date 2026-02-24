@@ -30,13 +30,13 @@ Display: 10.4" TFT, 1200x2000
 ARCore: Supported ✓
 ```
 
-**Device 3: Nothing Phone (2a)**
+**Device 3: Nothing Phone (3a)**
 ```
-Model: Nothing Phone (2a)
-Android Version: 14.0
-Processor: MediaTek Dimensity 7200 Pro
+Model: Nothing Phone (3a)
+Android Version: 15.0
+Processor: Qualcomm Snapdragon 7s Gen 3
 RAM: 8 GB / 12 GB
-Display: 6.7" AMOLED, 1080x2412
+Display: 6.8" AMOLED, 1080x2400
 ARCore: Supported ✓
 ```
 
