@@ -77,7 +77,7 @@ On first launch, grant these permissions:
 3. Grant all permissions
 4. Look for "Loading water level..." in the UI
 
-If you see the AR view, installation was successful! ✅
+If you see the AR view, installation was successful! 
 
 ## Troubleshooting Installation
 

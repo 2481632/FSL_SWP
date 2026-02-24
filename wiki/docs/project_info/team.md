@@ -42,7 +42,6 @@ Information about the AR Flood Visualization project team, communication, and wo
 - **Purpose**: 
     - Quick questions
     - Async updates
-    - Link sharing
     - Coordination
 
 **3. GitHub**
@@ -50,7 +49,6 @@ Information about the AR Flood Visualization project team, communication, and wo
 - **Repository**: [Link to repo]
 - **Usage**:
     - Code reviews
-    - Issue tracking
     - Feature discussions
     - Release planning
 
@@ -63,16 +61,6 @@ Information about the AR Flood Visualization project team, communication, and wo
 
 
 ## Workflow
-
-### Development Cycle
-```mermaid
-graph LR
-    A[Planning] --> B[Development]
-    B --> C[Testing]
-    C --> D[Review]
-    D --> E[Integration]
-    E --> A
-```
 
 ### Weekly Rhythm
 
