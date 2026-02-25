@@ -51,7 +51,31 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Error Handling</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#errors-while-developing">Errors while developing</a>
+    <li class="toctree-l2"><a class="reference internal" href="#development-errors">Development Errors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#unity-script-errors">Unity Script Errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#runtime-errors">Runtime Errors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#gps-location-errors">GPS / Location Errors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ar-camera-errors">AR / Camera Errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#testing-errors">Testing Errors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#device-testing-issues">Device Testing Issues</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quick-reference">Quick Reference</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#error-code-lookup">Error Code Lookup</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -121,15 +145,123 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="error-handling">Error Handling</h1>
-<p>This section covers some common errors we found and how we dealt with them.</p>
-<h2 id="errors-while-developing">Errors while developing</h2>
-<h1 id="code-errors">Code Errors</h1>
-<p>Here are a few common errors that we noticed to occur:
-* the C#-Script needs to derive from MonoBehavior, meaning that in the funktion definition of the C#-Script the MonoBehavior needs to be defined 
-* when working with APIs, you have to specify the API URL not just in the code but also in the inspector window of the game Object you are assigning the script to</p>
-<h1 id="testing-errors">Testing Errors</h1>
-<p>Here are a few common errors that we noticed during testing:
-* GPS doesn't work: control in the settings if GPS is enabled, you have to give the permission manually </p>
+<p>Common errors we encountered during development and how to resolve them.</p>
+<h2 id="development-errors">Development Errors</h2>
+<h3 id="unity-script-errors">Unity Script Errors</h3>
+<p><strong>Error: "MonoBehaviour cannot be used as standalone"</strong></p>
+<pre><code>CS0246: The type or namespace name 'MonoBehaviour' could not be found
+</code></pre>
+<p><strong>Cause:</strong> Script doesn't inherit from MonoBehaviour</p>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-csharp">// Wrong
+public class MyScript {
+    void Start() { }
+}
+
+// Correct
+public class MyScript : MonoBehaviour {
+    void Start() { }
+}
+</code></pre>
+<p><strong>All Unity scripts that interact with GameObjects must inherit from MonoBehaviour.</strong></p>
+<hr />
+<p><strong>Error: "Public field not set in Inspector"</strong></p>
+<pre><code>NullReferenceException: Object reference not set to an instance of an object
+</code></pre>
+<p><strong>Cause:</strong> Public fields (like API URLs, GameObjects) not assigned in Inspector</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Select GameObject in Hierarchy</li>
+<li>Check Inspector panel</li>
+<li>Find your script component</li>
+<li>Assign all public fields:</li>
+<li><code>apiUrl</code> → Enter URL string</li>
+<li><code>displayText</code> → Drag TextMeshProUGUI object</li>
+<li><code>waterPlane</code> → Drag WaterPlane GameObject</li>
+</ol>
+<hr />
+<h2 id="runtime-errors">Runtime Errors</h2>
+<h3 id="gps-location-errors">GPS / Location Errors</h3>
+<p><strong>Error: "GPS not working / coordinates always 0.0"</strong></p>
+<p>Location Services Disabled:</p>
+<pre><code>Settings → Location → On
+Settings → Apps → AR Flood App → Permissions → Location → Allow
+</code></pre>
+<hr />
+<h3 id="ar-camera-errors">AR / Camera Errors</h3>
+<p><strong>Error: "Camera shows black screen"</strong></p>
+<p><strong>Causes &amp; Solutions:</strong></p>
+<p><strong>1. Camera Permission Denied</strong></p>
+<pre><code>Settings → Apps → AR Flood Viz → Permissions → Camera → Allow
+</code></pre>
+<p><strong>2. ARCore Not Installed</strong></p>
+<pre><code>Install &quot;Google Play Services for AR&quot; from Play Store
+</code></pre>
+<p><strong>3. Device Not ARCore Compatible</strong>
+- Check: https://developers.google.com/ar/devices
+- Try different device</p>
+<hr />
+<h2 id="testing-errors">Testing Errors</h2>
+<h3 id="device-testing-issues">Device Testing Issues</h3>
+<p><strong>Error: "Device not detected by Unity"</strong></p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>
+<p><strong>Enable USB Debugging:</strong>
+   <code>Settings → About Phone → Tap Build Number 7 times
+   Settings → Developer Options → USB Debugging → On</code></p>
+</li>
+<li>
+<p><strong>Check ADB:</strong>
+   <code>bash
+   adb devices
+   # Should show your device</code></p>
+</li>
+</ol>
+<hr />
+<h2 id="quick-reference">Quick Reference</h2>
+<h3 id="error-code-lookup">Error Code Lookup</h3>
+<table>
+<thead>
+<tr>
+<th>Error Type</th>
+<th>Check</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NullReferenceException</td>
+<td>Inspector assignments</td>
+<td>Assign public fields</td>
+</tr>
+<tr>
+<td>JSON parse error</td>
+<td>API response format</td>
+<td>Validate JSON structure</td>
+</tr>
+<tr>
+<td>GPS not working</td>
+<td>Location settings</td>
+<td>Enable GPS + permissions</td>
+</tr>
+<tr>
+<td>Black camera</td>
+<td>Camera permission</td>
+<td>Grant permission</td>
+</tr>
+<tr>
+<td>Build failed</td>
+<td>Gradle/SDK</td>
+<td>Update build tools</td>
+</tr>
+<tr>
+<td>Device not detected</td>
+<td>USB debugging</td>
+<td>Enable developer options</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div><footer>
