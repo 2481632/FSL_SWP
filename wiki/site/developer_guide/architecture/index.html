@@ -36,32 +36,32 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Overview</a>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Developer guide</span></p>
               <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../apis/">APIs</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Architecture</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-data-fetching-layer">1. Data Fetching Layer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-calculation-layer">2. Calculation Layer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-visualization-layer">3. Visualization Layer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-user-interface">4. User Interface</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../design_decisions/">Design Decisions</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../error_handling/">Error Handling</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Overview</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../setup/">Development Environment Setup</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing Strategy</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../apis/elevation/">Elevation</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../apis/mock_api/">Mock api</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../apis/pegelonline/">Pegelonline</a>
-                </li>
-    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Project info</span></p>
@@ -112,12 +112,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><img alt="System Architecture Diagramm" src="/assets/images/architecture_diagram.png"></p>
+                <div><h2 id="key-components">Key Components</h2>
+<h3 id="1-data-fetching-layer">1. Data Fetching Layer</h3>
+<ul>
+<li><code>API_WaterLevel.cs</code>: Fetches water levels from Pegelonline</li>
+<li><code>API_Elevation.cs</code>: Gets elevation data</li>
+<li><code>Location.cs</code>: Manages GPS positioning</li>
+</ul>
+<p><em>For more information, refer to the <a href="apis/elevation.md">API section</a>.</em></p>
+<h3 id="2-calculation-layer">2. Calculation Layer</h3>
+<ul>
+<li><code>FloodHeightManager.cs</code>: Calculates flood height at user position</li>
+<li>Combines water level, elevation, GPS, floor offset</li>
+</ul>
+<h3 id="3-visualization-layer">3. Visualization Layer</h3>
+<ul>
+<li><code>ContentPlacement.cs</code>: Positions water plane in AR space</li>
+<li><code>ARSessionOrigin</code>: Manages AR coordinate system</li>
+<li>Water material &amp; renderer</li>
+</ul>
+<h3 id="4-user-interface">4. User Interface</h3>
+<ul>
+<li><code>DebugPanel.cs</code>: Technical info display</li>
+<li><code>BuildingLevel.cs</code>: Floor selection dropdown</li>
+<li>TextMeshPro UI elements</li>
+</ul></div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../.." class="btn btn-neutral float-left" title="Welcome to MkDocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../apis/" class="btn btn-neutral float-left" title="APIs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../design_decisions/" class="btn btn-neutral float-right" title="Design Decisions">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -141,7 +165,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../apis/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../design_decisions/" style="color: #fcfcfc">Next &raquo;</a></span>
