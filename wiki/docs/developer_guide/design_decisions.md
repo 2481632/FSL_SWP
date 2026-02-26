@@ -35,7 +35,9 @@ The ultimate goal of the project is to visualize data from both the past and the
 
 ### Water Visualization
 
-Initially, we represented the water as a simple blue plane. However, we quickly realized that water in a flood simulation should appear threatening and murky rather than giving off "pool vibes". Since the Unity Asset Store already offers high-quality water templates, we decided to utilize one of them: [Water Shaders V2.x](https://assetstore.unity.com/packages/vfx/shaders/water-shaders-v2-x-149916).
+Initially, we represented the water as a simple blue plane. However, we quickly realized that water in a flood simulation should appear threatening and murky rather than giving off "pool vibes". Since the Unity Asset Store already offers high-quality water templates, we decided to utilize one of them: [URP Stylized Water Shader - Proto Series](https://assetstore.unity.com/packages/vfx/shaders/urp-stylized-water-shader-proto-series-187485).
+
+*For more information, refer to [Replacing Water Material](setup.md#replacing-water-material).* 
 
 
 ### UI
