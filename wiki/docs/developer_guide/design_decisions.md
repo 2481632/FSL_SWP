@@ -18,7 +18,7 @@ Within the Unity Editor, we utilized the [AR Mobile template](https://docs.unity
 
 ## Plattform
 
-As our target platform, we chose modern Android devices, as all team members own one, making testing as straightforward as possible. Additionally, compiling and sideloading on iOS is significantly more complex. For more information regarding hardware compatibility, refer to the [compatibility section](/user_guide/compatibility/).
+As our target platform, we chose modern Android devices, as all team members own one, making testing as straightforward as possible. Additionally, compiling and sideloading on iOS is significantly more complex. For more information regarding hardware compatibility, refer to the [compatibility section](../user_guide/compatibility.md).
 
 ## APIs
 
