@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Project Motivation - FSL Flood Simulation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Project Motivation";
+        var mkdocs_page_input_path = "project_info/motivation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FSL Flood Simulation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/design_decisions/">Design Decisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Development Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/testing/">Testing Strategy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/elevation/">Elevation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonline/">Pegelonline</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project info</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../future_work/">Future Work</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware Requirements</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Project Motivation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#the-problem">The Problem</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#abstract-flood-data-is-hard-to-understand">Abstract Flood Data is Hard to Understand</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#real-world-impact-of-poor-flood-visualization">Real-World Impact of Poor Flood Visualization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#our-solution">Our Solution</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ar-visualization-makes-flood-data-tangible">AR Visualization Makes Flood Data Tangible</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-it-works">How It Works</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-benefits">Key Benefits</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#use-cases">Use Cases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-personal-safety-assessment">1. Personal Safety Assessment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-education-awareness">2. Education &amp; Awareness</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-ar">Why AR?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-power-of-augmented-reality">The Power of Augmented Reality</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-vision">The Vision</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-were-building-toward">What We're Building Toward</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#technical-innovation">Technical Innovation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#challenges-we-solved">Challenges We Solved</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-we-built-this">Why We Built This</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#personal-motivation">Personal Motivation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#development-journey">Development Journey</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../team/">Team Structure</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/compatibility/">Compatibility</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/getting_started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/how_to_use/">How to Use</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/troubleshooting/">Troubleshooting</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FSL Flood Simulation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Project info</li>
+      <li class="breadcrumb-item active">Project Motivation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div><h1 id="project-motivation">Project Motivation</h1>
+<p>Why we built AR Flood Visualization and the problem it solves.</p>
+<h2 id="the-problem">The Problem</h2>
+<h3 id="abstract-flood-data-is-hard-to-understand">Abstract Flood Data is Hard to Understand</h3>
+<p>Current flood information systems have significant limitations that prevent people from truly understanding their personal risk:</p>
+<p><strong>1. Gauge Readings (Pegelstände) are Abstract Numbers</strong></p>
+<ul>
+<li>Show water levels as numbers like "245 cm over gauge zero"</li>
+<li>Numbers are meaningless without context</li>
+<li>No connection to your personal environment</li>
+<li>Requires understanding of reference systems (Pegelnull, Normal-Null)</li>
+<li>Most people can't translate "3460 cm over NN" to real-world impact</li>
+</ul>
+<p><strong>2. Flood Maps are Static and Generic</strong></p>
+<ul>
+<li>Show general flood zones, not your specific location</li>
+<li>Don't account for local terrain differences (small hills, basements, floor levels)</li>
+<li>Often outdated or based on historical models</li>
+<li>Hard to interpret</li>
+</ul>
+<p><strong>3. Lack of Visual Intuition</strong></p>
+<ul>
+<li>Hard to assess personal risk from numbers alone</li>
+<li>Can't visualize the impact on your home/neighborhood</li>
+<li>Abstract measurements don't convey urgency</li>
+<li>People consistently underestimate flood danger</li>
+</ul>
+<h3 id="real-world-impact-of-poor-flood-visualization">Real-World Impact of Poor Flood Visualization</h3>
+<p>When people can't visualize flood risk, it leads to:</p>
+<p><strong>Poor Preparedness:</strong></p>
+<ul>
+<li>Don't know if they're actually at risk</li>
+<li>Underestimate how high water will reach</li>
+<li>Don't prepare adequately (sandbags, moving valuables)</li>
+<li>Miss opportunity for preventive measures</li>
+</ul>
+<p><strong>Delayed Evacuation:</strong></p>
+<ul>
+<li>Underestimate flood height until it's too late</li>
+<li>Don't leave early enough</li>
+<li>Get trapped in dangerous situations</li>
+</ul>
+<p><strong>Safety Risks:</strong></p>
+<ul>
+<li>Put themselves in danger by staying too long</li>
+<li>Try to drive through flooded areas</li>
+<li>Don't understand fast-rising water danger</li>
+<li>Unnecessary injuries and casualties</li>
+</ul>
+<h2 id="our-solution">Our Solution</h2>
+<h3 id="ar-visualization-makes-flood-data-tangible">AR Visualization Makes Flood Data Tangible</h3>
+<p><strong>The Core Idea:</strong></p>
+<blockquote>
+<p>Point your phone at your surroundings and <strong>see exactly where flood water would reach</strong> in augmented reality.</p>
+</blockquote>
+<p>Instead of reading "Water level: 3460 cm over Normal-Null", you <strong>see</strong> a water plane at knee-height in your living room.</p>
+<h3 id="how-it-works">How It Works</h3>
+<ol>
+<li>Open app at your location</li>
+<li>Camera shows your surroundings</li>
+<li>Water plane appears showing flood water level</li>
+<li>Select your floor (basement, ground, 1st floor, etc.)</li>
+<li>Instantly see if you're safe or at risk</li>
+</ol>
+<h3 id="key-benefits">Key Benefits</h3>
+<p><strong>1. Immediate Understanding</strong></p>
+<pre><code>Traditional: "Water level: 3460 cm over NN"
+           ↓
+User thinks: "What does that mean for me?"
+           ↓
+Confusion, uncertainty, no action
+
+
+Our App: Water plane at chest height in your view
+       ↓
+User sees: "The water would be THIS HIGH"
+       ↓
+Immediate understanding, informed decision
+</code></pre>
+<p><strong>2. Personalized to Your Exact Location</strong></p>
+<ul>
+<li>Uses your GPS position</li>
+<li>Accounts for your specific elevation</li>
+<li>Adjusts for your floor level</li>
+<li>Real-time updates as you move</li>
+<li>Shows YOUR risk, not general area</li>
+</ul>
+<p><strong>3. Educational Value</strong></p>
+<ul>
+<li>Teaches people about flood risk intuitively</li>
+<li>Demonstrates importance of elevation</li>
+<li>Shows impact of different water levels</li>
+<li>Raises awareness</li>
+<li>Makes abstract concept concrete</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-personal-safety-assessment">1. Personal Safety Assessment</h3>
+<p><strong>Scenario:</strong> You live near the Elbe river and hear flood warnings on the news. Water level is rising.</p>
+<p><strong>Without our app:</strong></p>
+<ul>
+<li>News: "Elbe at 634 cm in Dresden"</li>
+<li>You: "Is that bad? Should I evacuate?"</li>
+<li>Confusion, anxiety, unclear risk</li>
+</ul>
+<p><strong>With our app:</strong></p>
+<ol>
+<li>Open app at your home</li>
+<li>See AR visualization of flood level</li>
+<li>Water plane appears 50cm below your window</li>
+<li>You're on ground floor</li>
+<li><strong>Decision: Evacuate immediately</strong></li>
+</ol>
+<p><strong>Result:</strong> Informed, confident decision about your safety</p>
+<hr>
+<h3 id="2-education-awareness">2. Education &amp; Awareness</h3>
+<p><strong>Scenario:</strong> teaching about flood risk</p>
+<p><strong>With our app:</strong></p>
+<ol>
+<li>Use demo mode with adjustable water levels</li>
+<li>Show students: "This is what 1m of flooding looks like"</li>
+<li>Increase level: "This is 2m, this is 3m"</li>
+<li>Demonstrate how elevation matters</li>
+</ol>
+<p><strong>Result:</strong> Students understand flood risk concretely, not abstractly</p>
+<h2 id="why-ar">Why AR?</h2>
+<h3 id="the-power-of-augmented-reality">The Power of Augmented Reality</h3>
+<p><strong>1. Spatial Understanding</strong></p>
+<ul>
+<li>See flood risk in context of your actual environment</li>
+<li>Understand height relationships intuitively</li>
+<li>No need for mental 3D visualization</li>
+<li>Direct comparison: flood vs. your surroundings</li>
+</ul>
+<p><strong>2. Immersive &amp; Memorable</strong></p>
+<ul>
+<li>More impactful than maps or numbers</li>
+<li>Creates emotional connection to risk</li>
+<li>Unforgettable experience</li>
+<li>Changes behavior through vivid visualization</li>
+</ul>
+<p><strong>3. Accessibility &amp; Ubiquity</strong></p>
+<ul>
+<li>Everyone has a smartphone</li>
+<li>No special equipment needed</li>
+<li>Works anywhere, anytime (with internet)</li>
+<li>Simple to use, no training required</li>
+</ul>
+<h2 id="the-vision">The Vision</h2>
+<h3 id="what-were-building-toward">What We're Building Toward</h3>
+<p><strong>Short-term:</strong></p>
+<ul>
+<li>Functional AR flood visualization</li>
+<li>Real-time water level data</li>
+<li>User-friendly mobile app</li>
+<li>Predictive modeling (24-48h forecasts)</li>
+</ul>
+<p><strong>long-term:</strong></p>
+<ul>
+<li>Historical flood overlays</li>
+<li>Multi-location comparison</li>
+<li>Notification system</li>
+<li>Offline mode</li>
+</ul>
+<h2 id="technical-innovation">Technical Innovation</h2>
+<h3 id="challenges-we-solved">Challenges We Solved</h3>
+<p><strong>1. Data Integration</strong></p>
+<ul>
+<li>Combined three data sources: water levels, GPS, elevation</li>
+<li>Different units, reference systems</li>
+<li>Real-time updates</li>
+<li>Robust error handling</li>
+</ul>
+<p><strong>2. Coordinate System Conversion</strong></p>
+<ul>
+<li>GPS coordinates (lat/lon)</li>
+<li>Elevation above sea level</li>
+<li>Gauge reference points (Pegelnull)</li>
+<li>Unity AR coordinate system</li>
+</ul>
+<p><strong>3. AR Positioning</strong></p>
+<ul>
+<li>Position water plane at exact height</li>
+<li>Account for camera height</li>
+<li>Account for floor levels</li>
+<li>Stable tracking despite GPS drift</li>
+</ul>
+<p><strong>4. User Experience</strong></p>
+<ul>
+<li>Simple interface despite complex calculations</li>
+<li>Debug panel for transparency</li>
+<li>Demo mode for testing/education</li>
+<li>Works on range of devices</li>
+</ul>
+<h2 id="why-we-built-this">Why We Built This</h2>
+<h3 id="personal-motivation">Personal Motivation</h3>
+<p>As computer science students, we wanted to:</p>
+<ul>
+<li><strong>Apply our skills for social good</strong></li>
+<li><strong>Tackle a real-world problem</strong></li>
+<li><strong>Learn AR development</strong></li>
+<li><strong>Make a meaningful impact</strong></li>
+</ul>
+<h3 id="development-journey">Development Journey</h3>
+<p><strong>November 2025:</strong> Project conception, Technology exploration<br>
+<strong>December 2025:</strong> Mock API , MVP Development<br>
+<strong>January 2026:</strong> Real API integration, refinement<br>
+<strong>February 2026:</strong> Documentation</p>
+<hr>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Learn about the <a href="../team/">Team</a> behind this project</li>
+<li>Understand our <a href="../hardware/">Hardware</a> requirements</li>
+<li>See our <a href="../future_work/">Future Work</a> plans</li>
+<li>Try the app: <a href="../../user_guide/installation/">Installation Guide</a></li>
+</ul></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../hardware/" class="btn btn-neutral float-left" title="Hardware Requirements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../team/" class="btn btn-neutral float-right" title="Team Structure">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../hardware/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../team/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

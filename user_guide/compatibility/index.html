@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Compatibility - FSL Flood Simulation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Compatibility";
+        var mkdocs_page_input_path = "user_guide/compatibility.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FSL Flood Simulation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/design_decisions/">Design Decisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Development Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/testing/">Testing Strategy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/elevation/">Elevation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonline/">Pegelonline</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project info</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/future_work/">Future Work</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/hardware/">Hardware Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/motivation/">Project Motivation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/team/">Team Structure</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Compatibility</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#android-requirements">Android Requirements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#minimum-requirements">Minimum Requirements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-requirements">Recommended Requirements</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#arcore-compatibility">ARCore Compatibility</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-arcore">What is ARCore?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supported-devices">Supported Devices</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#regional-limitations">Regional Limitations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#gps-coverage">GPS Coverage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pegelonline-api-coverage">Pegelonline API Coverage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#elevation-api-coverage">Elevation API Coverage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#network-requirements">Network Requirements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#internet-connection">Internet Connection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#offline-capabilities">Offline Capabilities</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#permissions-required">Permissions Required</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#performance-considerations">Performance Considerations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#battery-life">Battery Life</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#known-incompatibilities">Known Incompatibilities</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#devices-without-arcore">Devices WITHOUT ARCore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#software-conflicts">Software Conflicts</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#testing-your-device">Testing Your Device</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#verification-steps">Verification Steps</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#future-compatibility">Future Compatibility</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#planned-support">Planned Support</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../how_to_use/">How to Use</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FSL Flood Simulation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User guide</li>
+      <li class="breadcrumb-item active">Compatibility</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div><h1 id="compatibility">Compatibility</h1>
+<p>Detailed information about device and system requirements for AR Flood Visualization.</p>
+<h2 id="android-requirements">Android Requirements</h2>
+<h3 id="minimum-requirements">Minimum Requirements</h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OS Version</strong></td>
+<td>Android 11.0 (API Level 30)</td>
+</tr>
+<tr>
+<td><strong>ARCore</strong></td>
+<td>Required (installed automatically)</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>2 GB minimum, 4 GB recommended</td>
+</tr>
+<tr>
+<td><strong>Storage</strong></td>
+<td>150 MB free space</td>
+</tr>
+<tr>
+<td><strong>Camera</strong></td>
+<td>Rear-facing camera required</td>
+</tr>
+<tr>
+<td><strong>GPS</strong></td>
+<td>GPS/GLONASS/Galileo support</td>
+</tr>
+<tr>
+<td><strong>Network</strong></td>
+<td>WiFi or mobile data (3G minimum, 4G/5G recommended)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-requirements">Recommended Requirements</h3>
+<p>For optimal performance:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Recommended Spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OS Version</strong></td>
+<td>Android 12.0 or higher</td>
+</tr>
+<tr>
+<td><strong>Processor</strong></td>
+<td>Snapdragon 600 series or equivalent</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>4 GB or more</td>
+</tr>
+<tr>
+<td><strong>GPU</strong></td>
+<td>Adreno 500+ or Mali-G71+</td>
+</tr>
+<tr>
+<td><strong>Display</strong></td>
+<td>1080p or higher</td>
+</tr>
+<tr>
+<td><strong>Network</strong></td>
+<td>4G LTE or 5G</td>
+</tr>
+</tbody>
+</table>
+<h2 id="arcore-compatibility">ARCore Compatibility</h2>
+<h3 id="what-is-arcore">What is ARCore?</h3>
+<p>ARCore is Google's platform for building augmented reality experiences. It's required for this app to work.</p>
+<h3 id="supported-devices">Supported Devices</h3>
+<p>Check if your device supports ARCore:</p>
+<ol>
+<li>Visit <a href="https://developers.google.com/ar/devices">Google's ARCore Supported Devices</a></li>
+<li>Search for your device model</li>
+<li>Verify it's listed as supported</li>
+</ol>
+<h2 id="regional-limitations">Regional Limitations</h2>
+<h3 id="gps-coverage">GPS Coverage</h3>
+<ul>
+<li><strong>Works Worldwide</strong>: GPS functionality available globally</li>
+<li><strong>Best Results</strong>: Clear view of sky, outdoors</li>
+</ul>
+<h3 id="pegelonline-api-coverage">Pegelonline API Coverage</h3>
+<ul>
+<li><strong>Primary Coverage</strong>: Germany </li>
+<li><strong>Limitations</strong>: Outside Germany, the app will use demo mode</li>
+</ul>
+<h3 id="elevation-api-coverage">Elevation API Coverage</h3>
+<ul>
+<li><strong>Open-Meteo</strong>: Global coverage </li>
+<li><strong>Accuracy</strong>: Varies by region (±5-10m)</li>
+</ul>
+<h2 id="network-requirements">Network Requirements</h2>
+<h3 id="internet-connection">Internet Connection</h3>
+<p>Required for:</p>
+<ul>
+<li>Fetching current water levels (Pegelonline API)</li>
+<li>Getting elevation data (Open-Meteo API)</li>
+<li>Updating gauge station information</li>
+</ul>
+<h3 id="offline-capabilities">Offline Capabilities</h3>
+<p>Limited offline functionality:</p>
+<ul>
+<li>AR visualization works offline</li>
+<li>Demo mode works offline</li>
+<li>Live water levels require internet</li>
+<li>Elevation API requires internet</li>
+</ul>
+<h2 id="permissions-required">Permissions Required</h2>
+<p>The app requires these permissions to function:</p>
+<pre><code>Camera (CAMERA)
+- Required for AR visualization
+- Used to display real-world view
+
+Location (ACCESS_FINE_LOCATION)
+- Required for GPS positioning
+- Used to calculate your elevation
+
+Internet (INTERNET)
+- Required for API access
+- Used to fetch water level data
+</code></pre>
+<p>All permissions can be reviewed and managed in:<br>
+<code>Settings → Apps → AR Flood Viz → Permissions</code></p>
+<h2 id="performance-considerations">Performance Considerations</h2>
+<h3 id="battery-life">Battery Life</h3>
+<p>AR applications are power-intensive:</p>
+<ul>
+<li><strong>Average Usage</strong>: 20-30% battery per hour</li>
+<li><strong>Recommendations</strong>: <ul>
+<li>Use with &gt;50% battery</li>
+<li>Enable power saving mode</li>
+<li>Reduce screen brightness</li>
+<li>Close background apps</li>
+</ul>
+</li>
+</ul>
+<h2 id="known-incompatibilities">Known Incompatibilities</h2>
+<h3 id="devices-without-arcore">Devices WITHOUT ARCore</h3>
+<p>These devices will NOT work:</p>
+<ul>
+<li>Most devices older than 2018</li>
+<li>Budget smartphones without ARCore certification</li>
+<li>Tablets without AR support</li>
+<li>Devices with Android &lt; 11.0</li>
+</ul>
+<h3 id="software-conflicts">Software Conflicts</h3>
+<p>May conflict with:</p>
+<ul>
+<li>Other AR apps running simultaneously</li>
+<li>Aggressive battery savers</li>
+<li>Custom camera apps</li>
+<li>Screen overlays</li>
+</ul>
+<h2 id="testing-your-device">Testing Your Device</h2>
+<h3 id="verification-steps">Verification Steps</h3>
+<ol>
+<li>
+<p><strong>Install ARCore</strong></p>
+<ul>
+<li>Download "Google Play Services for AR" from Play Store</li>
+<li>If it installs successfully, ARCore is supported </li>
+</ul>
+</li>
+<li>
+<p><strong>Test GPS</strong></p>
+<ul>
+<li>Open Google Maps</li>
+<li>Check if location is accurate</li>
+<li>GPS must work for this app </li>
+</ul>
+</li>
+<li>
+<p><strong>Test Camera</strong></p>
+<ul>
+<li>Open camera app</li>
+<li>Verify rear camera works</li>
+<li>AR requires functional camera </li>
+</ul>
+</li>
+</ol>
+<h2 id="future-compatibility">Future Compatibility</h2>
+<h3 id="planned-support">Planned Support</h3>
+<p>We're planning to work on:</p>
+<ul>
+<li>iOS version (ARKit)</li>
+<li>Web-based viewer (WebXR)</li>
+<li>Lower Android versions (Android 10)</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Install the app: <a href="../installation/">Installation Guide</a></li>
+<li>Learn to use it: <a href="../getting_started/">Getting Started</a></li>
+<li>Need help? <a href="../troubleshooting/">Troubleshooting</a></li>
+</ul></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../project_info/team/" class="btn btn-neutral float-left" title="Team Structure"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../getting_started/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../project_info/team/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../getting_started/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

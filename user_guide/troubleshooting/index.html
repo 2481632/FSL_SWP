@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Troubleshooting - FSL Flood Simulation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Troubleshooting";
+        var mkdocs_page_input_path = "user_guide/troubleshooting.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FSL Flood Simulation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/design_decisions/">Design Decisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Development Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/testing/">Testing Strategy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/elevation/">Elevation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonline/">Pegelonline</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project info</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/future_work/">Future Work</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/hardware/">Hardware Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/motivation/">Project Motivation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/team/">Team Structure</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../compatibility/">Compatibility</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../how_to_use/">How to Use</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Troubleshooting</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation-issues">Installation Issues</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#app-wont-install">App Won't Install</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#app-not-compatible-error">"App Not Compatible" Error</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#arcore-installation-fails">ARCore Installation Fails</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#runtime-issues">Runtime Issues</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#app-crashes-on-launch">App Crashes on Launch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#camera-not-working">Camera Not Working</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gps-not-working">GPS Not Working</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#loading-water-level-stuck">"Loading Water Level..." Stuck</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ar-tracking-lost">AR Tracking Lost</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#water-plane-not-visible">Water Plane Not Visible</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-issues">Data Issues</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#incorrect-water-levels">Incorrect Water Levels</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#elevation-data-wrong">Elevation Data Wrong</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#no-internet-connection">No Internet Connection</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#performance-issues">Performance Issues</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#app-is-laggy">App is Laggy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#battery-draining-fast">Battery Draining Fast</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#error-messages">Error Messages</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#camera-permission-denied">"Camera Permission Denied"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#location-permission-denied">"Location Permission Denied"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#arcore-not-installed">"ARCore Not Installed"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#no-internet-connection_1">"No Internet Connection"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#invalid-api-data">"Invalid API Data"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gps-signal-lost">"GPS Signal Lost"</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#still-having-issues">Still Having Issues?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FSL Flood Simulation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User guide</li>
+      <li class="breadcrumb-item active">Troubleshooting</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div><h1 id="troubleshooting">Troubleshooting</h1>
+<p>Common issues and their solutions for AR Flood Visualization.</p>
+<h2 id="installation-issues">Installation Issues</h2>
+<h3 id="app-wont-install">App Won't Install</h3>
+<p><strong>Symptoms</strong>: "App not installed" error message</p>
+<p><strong>Possible Causes:</strong></p>
+<ul>
+<li>Insufficient storage space</li>
+<li>Corrupted APK file</li>
+<li>Android version incompatibility</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Check Storage</strong></li>
+</ol>
+<pre><code>   Settings → Storage → Check available space
+   Need: 150 MB minimum
+</code></pre>
+<ol>
+<li>
+<p><strong>Re-download APK</strong></p>
+<ul>
+<li>Delete the current APK</li>
+<li>Download again from official source</li>
+<li>Verify file size matches (should be ~120 MB)</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify Android Version</strong></p>
+</li>
+</ol>
+<pre><code>   Settings → About Phone → Android Version
+   Required: 11.0 or higher
+</code></pre>
+<h3 id="app-not-compatible-error">"App Not Compatible" Error</h3>
+<p><strong>Symptoms</strong>: Play Store or APK says incompatible</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>
+<p><strong>Check ARCore Support</strong></p>
+<ul>
+<li>Visit <a href="https://developers.google.com/ar/devices">ARCore Devices</a></li>
+<li>Your device must be on this list</li>
+</ul>
+</li>
+<li>
+<p><strong>Update Android</strong></p>
+</li>
+</ol>
+<pre><code>   Settings → System → System Update
+   Install any available updates
+</code></pre>
+<ol>
+<li><strong>Try Different Device</strong><ul>
+<li>Not all devices support ARCore</li>
+<li>Consider testing on a compatible device</li>
+</ul>
+</li>
+</ol>
+<h3 id="arcore-installation-fails">ARCore Installation Fails</h3>
+<p><strong>Symptoms</strong>: Prompted to install ARCore, but installation fails</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>
+<p><strong>Update Play Store</strong></p>
+<ul>
+<li>Open Play Store → Menu → Settings</li>
+<li>Update Play Store to latest version</li>
+</ul>
+</li>
+<li>
+<p><strong>Clear Play Store Cache</strong></p>
+</li>
+</ol>
+<pre><code>   Settings → Apps → Google Play Store
+   → Storage → Clear Cache
+</code></pre>
+<ol>
+<li><strong>Manual ARCore Install</strong><ul>
+<li>Search "Google Play Services for AR" in Play Store</li>
+<li>Install directly</li>
+</ul>
+</li>
+</ol>
+<h2 id="runtime-issues">Runtime Issues</h2>
+<h3 id="app-crashes-on-launch">App Crashes on Launch</h3>
+<p><strong>Symptoms</strong>: App opens then immediately closes</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Clear App Data</strong></li>
+</ol>
+<pre><code>   Settings → Apps → AR Flood Viz
+   → Storage → Clear Data
+   Restart app
+</code></pre>
+<ol>
+<li>
+<p><strong>Reinstall App</strong></p>
+<ul>
+<li>Uninstall completely</li>
+<li>Restart device</li>
+<li>Reinstall from APK</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Permissions</strong></p>
+</li>
+</ol>
+<pre><code>   Settings → Apps → AR Flood Viz → Permissions
+   Ensure Camera and Location are enabled
+</code></pre>
+<h3 id="camera-not-working">Camera Not Working</h3>
+<p><strong>Symptoms</strong>: Black screen or "Camera permission denied"</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Grant Camera Permission</strong></li>
+</ol>
+<pre><code>   Settings → Apps → AR Flood Viz → Permissions
+   → Camera → Allow
+</code></pre>
+<ol>
+<li>
+<p><strong>Check Camera in Other Apps</strong></p>
+<ul>
+<li>Open default camera app</li>
+<li>If camera doesn't work there, it's a device issue</li>
+</ul>
+</li>
+<li>
+<p><strong>Close Other Camera Apps</strong></p>
+<ul>
+<li>Close all apps using the camera</li>
+<li>Restart AR Flood Viz</li>
+</ul>
+</li>
+<li>
+<p><strong>Restart Device</strong></p>
+<ul>
+<li>Complete device restart often fixes camera issues</li>
+</ul>
+</li>
+</ol>
+<h3 id="gps-not-working">GPS Not Working</h3>
+<p><strong>Symptoms</strong>: "Lat: 0.0, Lon: 0.0" or coordinates not updating</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Enable Location Services</strong></li>
+</ol>
+<pre><code>   Settings → Location → On
+   Mode: High accuracy
+</code></pre>
+<ol>
+<li><strong>Grant Location Permission</strong></li>
+</ol>
+<pre><code>   Settings → Apps → AR Flood Viz → Permissions
+   → Location → Allow all the time (or While using app)
+</code></pre>
+<ol>
+<li>
+<p><strong>Go Outdoors</strong></p>
+<ul>
+<li>GPS requires clear view of sky</li>
+<li>Move away from tall buildings</li>
+<li>Wait 30-60 seconds for GPS lock</li>
+</ul>
+</li>
+<li>
+<p><strong>Restart GPS</strong></p>
+<ul>
+<li>Toggle Airplane mode on/off</li>
+<li>Or restart device</li>
+</ul>
+</li>
+</ol>
+<h3 id="loading-water-level-stuck">"Loading Water Level..." Stuck</h3>
+<p><strong>Symptoms</strong>: Loading message never disappears</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>
+<p><strong>Check Internet Connection</strong></p>
+<ul>
+<li>Open a web browser</li>
+<li>Verify you can load websites</li>
+<li>Try switching WiFi/mobile data</li>
+</ul>
+</li>
+<li>
+<p><strong>Check API Status</strong></p>
+<ul>
+<li>Pegelonline API may be down</li>
+<li>Try again in 5 minutes</li>
+</ul>
+</li>
+<li>
+<p><strong>Use Demo Mode</strong></p>
+<ul>
+<li>Switch to demo mode in settings</li>
+<li>This works without internet</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Location</strong></p>
+<ul>
+<li>App only works near Pegelonline stations (Germany)</li>
+<li>If outside coverage area, use demo mode</li>
+</ul>
+</li>
+</ol>
+<h3 id="ar-tracking-lost">AR Tracking Lost</h3>
+<p><strong>Symptoms</strong>: "Tracking lost" message or water plane disappears</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>
+<p><strong>Point at Textured Ground</strong></p>
+<ul>
+<li>AR needs visual features to track</li>
+<li>Avoid blank walls or uniform surfaces</li>
+<li>Point at ground with texture/patterns</li>
+</ul>
+</li>
+<li>
+<p><strong>Improve Lighting</strong></p>
+<ul>
+<li>Use in well-lit areas</li>
+<li>Avoid very dark or very bright conditions</li>
+<li>Daylight works best</li>
+</ul>
+</li>
+<li>
+<p><strong>Move Slowly</strong></p>
+<ul>
+<li>Rapid movements confuse AR</li>
+<li>Slow, steady movements work best</li>
+</ul>
+</li>
+</ol>
+<h3 id="water-plane-not-visible">Water Plane Not Visible</h3>
+<p><strong>Symptoms</strong>: Can't see the Water plane</p>
+<p><strong>Possible Causes:</strong></p>
+<ol>
+<li>
+<p><strong>You're Far from Water Level</strong></p>
+<ul>
+<li>If flood level is below you, plane won't be visible</li>
+<li>Check "Fluthöhe" value</li>
+</ul>
+</li>
+<li>
+<p><strong>Water Level Below Ground</strong></p>
+<ul>
+<li>In demo mode with low values</li>
+<li>Try increasing simulated water level</li>
+</ul>
+</li>
+<li>
+<p><strong>Rendering Issue</strong></p>
+<ul>
+<li>Restart app</li>
+<li>Clear cache</li>
+</ul>
+</li>
+</ol>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Check Flood Height Display</strong></li>
+</ol>
+<pre><code>   If "Fluthöhe: -45.0 m"
+   → Water is 45m below you (not visible)
+</code></pre>
+<ol>
+<li>
+<p><strong>Adjust Floor Level</strong></p>
+<ul>
+<li>Lower your floor setting</li>
+<li>Try "Floor: B3" (basement) to raise water plane</li>
+</ul>
+</li>
+<li>
+<p><strong>Use Demo Mode</strong></p>
+<ul>
+<li>Set high water level</li>
+<li>Verify plane is visible</li>
+</ul>
+</li>
+</ol>
+<h2 id="data-issues">Data Issues</h2>
+<h3 id="incorrect-water-levels">Incorrect Water Levels</h3>
+<p><strong>Symptoms</strong>: Water level seems wrong for your area</p>
+<p><strong>Possible Causes:</strong></p>
+<ul>
+<li>Data from distant gauge station</li>
+<li>Elevation data inaccuracy</li>
+<li>GPS positioning error</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>
+<p><strong>Check Distance to Station</strong></p>
+<ul>
+<li>Pegelonline stations are spaced far apart</li>
+<li>Data may be from 10-50km away</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify GPS Accuracy</strong></p>
+<ul>
+<li>Wait for GPS to stabilize (30-60 seconds)</li>
+<li>Check GPS coordinates in debug panel</li>
+</ul>
+</li>
+<li>
+<p><strong>Compare with Official Data</strong></p>
+<ul>
+<li>Visit <a href="https://www.hochwasserzentralen.de">hochwasserzentralen.de</a></li>
+<li>Compare with nearest station</li>
+</ul>
+</li>
+</ol>
+<h3 id="elevation-data-wrong">Elevation Data Wrong</h3>
+<p><strong>Symptoms</strong>: "Elev: X m" seems incorrect</p>
+<p><strong>Known Issues:</strong></p>
+<ul>
+<li>Elevation API accuracy: ±5-10 meters</li>
+<li>DEM (Digital Elevation Model) resolution varies</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>
+<p><strong>Accept Margin of Error</strong></p>
+<ul>
+<li>±10m is normal for elevation data</li>
+<li>App is for visualization, not precision measurements</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify with Other Sources</strong></p>
+<ul>
+<li>Google Earth</li>
+<li>Topographic maps</li>
+</ul>
+</li>
+<li>
+<p><strong>Report Persistent Issues</strong></p>
+<ul>
+<li>If consistently wrong (&gt;20m error)</li>
+<li>Report to development team</li>
+</ul>
+</li>
+</ol>
+<h3 id="no-internet-connection">No Internet Connection</h3>
+<p><strong>Symptoms</strong>: Cannot fetch live data</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Check Network</strong></li>
+</ol>
+<pre><code>   Settings → Network → Verify connection
+   Test with web browser
+</code></pre>
+<ol>
+<li>
+<p><strong>Switch Networks</strong></p>
+<ul>
+<li>Try WiFi instead of mobile data (or vice versa)</li>
+<li>Move to area with better signal</li>
+</ul>
+</li>
+<li>
+<p><strong>Use Demo Mode</strong></p>
+<ul>
+<li>Demo mode works offline</li>
+<li>Toggle in settings menu</li>
+</ul>
+</li>
+</ol>
+<h2 id="performance-issues">Performance Issues</h2>
+<h3 id="app-is-laggy">App is Laggy</h3>
+<p><strong>Symptoms</strong>: Slow, choppy AR visualization</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Close Background Apps</strong></li>
+</ol>
+<pre><code>   Recent Apps → Close all
+   Keep only AR Flood App open
+</code></pre>
+<ol>
+<li>
+<p><strong>Reduce Graphics</strong></p>
+<ul>
+<li>Lower screen brightness</li>
+<li>Close resource-heavy apps</li>
+</ul>
+</li>
+<li>
+<p><strong>Restart Device</strong></p>
+<ul>
+<li>Frees up RAM</li>
+<li>Clears system cache</li>
+</ul>
+</li>
+</ol>
+<h3 id="battery-draining-fast">Battery Draining Fast</h3>
+<p><strong>Symptoms</strong>: Battery drops rapidly during use</p>
+<p><strong>Expected Behavior:</strong></p>
+<ul>
+<li>AR apps use 20-30% battery per hour</li>
+<li>This is normal for AR technology</li>
+</ul>
+<p><strong>Mitigation:</strong></p>
+<ol>
+<li>
+<p><strong>Use Power Saving</strong></p>
+<ul>
+<li>Enable battery saver mode</li>
+<li>Reduce screen brightness</li>
+</ul>
+</li>
+<li>
+<p><strong>Limit Session Length</strong></p>
+<ul>
+<li>Use app in 10-15 minute sessions</li>
+<li>Take breaks</li>
+</ul>
+</li>
+<li>
+<p><strong>Charge Device</strong></p>
+<ul>
+<li>Keep device charged above 50%</li>
+<li>Use portable charger if needed</li>
+</ul>
+</li>
+</ol>
+<h2 id="error-messages">Error Messages</h2>
+<h3 id="camera-permission-denied">"Camera Permission Denied"</h3>
+<p><strong>Solution:</strong></p>
+<pre><code>Settings → Apps → AR Flood Viz → Permissions
+→ Camera → Allow
+Restart app
+</code></pre>
+<h3 id="location-permission-denied">"Location Permission Denied"</h3>
+<p><strong>Solution:</strong></p>
+<pre><code>Settings → Apps → AR Flood Viz → Permissions
+→ Location → Allow (While using app)
+Restart app
+</code></pre>
+<h3 id="arcore-not-installed">"ARCore Not Installed"</h3>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Tap "Install" when prompted</li>
+<li>Install "Google Play Services for AR"</li>
+<li>Return to app</li>
+</ol>
+<h3 id="no-internet-connection_1">"No Internet Connection"</h3>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Check WiFi/mobile data is on</li>
+<li>Test internet in browser</li>
+<li>Restart router/device</li>
+<li>Use demo mode as fallback</li>
+</ol>
+<h3 id="invalid-api-data">"Invalid API Data"</h3>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>API may be temporarily down</li>
+<li>Wait 5 minutes and try again</li>
+<li>Use demo mode temporarily</li>
+<li>Report if persists &gt;1 hour</li>
+</ol>
+<h3 id="gps-signal-lost">"GPS Signal Lost"</h3>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Move outdoors</li>
+<li>Wait for GPS to reacquire (30-60s)</li>
+<li>Check location services enabled</li>
+<li>Restart device</li>
+</ol>
+<h2 id="still-having-issues">Still Having Issues?</h2>
+<p>If none of these solutions work:</p>
+<ol>
+<li>
+<p><strong>Check System Requirements</strong></p>
+<ul>
+<li>Review <a href="../compatibility/">Compatibility Guide</a></li>
+<li>Ensure device meets all requirements</li>
+</ul>
+</li>
+<li>
+<p><strong>Report a Bug</strong></p>
+<ul>
+<li>Document the issue</li>
+<li>Include device model and Android version</li>
+<li>Note steps to reproduce</li>
+<li>Submit to GitHub issues</li>
+</ul>
+</li>
+</ol>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Return to <a href="../how_to_use/">How to Use</a></li>
+<li>Check <a href="../compatibility/">Compatibility</a></li>
+<li>Read <a href="../../developer_guide/overview/">Developer Guide</a> to contribute</li>
+</ul></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../installation/" class="btn btn-neutral float-left" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../installation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

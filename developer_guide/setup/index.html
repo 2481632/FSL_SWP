@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Development Environment Setup - FSL Flood Simulation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Development Environment Setup";
+        var mkdocs_page_input_path = "developer_guide/setup.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FSL Flood Simulation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../design_decisions/">Design Decisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../error_handling/">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Development Environment Setup</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#required-software">Required Software</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#core-development-tools">Core Development Tools</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#project-setup">Project Setup</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#verify-android-build-support">Verify Android Build Support</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#verify-ar-foundation">Verify AR Foundation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#assets-resources">Assets &amp; Resources</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#unity-asset-store-assets">Unity Asset Store Assets</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#replacing-water-material">Replacing Water Material</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#testing-setup">Testing Setup</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#device-setup-for-testing">Device Setup for Testing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test-build">Test Build</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing Strategy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../apis/elevation/">Elevation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../apis/pegelonline/">Pegelonline</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project info</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/future_work/">Future Work</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/hardware/">Hardware Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/motivation/">Project Motivation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/team/">Team Structure</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/compatibility/">Compatibility</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/getting_started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/how_to_use/">How to Use</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user_guide/troubleshooting/">Troubleshooting</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FSL Flood Simulation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Developer guide</li>
+      <li class="breadcrumb-item active">Development Environment Setup</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div><h1 id="development-environment-setup">Development Environment Setup</h1>
+<p>Complete guide to setting up your development environment for AR Flood Visualization.</p>
+<h2 id="required-software">Required Software</h2>
+<h3 id="core-development-tools">Core Development Tools</h3>
+<p><strong>1. Unity Hub &amp; Unity Editor</strong></p>
+<pre><code>Unity Hub: https://unity.com/download
+Unity Version: 2021.3 LTS or newer
+</code></pre>
+<p><strong>Required Unity Modules:</strong>
+- Android Build Support
+- Android SDK &amp; NDK Tools
+- OpenJDK (included with Unity)</p>
+<p><strong>2. Code Editor</strong></p>
+<p>Visual Studio or other </p>
+<h2 id="project-setup">Project Setup</h2>
+<ul>
+<li>Download or clone the project/repository.</li>
+<li>open the project in Unity</li>
+</ul>
+<h3 id="verify-android-build-support">Verify Android Build Support</h3>
+<ol>
+<li>File → Build Settings</li>
+<li>Check if "Android" is listed under Platform</li>
+<li>If not listed: Unity module not installed, go back to Unity Hub</li>
+<li>If listed but not active: Click "Switch Platform" </li>
+</ol>
+<h3 id="verify-ar-foundation">Verify AR Foundation</h3>
+<p><strong>Check Package Manager:</strong></p>
+<ol>
+<li>Window → Package Manager</li>
+<li>Select "Unity Registry" (top left)</li>
+<li>Search for "AR Foundation"</li>
+<li>Should show version 5.x (installed)</li>
+<li>Also check "ARCore XR Plugin" (installed)</li>
+</ol>
+<p><strong>If Not Installed:</strong></p>
+<p>Install under package manager.</p>
+<h2 id="assets-resources">Assets &amp; Resources</h2>
+<h3 id="unity-asset-store-assets">Unity Asset Store Assets</h3>
+<p><strong>URP Stylized Water Shader - Proto Series by BitGem</strong></p>
+<p><strong>Original Asset (used in development):</strong></p>
+<pre><code>Asset: URP Stylized Water Shader - Proto Series
+Developer: BitGem
+Type: Water shader for URP
+Status: May not be free anymore
+</code></pre>
+<p><strong>Alternative Water Shaders (if original unavailable or not free anymore):</strong></p>
+<p>Any water shader from the Unity Asset Store that supports URP.
+You could also build your own shader. </p>
+<h3 id="replacing-water-material">Replacing Water Material</h3>
+<p>If you need to use a different water shader:</p>
+<p><strong>Step 1: Import New Shader</strong>
+- Download from Asset Store
+- Import into project</p>
+<p><strong>Step 2: Create New Material</strong></p>
+<pre><code>Project Window → Right Click → Create → Material
+Name it: "WaterMaterial_New"
+</code></pre>
+<p><strong>Step 3: Assign Shader</strong></p>
+<pre><code>Select new material
+Inspector → Shader dropdown → Select your water shader
+Configure shader properties (color, transparency, etc.)
+</code></pre>
+<p><strong>Step 4: Update Water Plane</strong></p>
+<pre><code>Hierarchy → ARWater GameObject
+Inspector → Mesh Renderer → Materials
+Replace old material with new material
+</code></pre>
+<h2 id="testing-setup">Testing Setup</h2>
+<h3 id="device-setup-for-testing">Device Setup for Testing</h3>
+<p><strong>Enable Developer Options on Android Device</strong></p>
+<pre><code>Settings → About Phone
+Tap "Build Number" 7 times
+"Developer options" now available
+</code></pre>
+<p><strong>Enable USB Debugging</strong></p>
+<pre><code>Settings → System → Developer Options
+USB Debugging → Enable
+</code></pre>
+<p><strong>Connect Device to Computer</strong></p>
+<pre><code>Connect via USB cable
+On device: Allow USB debugging
+On computer: Verify device detected
+</code></pre>
+<h3 id="test-build">Test Build</h3>
+<p><strong>Quick Test Build:</strong></p>
+<pre><code>File → Build Settings
+Ensure device connected
+Click "Build and Run"
+Choose filename: test.apk
+Save anywhere (Desktop, Downloads)
+Unity builds and installs automatically
+App launches on device
+</code></pre>
+<p><strong>If Build Fails:</strong>
+- Check device connected (adb devices)
+- Check USB debugging enabled
+- Try "Refresh" in Build Settings
+- Check Console for errors</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>Once your environment is set up:</p>
+<ol>
+<li>
+<p><strong>Read the Architecture Guide</strong><br>
+<a href="../architecture/">Architecture Documentation</a></p>
+</li>
+<li>
+<p><strong>Understand the Design Decisions</strong><br>
+<a href="../design_decisions/">Design Decisions</a></p>
+</li>
+<li>
+<p><strong>Building Guide</strong><br>
+<a href="building.md">Building Guide</a></p>
+</li>
+</ol></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../overview/" class="btn btn-neutral float-left" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../testing/" class="btn btn-neutral float-right" title="Testing Strategy">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../overview/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../testing/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Getting Started - FSL Flood Simulation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Getting Started";
+        var mkdocs_page_input_path = "user_guide/getting_started.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FSL Flood Simulation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/design_decisions/">Design Decisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Development Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/testing/">Testing Strategy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Apis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/elevation/">Elevation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/mock_api/">Mock api</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../developer_guide/apis/pegelonline/">Pegelonline</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project info</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/future_work/">Future Work</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/hardware/">Hardware Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/motivation/">Project Motivation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../project_info/team/">Team Structure</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../compatibility/">Compatibility</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Getting Started</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-youll-need">What You'll Need</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#first-launch">First Launch</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#understanding-the-interface">Understanding the Interface</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#your-first-visualization">Your First Visualization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#understanding-the-visualization">Understanding the Visualization</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#whats-next">What's Next?</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../how_to_use/">How to Use</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FSL Flood Simulation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User guide</li>
+      <li class="breadcrumb-item active">Getting Started</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div><h1 id="getting-started">Getting Started</h1>
+<p>Welcome to AR Flood Visualization. This guide will help you get started with using the app.</p>
+<h2 id="what-youll-need">What You'll Need</h2>
+<p>Before you begin, make sure you have:</p>
+<ul>
+<li>An Android device running Android 11.0 or higher</li>
+<li>ARCore support (check <a href="https://developers.google.com/ar/devices">ARCore supported devices</a>)</li>
+<li>GPS enabled on your device</li>
+<li>Internet connection for live data</li>
+<li>Camera permissions</li>
+</ul>
+<h2 id="first-launch">First Launch</h2>
+<ol>
+<li>
+<p><strong>Install the App</strong><br>
+   Follow the <a href="../installation/">Installation Guide</a> to install the app on your device.</p>
+</li>
+<li>
+<p><strong>Grant Permissions</strong><br>
+   On first launch, you'll be asked to grant:</p>
+<ul>
+<li>Camera access (required for AR)</li>
+<li>Location access (required for GPS positioning)</li>
+<li>Internet access (for fetching water level data)</li>
+</ul>
+</li>
+<li>
+<p><strong>Choose Your Mode</strong>  </p>
+<ul>
+<li><strong>Live Mode</strong>: Uses real data from Pegelonline API</li>
+<li><strong>Demo Mode</strong>: Uses simulated data for testing</li>
+</ul>
+</li>
+</ol>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="understanding-the-interface">Understanding the Interface</h3>
+<p>The app consists of several key elements:</p>
+<p><strong>Debug Panel</strong> (top right):</p>
+<ul>
+<li>GPS coordinates (latitude/longitude)</li>
+<li>Elevation at your location</li>
+<li>Current water height over gauge zero</li>
+<li>Water height over normal null</li>
+</ul>
+<p><strong>AR View</strong> (center):</p>
+<ul>
+<li>Live camera feed</li>
+<li>Water plane showing flood level</li>
+<li>Adjusts in real-time based on your position</li>
+</ul>
+<p><strong>Info Button</strong> (top left):</p>
+<ul>
+<li>turns debug panel display on/off</li>
+</ul>
+<p><strong>Demo Mode Button</strong> (top left):</p>
+<ul>
+<li>enter demo mode, return from demo mode</li>
+</ul>
+<p><strong>Floor Selector</strong> (top left):</p>
+<ul>
+<li>Select which floor you're on (-3 to 45)</li>
+<li>Adjusts the water visualization accordingly</li>
+</ul>
+<h3 id="your-first-visualization">Your First Visualization</h3>
+<ol>
+<li>
+<p><strong>Enable AR</strong><br>
+   Point your phone camera at the ground and move slowly to let ARCore detect the surface.</p>
+</li>
+<li>
+<p><strong>Wait for Data</strong><br>
+   The app fetches current water levels. You'll see "Loading water level..." briefly.</p>
+</li>
+<li>
+<p><strong>View the Flood Level</strong><br>
+   The Water Plane represents where flood water would reach at your location.</p>
+</li>
+<li>
+<p><strong>Adjust Your Floor</strong><br>
+   Use the floor dropdown to select your current level. The water plane adjusts accordingly.</p>
+</li>
+</ol>
+<h2 id="understanding-the-visualization">Understanding the Visualization</h2>
+<p>The Water plane shows:</p>
+<ul>
+<li><strong>Below ground level</strong>: You're safe from flooding at this location</li>
+<li><strong>At ground level</strong>: Water would reach your feet</li>
+<li><strong>Above ground level</strong>: Your location would be flooded to that height</li>
+</ul>
+<p>The calculation takes into account:</p>
+<ul>
+<li>Current water level from the nearest gauge station</li>
+<li>Gauge zero height (reference point)</li>
+<li>Your GPS elevation</li>
+<li>Your selected floor level</li>
+</ul>
+<h2 id="limitations">Limitations</h2>
+<ul>
+<li>Elevation data accuracy varies by location (±5-10m)</li>
+<li>Water levels are from the nearest gauge station</li>
+<li>This is a visualization tool, not an official warning system</li>
+</ul>
+<h2 id="whats-next">What's Next?</h2>
+<ul>
+<li>Learn about <a href="../compatibility/">Compatibility</a></li>
+<li>Read <a href="../how_to_use/">How to Use</a> for detailed features</li>
+<li>Check <a href="../troubleshooting/">Troubleshooting</a> if you encounter issues</li>
+</ul></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../compatibility/" class="btn btn-neutral float-left" title="Compatibility"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../how_to_use/" class="btn btn-neutral float-right" title="How to Use">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../compatibility/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../how_to_use/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
