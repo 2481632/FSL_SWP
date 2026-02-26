@@ -31,7 +31,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> FSL Flood Simulation
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -49,7 +53,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../error_handling/">Error Handling</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../setup/">Development Environment Setup</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../setup/">Setup</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Testing Strategy</a>
     <ul class="current">
@@ -132,18 +136,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="testing-strategy">Testing Strategy</h1>
+                <h1 id="testing-strategy">Testing Strategy</h1>
 <p>Comprehensive testing approach for AR Flood App.</p>
 <h2 id="testing-levels">Testing Levels</h2>
 <h3 id="1-code-review-testing">1. Code Review Testing</h3>
 <p><strong>When:</strong> Before merging any code</p>
 <p><strong>Process:</strong></p>
-<p>Check code for:
-* Obvious bugs
-* Code style consistency
-* Proper error handling
-* Comments where needed
-* No debug/test code left in</p>
+<p>Check code for:</p>
+<ul>
+<li>Obvious bugs</li>
+<li>Code style consistency</li>
+<li>Proper error handling</li>
+<li>No debug/test code left in</li>
+</ul>
 <h3 id="2-unity-play-mode-testing">2. Unity Play Mode Testing</h3>
 <p><strong>When:</strong> During development, before building to device</p>
 <p><strong>What We Test:</strong>
@@ -198,8 +203,10 @@
 <li>Works offline</li>
 <li>No API rate limits</li>
 </ul>
-<p>how:
-* Change values in the mock API and watch how the water plane changes height </p>
+<p>how:</p>
+<ul>
+<li>Change values in the mock API and watch how the water plane changes height </li>
+</ul>
 <p><strong>Test with Real API:</strong></p>
 <ul>
 <li>check if GPS calculations find the correct nearest station and wether the flood level is displayed correctly</li>
@@ -219,38 +226,42 @@
 <h4 id="not-tested-yet-edge-cases">Not tested yet: Edge Cases</h4>
 <p><strong>Situations that haven't been tested:</strong></p>
 <ol>
-<li><strong>Very High Elevation</strong> (mountain)</li>
+<li>
+<p><strong>Very High Elevation</strong> (mountain)</p>
+<ul>
 <li>Launch at 1000m+ elevation</li>
 <li>Verify calculations correct</li>
-<li>
-<p>Water should be far below</p>
+<li>Water should be far below</li>
+</ul>
 </li>
 <li>
 <p><strong>Very Low Elevation</strong> (coast)</p>
-</li>
+<ul>
 <li>Launch at sea level</li>
 <li>Verify calculations correct</li>
-<li>
-<p>Water may be above</p>
+<li>Water may be above</li>
+</ul>
 </li>
 <li>
 <p><strong>Rapid Movement</strong></p>
-</li>
+<ul>
 <li>Walk quickly while using app</li>
 <li>Verify AR tracking recovers</li>
 <li>Check GPS updates</li>
+</ul>
+</li>
 </ol>
 <h3 id="resources">Resources</h3>
 <ul>
 <li><a href="../project_info/debugging.md">Debugging Guide</a></li>
 <li><a href="../../user_guide/troubleshooting/">Troubleshooting</a></li>
 <li><a href="../architecture/">Architecture</a></li>
-</ul></div>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../setup/" class="btn btn-neutral float-left" title="Development Environment Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../setup/" class="btn btn-neutral float-left" title="Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../../project_info/future_work/" class="btn btn-neutral float-right" title="Future Work">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -285,6 +296,7 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);

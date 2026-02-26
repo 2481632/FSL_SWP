@@ -31,7 +31,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> FSL Flood Simulation
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -79,7 +83,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../error_handling/">Error Handling</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../setup/">Development Environment Setup</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../setup/">Setup</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing Strategy</a>
                   </li>
@@ -132,7 +136,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="design-decisions">Design Decisions</h1>
+                <h1 id="design-decisions">Design Decisions</h1>
 <h2 id="engine-and-tools">Engine and Tools</h2>
 <h3 id="unity">Unity</h3>
 <p>We decided to use Unity as our development engine. While WebAR was considered as an alternative during the initial planning phase, we ultimately chose Unity due to its superior performance and smoother operation across target devices.</p>
@@ -153,7 +157,7 @@
 <p>Initially, we represented the water as a simple blue plane. However, we quickly realized that water in a flood simulation should appear threatening and murky rather than giving off "pool vibes". Since the Unity Asset Store already offers high-quality water templates, we decided to utilize one of them: <a href="https://assetstore.unity.com/packages/vfx/shaders/urp-stylized-water-shader-proto-series-187485">URP Stylized Water Shader - Proto Series</a>.</p>
 <p><em>For more information, refer to <a href="../setup/#replacing-water-material">Replacing Water Material</a>.</em> </p>
 <h3 id="ui">UI</h3>
-<p>We aimed to keep the UI as simple and lightweight as possible while still providing all relevant information. To achieve both, we implemented a debug overlay that allows the user to toggle between a clean view and a view displaying detailed debug information.</p></div>
+<p>We aimed to keep the UI as simple and lightweight as possible while still providing all relevant information. To achieve both, we implemented a debug overlay that allows the user to toggle between a clean view and a view displaying detailed debug information.</p>
               
             </div>
           </div><footer>
@@ -193,6 +197,7 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);

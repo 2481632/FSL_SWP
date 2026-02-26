@@ -31,7 +31,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> FSL Flood Simulation
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -77,7 +81,7 @@
     </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../setup/">Development Environment Setup</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../setup/">Setup</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing Strategy</a>
                   </li>
@@ -130,7 +134,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="error-handling">Error Handling</h1>
+                <h1 id="error-handling">Error Handling</h1>
 <p>Common errors we encountered during development and how to resolve them.</p>
 <h2 id="development-errors">Development Errors</h2>
 <h3 id="unity-script-errors">Unity Script Errors</h3>
@@ -150,7 +154,7 @@ public class MyScript : MonoBehaviour {
 }
 </code></pre>
 <p><strong>All Unity scripts that interact with GameObjects must inherit from MonoBehaviour.</strong></p>
-<hr>
+<hr />
 <p><strong>Error: "Public field not set in Inspector"</strong></p>
 <pre><code>NullReferenceException: Object reference not set to an instance of an object
 </code></pre>
@@ -165,7 +169,7 @@ public class MyScript : MonoBehaviour {
 <li><code>displayText</code> → Drag TextMeshProUGUI object</li>
 <li><code>waterPlane</code> → Drag WaterPlane GameObject</li>
 </ol>
-<hr>
+<hr />
 <h2 id="runtime-errors">Runtime Errors</h2>
 <h3 id="gps-location-errors">GPS / Location Errors</h3>
 <p><strong>Error: "GPS not working / coordinates always 0.0"</strong></p>
@@ -173,7 +177,7 @@ public class MyScript : MonoBehaviour {
 <pre><code>Settings → Location → On
 Settings → Apps → AR Flood App → Permissions → Location → Allow
 </code></pre>
-<hr>
+<hr />
 <h3 id="ar-camera-errors">AR / Camera Errors</h3>
 <p><strong>Error: "Camera shows black screen"</strong></p>
 <p><strong>Causes &amp; Solutions:</strong></p>
@@ -181,12 +185,12 @@ Settings → Apps → AR Flood App → Permissions → Location → Allow
 <pre><code>Settings → Apps → AR Flood Viz → Permissions → Camera → Allow
 </code></pre>
 <p><strong>2. ARCore Not Installed</strong></p>
-<pre><code>Install "Google Play Services for AR" from Play Store
+<pre><code>Install &quot;Google Play Services for AR&quot; from Play Store
 </code></pre>
 <p><strong>3. Device Not ARCore Compatible</strong>
 - Check: https://developers.google.com/ar/devices
 - Try different device</p>
-<hr>
+<hr />
 <h2 id="testing-errors">Testing Errors</h2>
 <h3 id="device-testing-issues">Device Testing Issues</h3>
 <p><strong>Error: "Device not detected by Unity"</strong></p>
@@ -204,7 +208,7 @@ Settings → Apps → AR Flood App → Permissions → Location → Allow
    # Should show your device</code></p>
 </li>
 </ol>
-<hr>
+<hr />
 <h2 id="quick-reference">Quick Reference</h2>
 <h3 id="error-code-lookup">Error Code Lookup</h3>
 <table>
@@ -247,13 +251,13 @@ Settings → Apps → AR Flood App → Permissions → Location → Allow
 <td>Enable developer options</td>
 </tr>
 </tbody>
-</table></div>
+</table>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../design_decisions/" class="btn btn-neutral float-left" title="Design Decisions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../setup/" class="btn btn-neutral float-right" title="Development Environment Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../setup/" class="btn btn-neutral float-right" title="Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -287,6 +291,7 @@ Settings → Apps → AR Flood App → Permissions → Location → Allow
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);

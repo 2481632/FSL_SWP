@@ -31,7 +31,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> FSL Flood Simulation
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -49,7 +53,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/error_handling/">Error Handling</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Development Environment Setup</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/setup/">Setup</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../developer_guide/testing/">Testing Strategy</a>
                   </li>
@@ -111,10 +115,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#updating">Updating</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#uninstalling">Uninstalling</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
     </li>
     </ul>
@@ -146,7 +146,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="installation">Installation</h1>
+                <h1 id="installation">Installation</h1>
 <p>This guide walks you through installing AR Flood App on your Android device.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <h3 id="device-requirements">Device Requirements</h3>
@@ -163,10 +163,8 @@
 <ol>
 <li><strong>Download the APK</strong></li>
 </ol>
-<pre><code>   AR_Flood.apk from the releases page
+<pre><code>   AR_Flood.apk from the repository 
 </code></pre>
-<!-- noch erstellen -->
-
 <ol>
 <li>
 <p><strong>Enable Unknown Sources</strong></p>
@@ -192,14 +190,9 @@
 </li>
 </ol>
 <h3 id="method-2-build-from-source">Method 2: Build from Source</h3>
-<p>For developers who want to build from source:</p>
-<pre><code class="language-bash"># Clone the repository
-git clone https://github.com/your-repo/ar-flood-viz.git
-
-# Open in Unity
-# See Developer Guide for detailed build instructions
-</code></pre>
-<p>See <a href="../developer_guide/building.md">Developer Guide - Building</a> for complete instructions.</p>
+<p>For developers who want to build from source:
+download the folder unityProjekt/water_Test</p>
+<p>See <a href="../../developer_guide/setup/">Developer Guide - Setup</a> for complete instructions.</p>
 <h2 id="post-installation">Post-Installation</h2>
 <h3 id="grant-permissions">Grant Permissions</h3>
 <p>On first launch, grant these permissions:</p>
@@ -276,31 +269,12 @@ git clone https://github.com/your-repo/ar-flood-viz.git
 <li>Manually enable Camera and Location</li>
 <li>Restart the app</li>
 </ol>
-<h2 id="updating">Updating</h2>
-<p>To update to a new version:</p>
-<ol>
-<li>Download the new APK</li>
-<li>Install over the existing version</li>
-<li>Your settings will be preserved</li>
-</ol>
-<h2 id="uninstalling">Uninstalling</h2>
-<p>To remove the app:</p>
-<ol>
-<li>Long-press the app icon</li>
-<li>Tap "Uninstall" or drag to "Uninstall"</li>
-<li>Confirm removal</li>
-</ol>
-<p>Or via Settings:</p>
-<ol>
-<li>Settings → Apps → AR Flood Viz</li>
-<li>Tap "Uninstall"</li>
-</ol>
 <h2 id="next-steps">Next Steps</h2>
 <ul>
 <li>Read <a href="../getting_started/">Getting Started</a> to learn how to use the app</li>
 <li>Check <a href="../compatibility/">Compatibility</a> for detailed device requirements</li>
 <li>Visit <a href="../how_to_use/">How to Use</a> for feature documentation</li>
-</ul></div>
+</ul>
               
             </div>
           </div><footer>
@@ -340,6 +314,7 @@ git clone https://github.com/your-repo/ar-flood-viz.git
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
