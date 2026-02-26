@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-system architecture 
-=======
 ## Key Components
 
 ### 1. Data Fetching Layer
@@ -27,4 +24,3 @@ system architecture
 - `DebugPanel.cs`: Technical info display
 - `BuildingLevel.cs`: Floor selection dropdown
 - TextMeshPro UI elements
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b

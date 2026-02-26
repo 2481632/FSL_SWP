@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-technical decisions explained
-
-* unity editor 
-* android app
-* pegelonline api
-
-* ar template von unity als startpunkt 
-* entschieden erst aktuelle daten darzustellen 
-* mit water plane dargestelllt, gemerkt dass plane braun sein sollte -> stellt stimmung und gefahr besser dar
-* überlegt welche ui für den nutzer am wichtigsten ist
-* begründen warum wir time prediction nicht mehr gemacht haben 
-* haben aus für wasser aus dem unity store entschieden und nicht selber geshaded -> zeit sparend 
-* building level selector 
-* elevation api 
-=======
 # Design Decisions
 
 ## Engine and Tools
@@ -59,4 +43,4 @@ Initially, we represented the water as a simple blue plane. However, we quickly 
 ### UI
 
 We aimed to keep the UI as simple and lightweight as possible while still providing all relevant information. To achieve both, we implemented a debug overlay that allows the user to toggle between a clean view and a view displaying detailed debug information.
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
+

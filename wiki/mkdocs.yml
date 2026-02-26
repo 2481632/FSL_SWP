@@ -1,9 +1,2 @@
 site_name: FSL Flood Simulation
 theme: readthedocs
-<<<<<<< HEAD
-=======
-markdown_extensions:
-  - attr_list
-plugins:
-  - mkdocs-pdf
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
