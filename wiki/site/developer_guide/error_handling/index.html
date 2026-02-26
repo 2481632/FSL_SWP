@@ -31,23 +31,39 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> FSL Flood Simulation
+<<<<<<< HEAD
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
+=======
+        </a>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
+<<<<<<< HEAD
                 <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+=======
+                <li class="toctree-l1"><a class="reference internal" href="../..">Overview</a>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Developer guide</span></p>
               <ul class="current">
+<<<<<<< HEAD
                   <li class="toctree-l1"><a class="reference internal" href="../architecture/">Architecture</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../design_decisions/">Design decisions</a>
+=======
+                  <li class="toctree-l1"><a class="reference internal" href="../apis/">APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture/">Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../design_decisions/">Design Decisions</a>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Error Handling</a>
     <ul class="current">
@@ -79,12 +95,16 @@
     </li>
     </ul>
                   </li>
+<<<<<<< HEAD
                   <li class="toctree-l1"><a class="reference internal" href="../overview/">Overview</a>
                   </li>
+=======
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
                   <li class="toctree-l1"><a class="reference internal" href="../setup/">Development Environment Setup</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing Strategy</a>
                   </li>
+<<<<<<< HEAD
                   <li class="toctree-l1"><a class="reference internal" >Apis</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../apis/elevation/">Elevation</a>
@@ -95,6 +115,8 @@
                 </li>
     </ul>
                   </li>
+=======
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
               </ul>
               <p class="caption"><span class="caption-text">Project info</span></p>
               <ul>
@@ -144,7 +166,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
+<<<<<<< HEAD
                 <h1 id="error-handling">Error Handling</h1>
+=======
+                <div><h1 id="error-handling">Error Handling</h1>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 <p>Common errors we encountered during development and how to resolve them.</p>
 <h2 id="development-errors">Development Errors</h2>
 <h3 id="unity-script-errors">Unity Script Errors</h3>
@@ -164,7 +190,11 @@ public class MyScript : MonoBehaviour {
 }
 </code></pre>
 <p><strong>All Unity scripts that interact with GameObjects must inherit from MonoBehaviour.</strong></p>
+<<<<<<< HEAD
 <hr />
+=======
+<hr>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 <p><strong>Error: "Public field not set in Inspector"</strong></p>
 <pre><code>NullReferenceException: Object reference not set to an instance of an object
 </code></pre>
@@ -179,7 +209,11 @@ public class MyScript : MonoBehaviour {
 <li><code>displayText</code> → Drag TextMeshProUGUI object</li>
 <li><code>waterPlane</code> → Drag WaterPlane GameObject</li>
 </ol>
+<<<<<<< HEAD
 <hr />
+=======
+<hr>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 <h2 id="runtime-errors">Runtime Errors</h2>
 <h3 id="gps-location-errors">GPS / Location Errors</h3>
 <p><strong>Error: "GPS not working / coordinates always 0.0"</strong></p>
@@ -187,7 +221,11 @@ public class MyScript : MonoBehaviour {
 <pre><code>Settings → Location → On
 Settings → Apps → AR Flood App → Permissions → Location → Allow
 </code></pre>
+<<<<<<< HEAD
 <hr />
+=======
+<hr>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 <h3 id="ar-camera-errors">AR / Camera Errors</h3>
 <p><strong>Error: "Camera shows black screen"</strong></p>
 <p><strong>Causes &amp; Solutions:</strong></p>
@@ -195,12 +233,20 @@ Settings → Apps → AR Flood App → Permissions → Location → Allow
 <pre><code>Settings → Apps → AR Flood Viz → Permissions → Camera → Allow
 </code></pre>
 <p><strong>2. ARCore Not Installed</strong></p>
+<<<<<<< HEAD
 <pre><code>Install &quot;Google Play Services for AR&quot; from Play Store
+=======
+<pre><code>Install "Google Play Services for AR" from Play Store
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 </code></pre>
 <p><strong>3. Device Not ARCore Compatible</strong>
 - Check: https://developers.google.com/ar/devices
 - Try different device</p>
+<<<<<<< HEAD
 <hr />
+=======
+<hr>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 <h2 id="testing-errors">Testing Errors</h2>
 <h3 id="device-testing-issues">Device Testing Issues</h3>
 <p><strong>Error: "Device not detected by Unity"</strong></p>
@@ -218,7 +264,11 @@ Settings → Apps → AR Flood App → Permissions → Location → Allow
    # Should show your device</code></p>
 </li>
 </ol>
+<<<<<<< HEAD
 <hr />
+=======
+<hr>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 <h2 id="quick-reference">Quick Reference</h2>
 <h3 id="error-code-lookup">Error Code Lookup</h3>
 <table>
@@ -261,13 +311,22 @@ Settings → Apps → AR Flood App → Permissions → Location → Allow
 <td>Enable developer options</td>
 </tr>
 </tbody>
+<<<<<<< HEAD
 </table>
+=======
+</table></div>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+<<<<<<< HEAD
         <a href="../design_decisions/" class="btn btn-neutral float-left" title="Design decisions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+=======
+        <a href="../design_decisions/" class="btn btn-neutral float-left" title="Design Decisions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../setup/" class="btn btn-neutral float-right" title="Development Environment Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
     </div>
 
   <hr/>
@@ -293,7 +352,11 @@ Settings → Apps → AR Flood App → Permissions → Location → Allow
       <span><a href="../design_decisions/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
+<<<<<<< HEAD
       <span><a href="../overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+=======
+      <span><a href="../setup/" style="color: #fcfcfc">Next &raquo;</a></span>
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
     
   </span>
 </div>
@@ -301,7 +364,10 @@ Settings → Apps → AR Flood App → Permissions → Location → Allow
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+<<<<<<< HEAD
       <script src="../../search/main.js"></script>
+=======
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);

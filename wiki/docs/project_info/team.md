@@ -46,10 +46,18 @@ Information about the AR Flood Visualization project team, communication, and wo
 
 **3. GitHub**
 
+<<<<<<< HEAD
 - **Repository**: https://github.com/2481632/FSL_SWP
 - **Usage**:
     - Code reviews
     - Feature discussions
+=======
+- **Repository**: [Link to repo]
+- **Usage**:
+    - Code reviews
+    - Feature discussions
+    - Release planning
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 **4. Unity Cloud**
 
@@ -84,8 +92,67 @@ Information about the AR Flood Visualization project team, communication, and wo
 - Prepare demo/update
 
 
+<<<<<<< HEAD
 ## Development Practices
 
+=======
+## Decision Making
+
+### Technical Decisions
+
+**Minor (e.g., variable naming, code structure):**
+
+- Individual developer decides
+- Document in code comments
+
+**Medium (e.g., new library, UI change):**
+
+- Discuss in text chat or meeting
+- Document in meeting notes
+
+**Major (e.g., architecture change, platform change):**
+
+- Dedicated meeting discussion
+- Document in design decisions
+
+
+## Collaboration Tools
+
+### Code & Version Control
+
+**GitHub**
+
+- Repository hosting
+- Issue tracking
+- Code review
+
+**Unity Collaborate / Git**
+
+- Unity project version control
+- Scene and asset merging
+- Conflict resolution
+
+### Project Management
+
+**GitHub Projects**
+
+- Kanban board
+- Sprint planning
+- Task tracking
+
+### Documentation
+
+**MkDocs**
+
+- Technical documentation
+- User guides
+- Developer guides
+
+
+## Development Practices
+
+
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 ### Testing
 
 **Who Tests:**
@@ -136,6 +203,21 @@ Information about the AR Flood Visualization project team, communication, and wo
 - Future work planning
 
 
+<<<<<<< HEAD
+=======
+## Skills 
+
+### Learning Goals
+
+**What We're Learning:**
+
+- AR development best practices
+- Mobile app optimization
+- Real-time data visualization
+- API integration patterns
+- Collaborative development
+- Documentation practices
+>>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 ## Retrospectives
 

@@ -23,14 +23,12 @@ Check code for:
 **When:** During development, before building to device
 
 **What We Test:**
-
 - Logic and calculations
 - UI behavior (non-AR parts)
 - Data parsing
 - Error handling
 
 **What Doesn't Work:**
-
 - AR tracking (needs device)
 - GPS (needs device)
 - Camera (needs device)
@@ -45,7 +43,6 @@ Check code for:
 3. **Samsung Galaxy Tab S6 Lite** 
 
 **Why Multiple Devices:**
-
 - Different performance levels
 - Different screen sizes
 - Different Android versions
@@ -56,7 +53,6 @@ Check code for:
 #### AR Tracking Quality
 
 **Test Environments:**
-
 - Indoor (poor lighting)
 - Outdoor (bright sun)
 - Outdoor (overcast)
@@ -64,7 +60,6 @@ Check code for:
 
 
 **Expected Results:**
-
 - AR tracking stable on textured surfaces
 - Water plane stays positioned correctly
 - No excessive jitter/shaking
@@ -75,12 +70,10 @@ Check code for:
 #### GPS Accuracy
 
 **Test Locations:**
-
 - Outside
 - Indoor
 
 **Expected Results:**
-
 - GPS lock within 30-60 seconds
 - Coordinates accurate within ±10 meters
 - Updates as you move
@@ -109,7 +102,6 @@ how:
 #### Floor Selection
 
 **Expected Results:**
-
 - Dropdown shows all floor options
 - Water plane adjusts correctly (±3m per floor)
 - Debug panel shows correct offset
@@ -119,7 +111,6 @@ how:
 #### Demo Mode
 
 **Expected Results:**
-
 - Works offline
 - Uses mock water levels
 - All features functional
