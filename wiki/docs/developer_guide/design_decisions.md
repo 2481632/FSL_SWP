@@ -22,7 +22,7 @@ As our target platform, we chose modern Android devices, as all team members own
 
 ## APIs
 
-For more information, refer to the [API section](apis/elevation.md).
+For more information, refer to the [API section](apis.md).
 
 ## Featues
 

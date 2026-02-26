@@ -208,4 +208,4 @@ See [Troubleshooting Guide](troubleshooting.md) for more help.
 
 - Learn about [Compatibility](compatibility.md)
 - Check [Troubleshooting](troubleshooting.md) for issues
-- Explore [Developer Guide](../developer_guide/overview.md) to contribute
+- Explore [Developer Guide](../index.md) to contribute

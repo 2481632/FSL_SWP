@@ -137,9 +137,5 @@ how:
     - Check GPS updates
 
 
-### Resources
 
-- [Debugging Guide](../project_info/debugging.md)
-- [Troubleshooting](../user_guide/troubleshooting.md)
-- [Architecture](architecture.md)
 

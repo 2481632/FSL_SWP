@@ -415,4 +415,4 @@ If none of these solutions work:
 
 - Return to [How to Use](how_to_use.md)
 - Check [Compatibility](compatibility.md)
-- Read [Developer Guide](../developer_guide/overview.md) to contribute
+- Read [Developer Guide](../index.md) to contribute

@@ -6,7 +6,7 @@
 - `API_Elevation.cs`: Gets elevation data
 - `Location.cs`: Manages GPS positioning
 
-*For more information, refer to the [API section](apis/elevation.md).*
+*For more information, refer to the [API section](apis.md).*
 
 ### 2. Calculation Layer
 

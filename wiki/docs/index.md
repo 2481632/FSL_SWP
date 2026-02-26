@@ -24,9 +24,9 @@ This developer guide covers:
 
 ### APIs & Services
 
-- **[Pegelonline API](apis/pegelonline.md)**: Real-time water level data
-- **[Open-Meteo Elevation API](apis/elevation.md)**: Terrain elevation data
-- **[Mock API](apis/mock_api.md)**: Testing and development
+- **[Pegelonline API](developer_guide/apis.md)**: Real-time water level data
+- **[Open-Meteo Elevation API](developer_guide/apis.md)**: Terrain elevation data
+- **[Mock API](developer_guide/apis.md)**: Testing and development
 
 
 
@@ -35,7 +35,7 @@ This developer guide covers:
 
 ### 1. Setup Development Environment
 
-See [Setup Guide](setup.md)
+See [Setup Guide](developer_guide/setup.md)
 
 ### 2. Make Changes
 
@@ -47,7 +47,7 @@ See [Setup Guide](setup.md)
 
 - Unity Play Mode testing
 - Android device testing
-- See [Testing Strategy](testing.md)
+- See [Testing Strategy](developer_guide/testing.md)
 
 
 ## Design Principles
@@ -79,9 +79,9 @@ Presentation Layer (UI/AR)
 ## Next Steps
 For more detailed information, read the following sections:
 
-[Setup Development Environment](setup.md)
-[Architecture](architecture.md)
-[Design Decisions](design_decisions.md)
-[API Documentation](apis/pegelonline.md)
-[Testing Strategy](testing.md)
-[Error Handling](error_handling.md)
+[Setup Development Environment](developer_guide/setup.md)
+[Architecture](developer_guide/architecture.md)
+[Design Decisions](developer_guide/design_decisions.md)
+[API Documentation](developer_guide/apis.md)
+[Testing Strategy](developer_guide/testing.md)
+[Error Handling](developer_guide/error_handling.md)
