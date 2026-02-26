@@ -11,11 +11,11 @@ Comprehensive testing approach for AR Flood App.
 **Process:**
 
 Check code for:
-* Obvious bugs
-* Code style consistency
-* Proper error handling
-* Comments where needed
-* No debug/test code left in
+
+- Obvious bugs
+- Code style consistency
+- Proper error handling
+- No debug/test code left in
 
 
 ### 2. Unity Play Mode Testing
@@ -23,12 +23,14 @@ Check code for:
 **When:** During development, before building to device
 
 **What We Test:**
+
 - Logic and calculations
 - UI behavior (non-AR parts)
 - Data parsing
 - Error handling
 
 **What Doesn't Work:**
+
 - AR tracking (needs device)
 - GPS (needs device)
 - Camera (needs device)
@@ -43,6 +45,7 @@ Check code for:
 3. **Samsung Galaxy Tab S6 Lite** 
 
 **Why Multiple Devices:**
+
 - Different performance levels
 - Different screen sizes
 - Different Android versions
@@ -53,6 +56,7 @@ Check code for:
 #### AR Tracking Quality
 
 **Test Environments:**
+
 - Indoor (poor lighting)
 - Outdoor (bright sun)
 - Outdoor (overcast)
@@ -60,6 +64,7 @@ Check code for:
 
 
 **Expected Results:**
+
 - AR tracking stable on textured surfaces
 - Water plane stays positioned correctly
 - No excessive jitter/shaking
@@ -70,10 +75,12 @@ Check code for:
 #### GPS Accuracy
 
 **Test Locations:**
+
 - Outside
 - Indoor
 
 **Expected Results:**
+
 - GPS lock within 30-60 seconds
 - Coordinates accurate within ±10 meters
 - Updates as you move
@@ -84,23 +91,25 @@ Check code for:
 
 **Test with Mock API:**
 
-* Test without real floods
-* Faster development iteration
-* Controllable test scenarios
-* Works offline
-* No API rate limits
+- Test without real floods
+- Faster development iteration
+- Controllable test scenarios
+- Works offline
+- No API rate limits
 
 how:
-* Change values in the mock API and watch how the water plane changes height 
+
+- Change values in the mock API and watch how the water plane changes height 
 
 **Test with Real API:**
 
-* check if GPS calculations find the correct nearest station and wether the flood level is displayed correctly
+- check if GPS calculations find the correct nearest station and wether the flood level is displayed correctly
 
 
 #### Floor Selection
 
 **Expected Results:**
+
 - Dropdown shows all floor options
 - Water plane adjusts correctly (±3m per floor)
 - Debug panel shows correct offset
@@ -110,6 +119,7 @@ how:
 #### Demo Mode
 
 **Expected Results:**
+
 - Works offline
 - Uses mock water levels
 - All features functional
@@ -121,19 +131,19 @@ how:
 **Situations that haven't been tested:**
 
 1. **Very High Elevation** (mountain)
-   - Launch at 1000m+ elevation
-   - Verify calculations correct
-   - Water should be far below
+    - Launch at 1000m+ elevation
+    - Verify calculations correct
+    - Water should be far below
 
 2. **Very Low Elevation** (coast)
-   - Launch at sea level
-   - Verify calculations correct
-   - Water may be above
+    - Launch at sea level
+    - Verify calculations correct
+    - Water may be above
 
 3. **Rapid Movement**
-   - Walk quickly while using app
-   - Verify AR tracking recovers
-   - Check GPS updates
+    - Walk quickly while using app
+    - Verify AR tracking recovers
+    - Check GPS updates
 
 
 ### Resources

@@ -1,6 +1,6 @@
 # How to Use
 
-A comprehensive guide to all features and functionality of AR Flood Visualization.
+A comprehensive guide to all features and functionality of AR Flood App.
 
 ## Interface Overview
 
@@ -178,10 +178,6 @@ Sources of error:
 Important:
 
     This app is for visualization only. Always rely on official flood warnings and evacuation orders from authorities.
-
-## Common Use Cases
-
-<!-- to do -->
 
 
 ## Limitations

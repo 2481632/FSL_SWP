@@ -99,20 +99,7 @@ Internet (INTERNET)
 ```
 
 All permissions can be reviewed and managed in:  
-`Settings → Apps → AR Flood Viz → Permissions`
-
-## Performance Considerations
-
-### Battery Life
-
-AR applications are power-intensive:
-
-- **Average Usage**: 20-30% battery per hour
-- **Recommendations**: 
-    - Use with >50% battery
-    - Enable power saving mode
-    - Reduce screen brightness
-    - Close background apps
+`Settings → Apps → AR Flood App → Permissions`
 
 
 ## Known Incompatibilities
@@ -122,7 +109,7 @@ AR applications are power-intensive:
 These devices will NOT work:
 
 - Most devices older than 2018
-- Budget smartphones without ARCore certification
+- Smartphones without ARCore certification
 - Tablets without AR support
 - Devices with Android < 11.0
 

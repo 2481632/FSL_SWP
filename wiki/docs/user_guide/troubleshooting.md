@@ -1,6 +1,6 @@
 # Troubleshooting
 
-Common issues and their solutions for AR Flood Visualization.
+Common issues and their solutions for AR Flood App.
 
 ## Installation Issues
 

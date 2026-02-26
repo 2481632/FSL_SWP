@@ -1,4 +1,4 @@
-# Development Environment Setup
+# Setup
 
 Complete guide to setting up your development environment for AR Flood Visualization.
 
@@ -26,8 +26,7 @@ Visual Studio or other
 
 ## Project Setup
 
-* Download or clone the project/repository.
-* open the project in Unity
+* Download the directory unityProject/water_Test and open in Unity
 
 
 ### Verify Android Build Support
@@ -83,7 +82,6 @@ If you need to use a different water shader:
 **Step 2: Create New Material**
 ```
 Project Window → Right Click → Create → Material
-Name it: "WaterMaterial_New"
 ```
 
 **Step 3: Assign Shader**
@@ -99,7 +97,6 @@ Hierarchy → ARWater GameObject
 Inspector → Mesh Renderer → Materials
 Replace old material with new material
 ```
-
 
 ## Testing Setup
 

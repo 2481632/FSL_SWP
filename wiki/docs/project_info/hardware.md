@@ -1,6 +1,6 @@
 # Hardware Requirements
 
-Information about hardware used for development and required for using AR Flood Visualization.
+Information about hardware used for development and required for using AR Flood App.
 
 ## Development Hardware
 
@@ -8,7 +8,7 @@ Information about hardware used for development and required for using AR Flood 
 
 The team used the following hardware during development and testing:
 
-#### Primary Test Devices
+#### Test Devices
 
 **Device 1: Samsung Galaxy S23**
 ```
@@ -60,9 +60,7 @@ ARCore: Supported ✓
 
 ### ARCore Compatibility
 
-**Critical Requirement:**
-
-The device MUST support ARCore. Check compatibility at:
+The device must support ARCore. Check compatibility at:
 
 - [Google's ARCore Supported Devices](https://developers.google.com/ar/devices)
 
@@ -88,20 +86,6 @@ The device MUST support ARCore. Check compatibility at:
 - Urban canyons affect signal
 - Weather can impact precision
 
-### Camera Requirements
-
-**For AR Tracking:**
-
-- Rear-facing camera mandatory
-- Minimum 8MP recommended
-- Good low-light performance helpful
-- Wide angle beneficial but not required
-
-**AR Tracking Needs:**
-
-- Textured surfaces for feature detection
-- Good lighting (not too dark/bright)
-- Stable camera movements
 
 ### Network Requirements
 
@@ -120,30 +104,6 @@ Required for:
 - Low latency helpful
 
 
-### Battery Requirements
-
-**Power Consumption:**
-
-AR apps are power-intensive:
-
-- Average drain: 20-30% per hour
-- Depends on device, brightness, network
-
-**Recommendations:**
-
-- Start with 50%+ battery
-- Use power saving mode
-- Reduce screen brightness
-- Close background apps
-- Consider portable charger for extended use
-
-**Battery Optimization:**
-```
-Settings → Battery → AR Flood Viz
-→ Optimize battery usage: On
-→ Background restriction: Recommended
-```
-
 ### Storage Requirements
 
 **Installation:**
@@ -156,7 +116,6 @@ Settings → Battery → AR Flood Viz
 
 - Temporary files minimal
 - No large data downloads
-- Cache can be cleared safely
 
 ## Development Workstation Setup
 

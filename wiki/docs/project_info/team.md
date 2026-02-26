@@ -46,11 +46,10 @@ Information about the AR Flood Visualization project team, communication, and wo
 
 **3. GitHub**
 
-- **Repository**: [Link to repo]
+- **Repository**: https://github.com/2481632/FSL_SWP
 - **Usage**:
     - Code reviews
     - Feature discussions
-    - Release planning
 
 **4. Unity Cloud**
 
@@ -85,61 +84,7 @@ Information about the AR Flood Visualization project team, communication, and wo
 - Prepare demo/update
 
 
-## Decision Making
-
-### Technical Decisions
-
-**Minor (e.g., variable naming, code structure):**
-
-- Individual developer decides
-- Document in code comments
-
-**Medium (e.g., new library, UI change):**
-
-- Discuss in text chat or meeting
-- Document in meeting notes
-
-**Major (e.g., architecture change, platform change):**
-
-- Dedicated meeting discussion
-- Document in design decisions
-
-
-## Collaboration Tools
-
-### Code & Version Control
-
-**GitHub**
-
-- Repository hosting
-- Issue tracking
-- Code review
-
-**Unity Collaborate / Git**
-
-- Unity project version control
-- Scene and asset merging
-- Conflict resolution
-
-### Project Management
-
-**GitHub Projects**
-
-- Kanban board
-- Sprint planning
-- Task tracking
-
-### Documentation
-
-**MkDocs**
-
-- Technical documentation
-- User guides
-- Developer guides
-
-
 ## Development Practices
-
 
 ### Testing
 
@@ -191,18 +136,6 @@ Information about the AR Flood Visualization project team, communication, and wo
 - Future work planning
 
 
-## Skills 
-
-### Learning Goals
-
-**What We're Learning:**
-
-- AR development best practices
-- Mobile app optimization
-- Real-time data visualization
-- API integration patterns
-- Collaborative development
-- Documentation practices
 
 ## Retrospectives
 

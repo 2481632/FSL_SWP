@@ -21,10 +21,8 @@ Visit [Google's ARCore Supported Devices](https://developers.google.com/ar/devic
 
 1. **Download the APK**
 ```
-   AR_Flood.apk from the releases page
+   AR_Flood.apk from the repository 
 ```
-
-   <!-- noch erstellen -->
 
 2. **Enable Unknown Sources**
     - Go to Settings → Security
@@ -42,15 +40,9 @@ Visit [Google's ARCore Supported Devices](https://developers.google.com/ar/devic
 ### Method 2: Build from Source
 
 For developers who want to build from source:
-```bash
-# Clone the repository
-git clone https://github.com/your-repo/ar-flood-viz.git
+download the folder unityProjekt/water_Test
 
-# Open in Unity
-# See Developer Guide for detailed build instructions
-```
-
-See [Developer Guide - Building](../developer_guide/building.md) for complete instructions.
+See [Developer Guide - Setup](../developer_guide/setup.md) for complete instructions.
 
 ## Post-Installation
 
@@ -126,26 +118,6 @@ If permissions aren't working:
 3. Manually enable Camera and Location
 4. Restart the app
 
-## Updating
-
-To update to a new version:
-
-1. Download the new APK
-2. Install over the existing version
-3. Your settings will be preserved
-
-## Uninstalling
-
-To remove the app:
-
-1. Long-press the app icon
-2. Tap "Uninstall" or drag to "Uninstall"
-3. Confirm removal
-
-Or via Settings:
-
-1. Settings → Apps → AR Flood Viz
-2. Tap "Uninstall"
 
 ## Next Steps
 

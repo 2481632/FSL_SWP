@@ -1,6 +1,6 @@
 # Project Motivation
 
-Why we built AR Flood Visualization and the problem it solves.
+Why we built AR Flood App and the problem it solves.
 
 ## The Problem
 
@@ -47,22 +47,15 @@ When people can't visualize flood risk, it leads to:
 - Don't leave early enough
 - Get trapped in dangerous situations
 
-**Safety Risks:**
-
-- Put themselves in danger by staying too long
-- Try to drive through flooded areas
-- Don't understand fast-rising water danger
-- Unnecessary injuries and casualties
-
 ## Our Solution
 
 ### AR Visualization Makes Flood Data Tangible
 
 **The Core Idea:**
 
-> Point your phone at your surroundings and **see exactly where flood water would reach** in augmented reality.
+> Point your phone at your surroundings and see exactly where flood water would reach in augmented reality.
 
-Instead of reading "Water level: 3460 cm over Normal-Null", you **see** a water plane at knee-height in your living room.
+Instead of reading "Water level: 3460 cm over Normal-Null", you see a water plane at knee-height in your living room.
 
 ### How It Works
 
@@ -74,51 +67,15 @@ Instead of reading "Water level: 3460 cm over Normal-Null", you **see** a water 
 
 ### Key Benefits
 
-**1. Immediate Understanding**
-```
-Traditional: "Water level: 3460 cm over NN"
-           ↓
-User thinks: "What does that mean for me?"
-           ↓
-Confusion, uncertainty, no action
+- immediate understanding 
+- personalized to your exact location
 
-
-Our App: Water plane at chest height in your view
-       ↓
-User sees: "The water would be THIS HIGH"
-       ↓
-Immediate understanding, informed decision
-```
-
-**2. Personalized to Your Exact Location**
-
-- Uses your GPS position
-- Accounts for your specific elevation
-- Adjusts for your floor level
-- Real-time updates as you move
-- Shows YOUR risk, not general area
-
-**3. Educational Value**
-
-- Teaches people about flood risk intuitively
-- Demonstrates importance of elevation
-- Shows impact of different water levels
-- Raises awareness
-- Makes abstract concept concrete
 
 ## Use Cases
 
 ### 1. Personal Safety Assessment
 
 **Scenario:** You live near the Elbe river and hear flood warnings on the news. Water level is rising.
-
-**Without our app:**
-
-- News: "Elbe at 634 cm in Dresden"
-- You: "Is that bad? Should I evacuate?"
-- Confusion, anxiety, unclear risk
-
-**With our app:**
 
 1. Open app at your home
 2. See AR visualization of flood level
@@ -148,97 +105,25 @@ Immediate understanding, informed decision
 
 ### The Power of Augmented Reality
 
-**1. Spatial Understanding**
+**Spatial Understanding**
 
 - See flood risk in context of your actual environment
 - Understand height relationships intuitively
 - No need for mental 3D visualization
 - Direct comparison: flood vs. your surroundings
 
-**2. Immersive & Memorable**
+**Immersive & Memorable**
 
 - More impactful than maps or numbers
 - Creates emotional connection to risk
-- Unforgettable experience
 - Changes behavior through vivid visualization
 
-**3. Accessibility & Ubiquity**
+**3. Accessibility**
 
 - Everyone has a smartphone
 - No special equipment needed
 - Works anywhere, anytime (with internet)
 - Simple to use, no training required
-
-
-## The Vision
-
-### What We're Building Toward
-
-**Short-term:**
-
-- Functional AR flood visualization
-- Real-time water level data
-- User-friendly mobile app
-- Predictive modeling (24-48h forecasts)
-
-**long-term:**
-
-- Historical flood overlays
-- Multi-location comparison
-- Notification system
-- Offline mode
-
-
-## Technical Innovation
-
-### Challenges We Solved
-
-**1. Data Integration**
-
-- Combined three data sources: water levels, GPS, elevation
-- Different units, reference systems
-- Real-time updates
-- Robust error handling
-
-**2. Coordinate System Conversion**
-
-- GPS coordinates (lat/lon)
-- Elevation above sea level
-- Gauge reference points (Pegelnull)
-- Unity AR coordinate system
-
-**3. AR Positioning**
-
-- Position water plane at exact height
-- Account for camera height
-- Account for floor levels
-- Stable tracking despite GPS drift
-
-**4. User Experience**
-
-- Simple interface despite complex calculations
-- Debug panel for transparency
-- Demo mode for testing/education
-- Works on range of devices
-
-
-## Why We Built This
-
-### Personal Motivation
-
-As computer science students, we wanted to:
-
-- **Apply our skills for social good**
-- **Tackle a real-world problem**
-- **Learn AR development**
-- **Make a meaningful impact**
-
-### Development Journey
-
-**November 2025:** Project conception, Technology exploration  
-**December 2025:** Mock API , MVP Development  
-**January 2026:** Real API integration, refinement  
-**February 2026:** Documentation
 
 --- 
 
