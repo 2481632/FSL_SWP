@@ -1,10 +1,6 @@
 # Project Motivation
 
-<<<<<<< HEAD
-Why we built AR Flood App and the problem it solves.
-=======
 Why we built AR Flood Visualization and the problem it solves.
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 ## The Problem
 
@@ -51,8 +47,6 @@ When people can't visualize flood risk, it leads to:
 - Don't leave early enough
 - Get trapped in dangerous situations
 
-<<<<<<< HEAD
-=======
 **Safety Risks:**
 
 - Put themselves in danger by staying too long
@@ -60,22 +54,15 @@ When people can't visualize flood risk, it leads to:
 - Don't understand fast-rising water danger
 - Unnecessary injuries and casualties
 
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 ## Our Solution
 
 ### AR Visualization Makes Flood Data Tangible
 
 **The Core Idea:**
 
-<<<<<<< HEAD
-> Point your phone at your surroundings and see exactly where flood water would reach in augmented reality.
-
-Instead of reading "Water level: 3460 cm over Normal-Null", you see a water plane at knee-height in your living room.
-=======
 > Point your phone at your surroundings and **see exactly where flood water would reach** in augmented reality.
 
 Instead of reading "Water level: 3460 cm over Normal-Null", you **see** a water plane at knee-height in your living room.
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 ### How It Works
 
@@ -87,53 +74,16 @@ Instead of reading "Water level: 3460 cm over Normal-Null", you **see** a water 
 
 ### Key Benefits
 
-<<<<<<< HEAD
 - immediate understanding 
 - personalized to your exact location
 
 
-=======
-**1. Immediate Understanding**
-```
-Traditional: "Water level: 3460 cm over NN"
-           ↓
-User thinks: "What does that mean for me?"
-           ↓
-Confusion, uncertainty, no action
-
-
-Our App: Water plane at chest height in your view
-       ↓
-User sees: "The water would be THIS HIGH"
-       ↓
-Immediate understanding, informed decision
-```
-
-**2. Personalized to Your Exact Location**
-
-- Uses your GPS position
-- Accounts for your specific elevation
-- Adjusts for your floor level
-- Real-time updates as you move
-- Shows YOUR risk, not general area
-
-**3. Educational Value**
-
-- Teaches people about flood risk intuitively
-- Demonstrates importance of elevation
-- Shows impact of different water levels
-- Raises awareness
-- Makes abstract concept concrete
-
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 ## Use Cases
 
 ### 1. Personal Safety Assessment
 
 **Scenario:** You live near the Elbe river and hear flood warnings on the news. Water level is rising.
 
-<<<<<<< HEAD
-=======
 **Without our app:**
 
 - News: "Elbe at 634 cm in Dresden"
@@ -142,7 +92,6 @@ Immediate understanding, informed decision
 
 **With our app:**
 
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 1. Open app at your home
 2. See AR visualization of flood level
 3. Water plane appears 50cm below your window
@@ -171,26 +120,13 @@ Immediate understanding, informed decision
 
 ### The Power of Augmented Reality
 
-<<<<<<< HEAD
-**Spatial Understanding**
-=======
 **1. Spatial Understanding**
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 - See flood risk in context of your actual environment
 - Understand height relationships intuitively
 - No need for mental 3D visualization
 - Direct comparison: flood vs. your surroundings
 
-<<<<<<< HEAD
-**Immersive & Memorable**
-
-- More impactful than maps or numbers
-- Creates emotional connection to risk
-- Changes behavior through vivid visualization
-
-**3. Accessibility**
-=======
 **2. Immersive & Memorable**
 
 - More impactful than maps or numbers
@@ -199,15 +135,12 @@ Immediate understanding, informed decision
 - Changes behavior through vivid visualization
 
 **3. Accessibility & Ubiquity**
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 - Everyone has a smartphone
 - No special equipment needed
 - Works anywhere, anytime (with internet)
 - Simple to use, no training required
 
-<<<<<<< HEAD
-=======
 
 ## The Vision
 
@@ -279,7 +212,6 @@ As computer science students, we wanted to:
 **January 2026:** Real API integration, refinement  
 **February 2026:** Documentation
 
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 --- 
 
 ## Next Steps

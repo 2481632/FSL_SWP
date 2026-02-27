@@ -92,10 +92,6 @@ Information about the AR Flood Visualization project team, communication, and wo
 - Prepare demo/update
 
 
-<<<<<<< HEAD
-## Development Practices
-
-=======
 ## Decision Making
 
 ### Technical Decisions
@@ -152,7 +148,6 @@ Information about the AR Flood Visualization project team, communication, and wo
 ## Development Practices
 
 
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 ### Testing
 
 **Who Tests:**
@@ -203,8 +198,6 @@ Information about the AR Flood Visualization project team, communication, and wo
 - Future work planning
 
 
-<<<<<<< HEAD
-=======
 ## Skills 
 
 ### Learning Goals
@@ -217,7 +210,6 @@ Information about the AR Flood Visualization project team, communication, and wo
 - API integration patterns
 - Collaborative development
 - Documentation practices
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 ## Retrospectives
 

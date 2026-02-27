@@ -1,10 +1,6 @@
 # Hardware Requirements
 
-<<<<<<< HEAD
-Information about hardware used for development and required for using AR Flood App.
-=======
 Information about hardware used for development and required for using AR Flood Visualization.
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 ## Development Hardware
 
@@ -12,11 +8,7 @@ Information about hardware used for development and required for using AR Flood 
 
 The team used the following hardware during development and testing:
 
-<<<<<<< HEAD
-#### Test Devices
-=======
 #### Primary Test Devices
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 **Device 1: Samsung Galaxy S23**
 ```
@@ -68,13 +60,9 @@ ARCore: Supported ✓
 
 ### ARCore Compatibility
 
-<<<<<<< HEAD
-The device must support ARCore. Check compatibility at:
-=======
 **Critical Requirement:**
 
 The device MUST support ARCore. Check compatibility at:
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 - [Google's ARCore Supported Devices](https://developers.google.com/ar/devices)
 
@@ -100,8 +88,6 @@ The device MUST support ARCore. Check compatibility at:
 - Urban canyons affect signal
 - Weather can impact precision
 
-<<<<<<< HEAD
-=======
 ### Camera Requirements
 
 **For AR Tracking:**
@@ -116,7 +102,6 @@ The device MUST support ARCore. Check compatibility at:
 - Textured surfaces for feature detection
 - Good lighting (not too dark/bright)
 - Stable camera movements
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 ### Network Requirements
 
@@ -135,8 +120,6 @@ Required for:
 - Low latency helpful
 
 
-<<<<<<< HEAD
-=======
 ### Battery Requirements
 
 **Power Consumption:**
@@ -161,7 +144,6 @@ Settings → Battery → AR Flood Viz
 → Background restriction: Recommended
 ```
 
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 ### Storage Requirements
 
 **Installation:**
@@ -174,10 +156,7 @@ Settings → Battery → AR Flood Viz
 
 - Temporary files minimal
 - No large data downloads
-<<<<<<< HEAD
-=======
 - Cache can be cleared safely
->>>>>>> 0588c6a36b4be4f768f775bfd9f4946e54dd487b
 
 ## Development Workstation Setup
 

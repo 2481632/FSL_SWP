@@ -157,5 +157,5 @@ Once your environment is set up:
    [Design Decisions](design_decisions.md)
 
 3. **Building Guide**  
-   [Building Guide](/user_guide/installation.md)
+   [Building Guide](../user_guide/installation.md)
 
